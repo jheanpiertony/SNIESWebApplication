@@ -21,7 +21,7 @@ namespace SNIESWebApplication.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            context.Periodo.AddOrUpdate(
+            context.Periodos.AddOrUpdate(
                x => x.Id,
                new Periodo { Id = 1, FechaPeriodo = "2014-1" },
                new Periodo { Id = 2, FechaPeriodo = "2014-2" },

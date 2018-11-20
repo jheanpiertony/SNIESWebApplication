@@ -31,6 +31,14 @@ namespace SNIESWebApplication.Models
         }
 
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.Participante> Participantes { get; set; }
-        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Periodo> Periodo { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Periodo> Periodos { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Admitido> Admitidos { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Matriculado> Matriculados { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Graduado> Graduados { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Cupo> Cupos { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Inscrito> Inscritos { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.EstudiantePrimerCurso> EstudiantesPrimerCurso { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.RetiroDisciplinario> RetirosDisciplinarios { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ApoyoEstudiante> ApoyoEstudiantes { get; set; }
     }
 }

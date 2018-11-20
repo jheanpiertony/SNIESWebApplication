@@ -1,0 +1,258 @@
+﻿@model SNIESWebApplication.Models.EstudiantePrimerCurso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EstudiantePrimerCurso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMERO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROGRAMA_CONSECUTIVO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROGRAMA_CONSECUTIVO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_PROGRAMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_PROGRAMA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_MUNICIPIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_MUNICIPIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MUNICIPIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MUNICIPIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_TIPO_VINCULACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_TIPO_VINCULACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_VINCULACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_VINCULACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_GRUPO_ETNICO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_GRUPO_ETNICO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GRUPO_ETNICO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GRUPO_ETNICO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_PUEBLO_INDIGENA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_PUEBLO_INDIGENA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PUEBLO_INDIGENA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PUEBLO_INDIGENA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_COMINIDAD_NEGRA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_COMINIDAD_NEGRA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMUNIDAD_NEGRA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMUNIDAD_NEGRA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSONA_CON_DISCAPACIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSONA_CON_DISCAPACIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_TIPO_DISCAPACIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_TIPO_DISCAPACIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_CAPACIDAD_EXCEP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_CAPACIDAD_EXCEP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAPACIDAD_EXCEPCIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAPACIDAD_EXCEPCIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_PRUEBA_SABER_11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_PRUEBA_SABER_11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FUENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FUENTE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

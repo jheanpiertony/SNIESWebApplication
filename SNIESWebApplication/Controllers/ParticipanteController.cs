@@ -39,7 +39,7 @@
         // GET: Participante/Create
         public ActionResult Create()
         {
-            ViewBag.PeriodoId = new SelectList(db.Periodo, "Id", "FechaPeriodo");
+            ViewBag.PeriodoId = new SelectList(db.Periodos, "Id", "FechaPeriodo");
             return View();
         }
 
@@ -147,7 +147,7 @@
                     plantillaCargaExcel.SaveAs(filePath);
                     string csvData = System.IO.File.ReadAllText(filePath);
                     int i = 0;
-                    var _FECHA_PERIODO = db.Periodo.Where(x => x.Id == PeriodoId).First();
+                    var _FECHA_PERIODO = db.Periodos.Where(x => x.Id == PeriodoId).First();
 
                     foreach (var row in csvData.Split('\n'))
                     {                        

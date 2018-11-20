@@ -17,6 +17,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    @*<span class="icon-bar"></span>*@
                 </button>
                 @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
@@ -25,6 +27,26 @@
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Estudiantes<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Inscritos", "Create", "Inscrito")</li>
+                            <li>@Html.ActionLink("Admitidos", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Matriculados", "Create", "Matriculado")</li>
+                            <li>@Html.ActionLink("Graduados", "Create", "Graduado")</li>
+                            <li>@Html.ActionLink("Primiparos", "Create", "EstudiantePrimerCurso")</li>
+                            <li>@Html.ActionLink("Cupos", "Create", "Cupo")</li>
+                            <li>@Html.ActionLink("Retiros", "Create", "RetiroDisciplinario")</li>
+                            <li>@Html.ActionLink("Apoyos", "Create", "ApoyoEstudiante")</li>
+                        </ul>
+                    </li> 
+                    @*<li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Estudiantes<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Admitidos", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Ver cotizaciones", "Index", "Cotizacion")</li>
+                        </ul>
+                    </li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

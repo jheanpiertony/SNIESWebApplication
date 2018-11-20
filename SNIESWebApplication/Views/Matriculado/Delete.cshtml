@@ -1,0 +1,288 @@
+﻿@model SNIESWebApplication.Models.Matriculado
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Matriculado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMERO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_ESTUDIANTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_ESTUDIANTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEXO_BIOLOGICO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEXO_BIOLOGICO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROGRAMA_CONSECUTIVO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROGRAMA_CONSECUTIVO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROGRAMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROGRAMA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_DANE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_DANE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MUNICIPIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MUNICIPIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_NACIMIENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_NACIMIENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_PAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_PAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_DANE_NACIMIENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_DANE_NACIMIENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO_NACIMIENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTAMENTO_NACIMIENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MUNICIPIO_NACIMIENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MUNICIPIO_NACIMIENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_ZONA_RESIDENCIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_ZONA_RESIDENCIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZONA_RESIDENCIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZONA_RESIDENCIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMERO_MATERIAS_INSCRITAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_MATERIAS_INSCRITAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMERO_MATERIAS_APROBADAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_MATERIAS_APROBADAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ES_REINTEGRO_ESTD_ANTES_DE1998)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ES_REINTEGRO_ESTD_ANTES_DE1998)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO_PRIMER_CURSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO_PRIMER_CURSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE_PRIMER_CURSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE_PRIMER_CURSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FUENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FUENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PERIODO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
