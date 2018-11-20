@@ -1,0 +1,170 @@
+﻿@model SNIESWebApplication.Models.Participante
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Participante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDENTIFICADOR_SNIES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDENTIFICADOR_SNIES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUM_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUM_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_SEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_SEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_NACIMIENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_NACIMIENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MUNICIPIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MUNICIPIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL_INSTITUCIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL_INSTITUCIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRECCION_INSTITUCIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRECCION_INSTITUCIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL_PEROSNAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL_PEROSNAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CELULAR_PERSONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CELULAR_PERSONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FUENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FUENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PERIODO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<SNIESWebApplication.Models.Participante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDENTIFICADOR_SNIES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_DOCUMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_DOCUMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEGUNDO_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_SEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_NACIMIENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAIS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MUNICIPIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL_INSTITUCIONAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRECCION_INSTITUCIONAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL_PEROSNAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CELULAR_PERSONAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FUENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODIGO_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDENTIFICADOR_SNIES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_DOCUMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_DOCUMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIMER_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEGUNDO_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEGUNDO_APELLIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_SEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_NACIMIENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAIS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MUNICIPIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL_INSTITUCIONAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIRECCION_INSTITUCIONAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL_PEROSNAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CELULAR_PERSONAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VERIFICADO_POR_FUENTE_OFICIAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FUENTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

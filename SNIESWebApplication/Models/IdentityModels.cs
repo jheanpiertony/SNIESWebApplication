@@ -29,5 +29,8 @@ namespace SNIESWebApplication.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Participante> Participantes { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Periodo> Periodo { get; set; }
     }
 }
