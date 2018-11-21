@@ -186,9 +186,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActividadBienestarController.cs" />
     <Compile Include="Controllers\AdmitidoController.cs" />
     <Compile Include="Controllers\ApoyoEstudianteController.cs" />
     <Compile Include="Controllers\CupoController.cs" />
+    <Compile Include="Controllers\EstudianteArticulacionController.cs" />
     <Compile Include="Controllers\EstudiantePrimerCursoController.cs" />
     <Compile Include="Controllers\GraduadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -202,10 +204,12 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ActividadBienestar.cs" />
     <Compile Include="Models\Admitido.cs" />
     <Compile Include="Models\ApoyoEstudiante.cs" />
     <Compile Include="Models\Cupo.cs" />
     <Compile Include="Models\Entidad.cs" />
+    <Compile Include="Models\EstudianteArticulacion.cs" />
     <Compile Include="Models\EstudiantePrimerCurso.cs" />
     <Compile Include="Models\Graduado.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -323,6 +327,13 @@
     <Content Include="Views\ApoyoEstudiante\Details.cshtml" />
     <Content Include="Views\ApoyoEstudiante\Edit.cshtml" />
     <Content Include="Views\ApoyoEstudiante\Index.cshtml" />
+    <Content Include="Views\EstudianteArticulacion\Create.cshtml" />
+    <Content Include="Views\EstudianteArticulacion\Delete.cshtml" />
+    <Content Include="Views\EstudianteArticulacion\Details.cshtml" />
+    <Content Include="Views\EstudianteArticulacion\Edit.cshtml" />
+    <Content Include="Views\EstudianteArticulacion\Index.cshtml" />
+    <Content Include="Views\ActividadBienestar\Create.cshtml" />
+    <Content Include="Views\ActividadBienestar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

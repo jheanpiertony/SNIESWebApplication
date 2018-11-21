@@ -1,0 +1,160 @@
+﻿@model SNIESWebApplication.Models.EstudianteArticulacion
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EstudianteArticulacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AÑO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AÑO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMERO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROGRAMA_CONSECUTIVO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROGRAMA_CONSECUTIVO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_PROGRAMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_PROGRAMA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_MUNICIPIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_MUNICIPIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MUNICIPIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MUNICIPIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GRADO_CURSA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GRADO_CURSA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

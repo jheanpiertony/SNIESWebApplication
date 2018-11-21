@@ -18,15 +18,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    @*<span class="icon-bar"></span>*@
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Estudiantes<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -38,15 +40,72 @@
                             <li>@Html.ActionLink("Cupos", "Create", "Cupo")</li>
                             <li>@Html.ActionLink("Retiros", "Create", "RetiroDisciplinario")</li>
                             <li>@Html.ActionLink("Apoyos", "Create", "ApoyoEstudiante")</li>
+                            <li>@Html.ActionLink("Estudiante de articulacion", "Create", "EstudianteArticulacion")</li>
+                            <li>@Html.ActionLink("Estudiante de articulacion", "Create", "EstudianteArticulacion")</li>
                         </ul>
                     </li> 
-                    @*<li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Estudiantes<b class="caret"></b></a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Bienestar universitario<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Admitidos", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Ver cotizaciones", "Index", "Cotizacion")</li>
+                            <li>@Html.ActionLink("Actividad bienestar", "Create", "Admitido")</li>
                         </ul>
-                    </li>*@
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Extensiones<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Actividad Cultural", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Consultoría", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Cursos", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Educación Continua", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Evento Cultural", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Proyecto de Extensión", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Servicios de Extensión", "Create", "Admitido")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">RRHH<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Autoridades", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Directivos", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Docentes IES", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Integrantes máximo organo de gobierno ", "Create", "Admitido")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Internacionalización<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Convenios Internacionales", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Personal administrativo hacia Colombia ", "Admitido")</li>
+                            <li>@Html.ActionLink("Personal administrativo hacia Exterior ", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Docentes del exterior hacia Colombia", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Docentes hacia el exterior", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Estudiantes hacia el exterior", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Estudiantes del exterior hacia Colombia", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Programas presenciales ofrecidos en el exterior", "Create", "Admitido")</li>
+                        </ul>
+                    </li> 
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Derechos pecuniarios<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink(" Derechos Pecuniarios IES Privadas ", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink(" Proyectos de Inversión ", "Admitido")</li>
+                            <li>@Html.ActionLink(" Valores de Matrícula IES Privadas ", "Create", "Admitido")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Informacion institucional<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink(" Derechos Pecuniarios IES Privadas ", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink(" Proyectos de Inversión ", "Admitido")</li>
+                            <li>@Html.ActionLink(" Valores de Matrícula IES Privadas ", "Create", "Admitido")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Participantes<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Participantes", "Create", "Participante")</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

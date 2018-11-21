@@ -40,5 +40,7 @@ namespace SNIESWebApplication.Models
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.EstudiantePrimerCurso> EstudiantesPrimerCurso { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.RetiroDisciplinario> RetirosDisciplinarios { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.ApoyoEstudiante> ApoyoEstudiantes { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.EstudianteArticulacion> EstudianteArticulacion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ActividadBienestar> ActividadBienestar { get; set; }
     }
 }
