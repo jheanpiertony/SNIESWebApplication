@@ -41,13 +41,12 @@
                             <li>@Html.ActionLink("Retiros", "Create", "RetiroDisciplinario")</li>
                             <li>@Html.ActionLink("Apoyos", "Create", "ApoyoEstudiante")</li>
                             <li>@Html.ActionLink("Estudiante de articulacion", "Create", "EstudianteArticulacion")</li>
-                            <li>@Html.ActionLink("Estudiante de articulacion", "Create", "EstudianteArticulacion")</li>
                         </ul>
-                    </li> 
+                    </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Bienestar universitario<b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown">Bienestar<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Actividad bienestar", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Actividad bienestar", "Create", "ActividadBienestar")</li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -83,7 +82,7 @@
                             <li>@Html.ActionLink("Estudiantes del exterior hacia Colombia", "Create", "Admitido")</li>
                             <li>@Html.ActionLink("Programas presenciales ofrecidos en el exterior", "Create", "Admitido")</li>
                         </ul>
-                    </li> 
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Derechos pecuniarios<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -111,6 +110,10 @@
             </div>
         </div>
     </div>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
     <div class="container body-content">
         @RenderBody()
         <hr />
