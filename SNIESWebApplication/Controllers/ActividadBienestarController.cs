@@ -14,6 +14,7 @@
     using OfficeOpenXml;
     using System.Reflection;
     using System.Dynamic;
+    using System.Data.Entity.Core.Metadata.Edm;
 
     public class ActividadBienestarController : Controller
     {
@@ -145,7 +146,7 @@
                     {
                         Directory.Delete(filePath);
                     }
-                    
+
                     var _FECHA_PERIODO = db.Periodos.Where(x => x.Id == PeriodoId).First();
 
                     if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm"))
@@ -154,36 +155,24 @@
                         {
                             var hojaActuales = paquete.Workbook.Worksheets;
                             var cantidadHojas = hojaActuales.Count;
-
                             
                             foreach (var hoja in hojaActuales)
-                            {
-                                Carga<ActividadBienestar>(hoja);
-                                
-                                //var nroColumna = hoja.Dimension.End.Column;
-                                //var nroFila = hoja.Dimension.End.Row;
+                            {                                
+                                var nroColumna = hoja.Dimension.End.Column;
+                                var nroFila = hoja.Dimension.End.Row;
+                                string[,] matrixValorHoja = new string[nroFila-1, nroColumna];
 
-                                //for (int j = 2; j <= nroFila; j++)
-                                //{
-                                //    for (int y = 0; y <= nroColumna; y++)
-                                //    {
-
-                                //        //libro = new Libro()
-                                //        //{
-                                //        //    Titulo = workSheet.Cells[i, 1].Value.ToString(),
-                                //        //    Autor = workSheet.Cells[i, 2].Value.ToString(),
-                                //        //    ISBN = workSheet.Cells[i, 3].Value.ToString(),
-                                //        //    Descripcion = workSheet.Cells[i, 4].Value.ToString(),
-                                //        //    Ano = int.Parse(workSheet.Cells[i, 5].Value.ToString()),
-                                //        //    Editorial = workSheet.Cells[i, 6].Value.ToString(),
-                                //        //    Edicion = int.Parse(workSheet.Cells[i, 7].Value.ToString()),
-                                //        //    Cantidad = int.Parse(workSheet.Cells[i, 8].Value.ToString()),
-                                //        //    Precio = decimal.Parse(workSheet.Cells[i, 9].Value.ToString())
-                                //        //};
-                                //    }
-                                //}
+                                for (int i = 2; i <= nroFila; i++)
+                                {
+                                    for (int j = 1; j <= nroColumna; j++)
+                                    {
+                                        matrixValorHoja[i - 2, j - 1] = (hoja.Cells[i, j].Value == null)? string.Empty: hoja.Cells[i, j].Value.ToString();
+                                    }
+                                }
+                                GuardarDatos(matrixValorHoja, hoja.Index);
                             }                           
                         }
+                        return View("Index", db.ActividadBienestar.ToList());
                     }
                     else
                     {
@@ -198,32 +187,14 @@
                             {
                                 if (i != 0)
                                 {
-                                    listaActividadBienestar.Add(new ActividadBienestar()
-                                    {
-                                        ID_IES = string.IsNullOrEmpty(row.Split(';')[0].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[0].Replace("\"", string.Empty),
-                                        NOMBRE_IES = string.IsNullOrEmpty(row.Split(';')[1].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[1].Replace("\"", string.Empty),
-                                        ANO = string.IsNullOrEmpty(row.Split(';')[2].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[2].Replace("\"", string.Empty),
-                                        SEMESTRE = string.IsNullOrEmpty(row.Split(';')[3].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[3].Replace("\"", string.Empty),
-                                        COD_UNIDAD = string.IsNullOrEmpty(row.Split(';')[4].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[4].Replace("\"", string.Empty),
-                                        UNIDAD_ORGANIZACIONAL = string.IsNullOrEmpty(row.Split(';')[5].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[5].Replace("\"", string.Empty),
-                                        COD_ACTIVIDAD = string.IsNullOrEmpty(row.Split(';')[6].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[6].Replace("\"", string.Empty),
-                                        ACTIVIDAD = string.IsNullOrEmpty(row.Split(';')[7].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[7].Replace("\"", string.Empty),
-                                        COD_TIPO_ACTIVIDAD = string.IsNullOrEmpty(row.Split(';')[8].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[8].Replace("\"", string.Empty),
-                                        TIPO_ACTIVIDAD = string.IsNullOrEmpty(row.Split(';')[9].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[9].Replace("\"", string.Empty),
-                                        FECHA_INICIO = string.IsNullOrEmpty(row.Split(';')[10].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[10].Replace("\"", string.Empty),
-                                        FECHA_FINAL = string.IsNullOrEmpty(row.Split(';')[11].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[11].Replace("\"", string.Empty),
-                                        FECHA_PERIODO = _FECHA_PERIODO.FechaPeriodo
-                                    });
                                 }
                                 i++;
                             }
                         }
-                    }
-
-
-                    db.ActividadBienestar.AddRange(listaActividadBienestar);
-                    db.SaveChanges();
-                    return View("Index", db.ActividadBienestar.ToList());
+                        db.ActividadBienestar.AddRange(listaActividadBienestar);
+                        db.SaveChanges();
+                        return View("Index", db.ActividadBienestar.ToList());
+                    }                    
                 }
                 else
                 {
@@ -238,87 +209,10 @@
             }
         }
 
-
-        public void Carga<T>(ExcelWorksheet hoja) where T : new()
+        private void GuardarDatos(string[,] matrixValorHoja, int index)
         {
-            var type = typeof(T);
-            var properties = type.GetProperties();
-            T a = new T();
-            dynamic modeloT = new ExpandoObject();
-            
-            //a.
-
-            var nroFila = hoja.Dimension.End.Row;
-            var nroColumna = hoja.Dimension.End.Column;
-            object[] values = new object[nroColumna];
-
-
-            T obj = default(T);
-            obj = Activator.CreateInstance<T>();
-            ob
-
-
-            var lista = new List<T>();
-            
-            for (int i = 2; i <= nroFila; i++)
-            {
-                for (int j = 0; j <= nroColumna; j++)
-                {
-                    //var a = 
-                }
-
-            }
-            //return new List<T>();
+            throw new NotImplementedException();
         }
-
-
-        /// <summary>
-        /// Create data table from list.
-        /// https://stackoverflow.com/questions/18746064/using-reflection-to-create-a-datatable-from-a-class
-        /// </summary>
-        public static DataTable CreateDataTable<T>(IEnumerable<T> list)
-        {
-            Type type = typeof(T);
-            var properties = type.GetProperties();
-            DataTable dataTable = new DataTable();
-            int j = 0;
-
-            foreach (PropertyInfo info in properties)
-            {
-                j++;
-                //if (typeof(T).GetProperty(info.Name).GetGetMethod().IsVirtual )
-                //{
-                //    //if (info.PropertyType.IsGenericType)
-                //    //{
-                //    //    dataTable.Columns.AddRange(_createDateTable(info));
-                //    //}
-                //}
-                //else
-                //{
-                dataTable.Columns.Add(new DataColumn(info.Name, Nullable.GetUnderlyingType(info.PropertyType) ?? info.PropertyType));
-                //}                
-            }
-
-            foreach (T entity in list)
-            {
-                object[] values = new object[properties.Length];
-                for (int i = 0; i < properties.Length; i++)
-                {
-                    //if (typeof(IEnumerable).IsAssignableFrom(entity.GetType().GetTypeInfo()))
-                    //{
-
-                    //}
-                    //else
-                    //{
-                    values[i] = properties[i].GetValue(entity);
-                    //}                    
-                }
-                dataTable.Rows.Add(values);
-            }
-
-            return dataTable;
-        }
-
 
         protected override void Dispose(bool disposing)
         {
