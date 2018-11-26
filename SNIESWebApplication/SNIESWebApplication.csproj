@@ -192,7 +192,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActividadBeneficiarController.cs" />
     <Compile Include="Controllers\ActividadBienestarController.cs" />
+    <Compile Include="Controllers\ActividadCulturalController.cs" />
+    <Compile Include="Models\ActividadCultural.cs" />
+    <Compile Include="Controllers\ActividadRecHumanoController.cs" />
     <Compile Include="Controllers\AdmitidoController.cs" />
     <Compile Include="Controllers\ApoyoEstudianteController.cs" />
     <Compile Include="Controllers\CupoController.cs" />
@@ -210,13 +214,18 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ActividadBeneficiar.cs" />
     <Compile Include="Models\ActividadBienestar.cs" />
+    <Compile Include="Models\ActividadRecHumano.cs" />
     <Compile Include="Models\Admitido.cs" />
     <Compile Include="Models\ApoyoEstudiante.cs" />
+    <Compile Include="Models\Consultaria.cs" />
     <Compile Include="Models\Cupo.cs" />
+    <Compile Include="Models\EducacionContinua.cs" />
     <Compile Include="Models\Entidad.cs" />
     <Compile Include="Models\EstudianteArticulacion.cs" />
     <Compile Include="Models\EstudiantePrimerCurso.cs" />
+    <Compile Include="Models\EventoCultural.cs" />
     <Compile Include="Models\Graduado.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Inscrito.cs" />
@@ -225,7 +234,9 @@
     <Compile Include="Models\Matriculado.cs" />
     <Compile Include="Models\Participante.cs" />
     <Compile Include="Models\Periodo.cs" />
+    <Compile Include="Models\ProyectoExtencion.cs" />
     <Compile Include="Models\RetiroDisciplinario.cs" />
+    <Compile Include="Models\ServicioExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -340,6 +351,24 @@
     <Content Include="Views\EstudianteArticulacion\Index.cshtml" />
     <Content Include="Views\ActividadBienestar\Create.cshtml" />
     <Content Include="Views\ActividadBienestar\Index.cshtml" />
+    <Content Include="Views\ActividadBienestar\Delete.cshtml" />
+    <Content Include="Views\ActividadBienestar\Details.cshtml" />
+    <Content Include="Views\ActividadBienestar\Edit.cshtml" />
+    <Content Include="Views\ActividadBeneficiar\Create.cshtml" />
+    <Content Include="Views\ActividadBeneficiar\Delete.cshtml" />
+    <Content Include="Views\ActividadBeneficiar\Details.cshtml" />
+    <Content Include="Views\ActividadBeneficiar\Edit.cshtml" />
+    <Content Include="Views\ActividadBeneficiar\Index.cshtml" />
+    <Content Include="Views\ActividadRecHumano\Create.cshtml" />
+    <Content Include="Views\ActividadRecHumano\Delete.cshtml" />
+    <Content Include="Views\ActividadRecHumano\Details.cshtml" />
+    <Content Include="Views\ActividadRecHumano\Edit.cshtml" />
+    <Content Include="Views\ActividadRecHumano\Index.cshtml" />
+    <Content Include="Views\ActividadCultural\Create.cshtml" />
+    <Content Include="Views\ActividadCultural\Delete.cshtml" />
+    <Content Include="Views\ActividadCultural\Details.cshtml" />
+    <Content Include="Views\ActividadCultural\Edit.cshtml" />
+    <Content Include="Views\ActividadCultural\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

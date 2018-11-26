@@ -1,0 +1,128 @@
+﻿@model SNIESWebApplication.Models.ActividadCultural
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ActividadCultural</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_UNIDAD_ORGANIZACIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_UNIDAD_ORGANIZACIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UNIDAD_ORGANIZACIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNIDAD_ORGANIZACIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_ACTIVIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_ACTIVIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACTIVIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACTIVIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_TIPO_ACTIVIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_TIPO_ACTIVIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_ACTIVIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_ACTIVIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_INICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_INICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_FINAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_FINAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PERIODO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

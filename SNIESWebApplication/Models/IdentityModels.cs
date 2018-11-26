@@ -48,5 +48,15 @@ namespace SNIESWebApplication.Models
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.ApoyoEstudiante> ApoyoEstudiantes { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.EstudianteArticulacion> EstudianteArticulacion { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.ActividadBienestar> ActividadBienestar { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ActividadBeneficiar> ActividadBeneficiar { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ActividadRecHumano> ActividadRecHumano { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ActividadCultural> ActividadCultural { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.RecHumanoCultural> RecHumanoCultural { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Consultaria> Consultaria { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.RecHumanoConsultoria> RecHumanoConsultoria { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.EducacionContinua> EducacionContinua { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.DocenteEducacionContinua> DocenteEducacionContinua { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.BeneficioEducacionContinua> BeneficioEducacionContinua { get; set; }
+
     }
 }

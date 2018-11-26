@@ -148,7 +148,7 @@
                     plantillaCargaExcel.SaveAs(filePath);
                     string csvData = System.IO.File.ReadAllText(filePath);
                     int i = 0;
-                    var _FECHA_PERIODO = db.Periodos.Where(x => x.Id == PeriodoId).First();
+                    var _FECHA_PERIODO = db.Periodos.Where(x => x.Id == PeriodoId).FirstOrDefault();
 
                     foreach (var row in csvData.Split('\n'))
                     {

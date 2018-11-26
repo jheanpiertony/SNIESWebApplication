@@ -1,0 +1,117 @@
+﻿@model IEnumerable<SNIESWebApplication.Models.ActividadRecHumano>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COD_UNIDAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UNIDAD_ORGANIZACIONAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COD_ACTIVIDAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTIVIDAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_DOCUMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUMERO_DOCUMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEGUNDO_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEMESTRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COD_UNIDAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UNIDAD_ORGANIZACIONAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COD_ACTIVIDAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVIDAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_DOCUMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUMERO_DOCUMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIMER_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEGUNDO_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEGUNDO_APELLIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

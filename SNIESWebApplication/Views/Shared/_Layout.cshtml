@@ -47,12 +47,20 @@
                         <a class="dropdown-toggle" data-toggle="dropdown">Bienestar<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Actividad bienestar", "Create", "ActividadBienestar")</li>
+                            <li>@Html.ActionLink("Actividad benefica", "Index", "ActividadBeneficiar")</li>
+                            <li>@Html.ActionLink("Actividad Rec. Humano", "Index", "ActividadRecHumano")</li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Extensiones<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Actividad Cultural", "Create", "Admitido")</li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">Extensiones<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Actividad Cultural", "Create", "ActividadCultural")</li>
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink("Actividad Cultural", "Create", "ActividadCultural")</li>
                             <li>@Html.ActionLink("Consultoría", "Create", "Admitido")</li>
                             <li>@Html.ActionLink("Cursos", "Create", "Admitido")</li>
                             <li>@Html.ActionLink("Educación Continua", "Create", "Admitido")</li>
@@ -61,6 +69,7 @@
                             <li>@Html.ActionLink("Servicios de Extensión", "Create", "Admitido")</li>
                         </ul>
                     </li>
+                    
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">RRHH<b class="caret"></b></a>
                         <ul class="dropdown-menu">
