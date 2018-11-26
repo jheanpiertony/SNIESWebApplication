@@ -30,6 +30,12 @@ namespace SNIESWebApplication.Models
             return new ApplicationDbContext();
         }
 
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    modelBuilder.Entity<Periodo>().Has
+
+        //}
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.Participante> Participantes { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.Periodo> Periodos { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.Admitido> Admitidos { get; set; }
