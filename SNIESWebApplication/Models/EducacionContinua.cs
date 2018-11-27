@@ -12,7 +12,7 @@
     {
         [Display(Name = "CÓDIGO IES")] public string CODIGO_IES { get; set; }
         [Display(Name = "NOMBRE IES")] public string NOMBRE_IES { get; set; }
-        [Display(Name = "AÑO")] public string AÑO { get; set; }
+        [Display(Name = "ANO")] public string ANO { get; set; }
         [Display(Name = "SEMESTRE")] public string SEMESTRE { get; set; }
         [Display(Name = "CÓDIGO CURSO")] public string CODIGO_CURSO { get; set; }
         [Display(Name = "NOMBRE CURSO")] public string NOMBRE_CURSO { get; set; }
@@ -28,7 +28,7 @@
     {
         [Display(Name = "CÓDIGO IES")] public string CODIGO_IES { get; set; }
         [Display(Name = "NOMBRE IES")] public string NOMBRE_IES { get; set; }
-        [Display(Name = "AÑO")] public string AÑO { get; set; }
+        [Display(Name = "ANO")] public string ANO { get; set; }
         [Display(Name = "SEMESTRE")] public string SEMESTRE { get; set; }
         [Display(Name = "CÓDIGO CURSO")] public string CODIGO_CURSO { get; set; }
         [Display(Name = "NOMBRE CURSO")] public string NOMBRE_CURSO { get; set; }
@@ -46,12 +46,13 @@
     {
         [Display(Name = "CÓDIGO IES")] public string CODIGO_IES { get; set; }
         [Display(Name = "NOMBRE IES")] public string NOMBRE_IES { get; set; }
-        [Display(Name = "AÑO")] public string AÑO { get; set; }
+        [Display(Name = "ANO")] public string ANO { get; set; }
         [Display(Name = "SEMESTRE")] public string SEMESTRE { get; set; }
         [Display(Name = "CÓDIGO CURSO")] public string CODIGO_CURSO { get; set; }
         [Display(Name = "NOMBRE CURSO")] public string NOMBRE_CURSO { get; set; }
         [Display(Name = "ID TIPO BENEFICIARIO")] public string ID_TIPO_BENEFICIARIO { get; set; }
         [Display(Name = "TIPO BENEFICIARIO")] public string TIPO_BENEFICIARIO { get; set; }
+        [Display(Name = "CANTIDAD BENEFICIARIOS")] public string CANTIDAD_BENEFICIARIOS { get; set; }
         [Display(Name = "PERIODO")] public string FECHA_PERIODO { get; set; }
 
     }

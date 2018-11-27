@@ -1,0 +1,117 @@
+﻿@model IEnumerable<SNIESWebApplication.Models.Consultaria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AÑO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COD_CONSULTORIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESC_CONSULTORIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COD_CINE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CINE_CAMPO_DETALLADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE_INSTITUCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COD_SECTOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SECTOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VALOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_INICIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._FECHA_FINAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AÑO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEMESTRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COD_CONSULTORIA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESC_CONSULTORIA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COD_CINE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CINE_CAMPO_DETALLADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE_INSTITUCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COD_SECTOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SECTOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VALOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_INICIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._FECHA_FINAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

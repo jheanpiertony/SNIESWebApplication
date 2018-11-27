@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SNIESWebApplication.Models.PoblacionCondiProyectoExtencion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UNIDAD_ORGANIZACINAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_PROYECTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE_PROYECTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POBLACION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CANTIDAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODIGO_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEMESTRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UNIDAD_ORGANIZACINAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODIGO_PROYECTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE_PROYECTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POBLACION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CANTIDAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

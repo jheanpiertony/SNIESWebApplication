@@ -60,7 +60,7 @@
     {
         [Display(Name = "CÓDIGO IES")] public string CODIGO_IES { get; set; }
         [Display(Name = "NOMBRE IES")] public string NOMBRE_IES { get; set; }
-        [Display(Name = "AÑO")] public string AÑO { get; set; }
+        [Display(Name = "ANO")] public string ANO { get; set; }
         [Display(Name = "SEMESTRE")] public string SEMESTRE { get; set; }
         [Display(Name = "UNIDAD ORGANIZACINAL")] public string UNIDAD_ORGANIZACINAL { get; set; }
         [Display(Name = "CÓDIGO PROYECTO")] public string CODIGO_PROYECTO { get; set; }

@@ -12,9 +12,6 @@
     using SNIESWebApplication.Models;
     using System.IO;
     using OfficeOpenXml;
-    using System.Reflection;
-    using System.Dynamic;
-    using System.Data.Entity.Core.Metadata.Edm;
 
     public class ActividadBienestarController : Controller
 {

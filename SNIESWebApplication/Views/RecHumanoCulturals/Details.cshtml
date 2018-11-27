@@ -1,0 +1,122 @@
+﻿@model SNIESWebApplication.Models.RecHumanoCultural
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RecHumanoCultural</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_UNIDAD_ORGANIZACIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_UNIDAD_ORGANIZACIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UNIDAD_ORGANIZACIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNIDAD_ORGANIZACIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_ACTIVIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_ACTIVIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACTIVIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACTIVIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_TIPO_ACTIVIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_TIPO_ACTIVIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_ACTIVIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_ACTIVIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_INICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_INICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_FINAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_FINAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PERIODO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

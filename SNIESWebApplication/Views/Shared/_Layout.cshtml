@@ -54,18 +54,53 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Extensiones<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown">Extensiones<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+                            <li>
+                                <a>Actividad Cultura<b class="caret"></b></a>
+                                <ul>
                                     <li>@Html.ActionLink("Actividad Cultural", "Create", "ActividadCultural")</li>
+                                    <li>@Html.ActionLink("Rec. Humano Cultural", "Index", "RecHumanoCulturals")</li>
                                 </ul>
                             </li>
-                            <li>@Html.ActionLink("Actividad Cultural", "Create", "ActividadCultural")</li>
-                            <li>@Html.ActionLink("Consultoría", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Cursos", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Educación Continua", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Evento Cultural", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Proyecto de Extensión", "Create", "Admitido")</li>
+                            <li>
+                                <a>Consultoría<b class="caret"></b></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Consultoría", "Create", "Consultaria")</li>
+                                    <li>@Html.ActionLink("Rec. Humano Consultoria", "Index", "RecHumanoConsultoria")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Educación Continua<b class="caret"></b></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Educación Continua", "Create", "EducacionContinua")</li>
+                                    <li>@Html.ActionLink("Docente Educacion Continua", "Index", "DocenteEducacionContinua")</li>
+                                    <li>@Html.ActionLink("Beneficio Educacion Continua", "Index", "BeneficioEducacionContinua")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Evento Cultural<b class="caret"></b></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Evento Cultural", "Create", "EventoCultural")</li>
+                                    <li>@Html.ActionLink("Fte. Nacional Event. Cultural", "Index", "FteNacionEventoCultural")</li>
+                                    <li>@Html.ActionLink("Fte. Internacional Evet. Cultural", "Index", "FteInternEventoCultural")</li>
+                                    <li>@Html.ActionLink("Rec. Humano Evento Cultural", "Index", "RecHumanoEventoCultural")</li>
+                                    <li>@Html.ActionLink("Beneficiar Evento Cultural", "Index", "BeneficiarEventoCultural")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Proyecto de Extensión"<b class="caret"></b></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Proyecto de Extensión", "Create", "ProyectoExtencion")</li>
+                                    <li>@Html.ActionLink("Area Trabajo Pro. Ext.", "Index", "AreaTrabajoProyectoExtencion")</li>
+                                    <li>@Html.ActionLink("Ciclo Vital Pro. Ext.", "Index", "CicloVitalProyectoExtencion")</li>
+                                    <li>@Html.ActionLink("Entidad Nacional Pro. Ext.", "Index", "EntidadNacionalProyectoExtencion")</li>
+                                    <li>@Html.ActionLink("Fuente Internacional Pro. Ext.", "Index", "FuenteInternacionalProyectoExtencion")</li>
+                                    <li>@Html.ActionLink("Fuente Nacional Pro. Ext.", "Index", "FuenteNacionalProyectoExtencion")</li>
+                                    <li>@Html.ActionLink("Otra Entidad Pro. Ext.", "Index", "OtraEntidadProyectoExtencion")</li>
+                                    <li>@Html.ActionLink("Poblacion Condicional Pro. Ext.", "Index", "PoblacionCondiProyectoExtencion")</li>
+                                    <li>@Html.ActionLink("Poblacion Grupo Pro. Ext.", "Index", "PoblacionGrupoProyectoExtencion")</li>
+                                </ul>
+                            </li>
+
                             <li>@Html.ActionLink("Servicios de Extensión", "Create", "Admitido")</li>
                         </ul>
                     </li>

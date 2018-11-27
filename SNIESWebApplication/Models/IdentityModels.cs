@@ -57,6 +57,22 @@ namespace SNIESWebApplication.Models
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.EducacionContinua> EducacionContinua { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.DocenteEducacionContinua> DocenteEducacionContinua { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.BeneficioEducacionContinua> BeneficioEducacionContinua { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.EventoCultural> EventoCultural { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.FteNacionEventoCultural> FteNacionEventoCultural { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.FteInternEventoCultural> FteInternEventoCultural { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.RecHumanoEventoCultural> RecHumanoEventoCultural { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.BeneficiarEventoCultural> BeneficiarEventoCultural { get; set; }
 
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ProyectoExtencion> ProyectoExtencion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.AreaTrabajoProyectoExtencion> AreaTrabajoProyectoExtencion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.CicloVitalProyectoExtencion> CicloVitalProyectoExtencion { get; set; }
+
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.EntidadNacionalProyectoExtencion> EntidadNacionalProyectoExtencion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.FuenteInternacionalProyectoExtencion> FuenteInternacionalProyectoExtencion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.FuenteNacionalProyectoExtencion> FuenteNacionalProyectoExtencion { get; set; }
+
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.OtraEntidadProyectoExtencion> OtraEntidadProyectoExtencion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.PoblacionCondiProyectoExtencion> PoblacionCondiProyectoExtencion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.PoblacionGrupoProyectoExtencion> PoblacionGrupoProyectoExtencion { get; set; }
     }
 }

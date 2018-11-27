@@ -1,0 +1,98 @@
+﻿@model SNIESWebApplication.Models.PoblacionGrupoProyectoExtencion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PoblacionGrupoProyectoExtencion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UNIDAD_ORGANIZACINAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNIDAD_ORGANIZACINAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_PROYECTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_PROYECTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_PROYECTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_PROYECTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POBLACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POBLACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CANTIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CANTIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PERIODO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
