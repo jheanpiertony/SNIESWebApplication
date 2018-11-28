@@ -1,0 +1,170 @@
+﻿@model SNIESWebApplication.Models.ServicioExtension
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ServicioExtension</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_UNIDAD_ORGANIZACIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_UNIDAD_ORGANIZACIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_SERVICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_SERVICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_SERVICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_SERVICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION_SERVICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION_SERVICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VALOR_SERVICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VALOR_SERVICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AREA_EXTENSION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AREA_EXTENSION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_INICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_INICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_FINAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_FINAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_CONTACTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_CONTACTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APELLIDO_CONTACTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APELLIDO_CONTACTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELEFONO_CONTACTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELEFONO_CONTACTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL_CONTACTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL_CONTACTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIENE_COSTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIENE_COSTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRITERIO_ELEGIBILIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRITERIO_ELEGIBILIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PERIODO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

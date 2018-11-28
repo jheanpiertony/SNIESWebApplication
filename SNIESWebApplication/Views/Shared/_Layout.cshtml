@@ -87,7 +87,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a>Proyecto de Extensión"<b class="caret"></b></a>
+                                <a>Proyecto de Extensión<b class="caret"></b></a>
                                 <ul>
                                     <li>@Html.ActionLink("Proyecto de Extensión", "Create", "ProyectoExtencion")</li>
                                     <li>@Html.ActionLink("Area Trabajo Pro. Ext.", "Index", "AreaTrabajoProyectoExtencion")</li>
@@ -100,25 +100,50 @@
                                     <li>@Html.ActionLink("Poblacion Grupo Pro. Ext.", "Index", "PoblacionGrupoProyectoExtencion")</li>
                                 </ul>
                             </li>
-
-                            <li>@Html.ActionLink("Servicios de Extensión", "Create", "Admitido")</li>
+                            <li>
+                                <a>Servicios de Extensión<b class="caret"></b></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Servicios de Extensión", "Create", "ServicioExtension")</li>
+                                    <li>@Html.ActionLink("Area Trabajo Serv. Ext.", "Index", "AreaTrabajoServicioExtension")</li>
+                                    <li>@Html.ActionLink("Ciclo Vital Serv. Ext.", "Index", "CicloVitalServicioExtension")</li>
+                                    <li>@Html.ActionLink("Entidad Nacional Serv. Ext.", "Index", "EntidadNacionalServicioExtension")</li>
+                                    <li>@Html.ActionLink("Fuente Internacional Serv. Ext.", "Index", "FuenteInternacionalServicioExtension")</li>
+                                    <li>@Html.ActionLink("Fuente Nacional Serv. Ext.", "Index", "FuenteNacionalServicioExtension")</li>
+                                    <li>@Html.ActionLink("Otra Entidad Serv. Ext.", "Index", "OtraEntidadServicioExtension")</li>
+                                    <li>@Html.ActionLink("Poblacion Condicional Serv. Ext.", "Index", "PoblacionCondicionalServicioExtension")</li>
+                                    <li>@Html.ActionLink("Poblacion Grupo Serv. Ext.", "Index", "PoblacionGrupoServicioExtension")</li>
+                                </ul>
+                            </li>                            
                         </ul>
-                    </li>
-                    
+                    </li>                    
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">RRHH<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Autoridades", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Directivos", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Docentes IES", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Integrantes máximo organo de gobierno ", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink("Autoridades", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Directivos", "Index", "Home")</li>
+                            <li>
+                                <a>Docentes<b class="caret"></b></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Docentes IES", "Create", "Docente")</li>
+                                    <li>@Html.ActionLink("Capacitacion Docente", "Index", "CapacitacionDocente")</li>
+                                    <li>@Html.ActionLink("Contrato Docente", "Index", "ContratoDocente")</li>
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink("Integrantes máximo organo de gobierno ", "Index", "Home")</li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Internacionalización<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Convenios Internacionales", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Personal administrativo hacia Colombia ", "Admitido")</li>
+                            <li>
+                                <a>Convenios Internacionales<b class="caret"></b></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Convenios Internacionales", "Create", "ConvenioInternacional")</li>
+                                    <li>@Html.ActionLink("Convenio Internacional Institucion", "Index", "ConvenioInternacionalInstitucion")</li>
+                                </ul>
+                            </li>
+                            
+                            <li>@Html.ActionLink("Personal administrativo hacia Colombia ", "Create","Admitido")</li>
                             <li>@Html.ActionLink("Personal administrativo hacia Exterior ", "Create", "Admitido")</li>
                             <li>@Html.ActionLink("Docentes del exterior hacia Colombia", "Create", "Admitido")</li>
                             <li>@Html.ActionLink("Docentes hacia el exterior", "Create", "Admitido")</li>

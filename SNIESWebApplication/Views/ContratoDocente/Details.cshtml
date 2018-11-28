@@ -1,0 +1,178 @@
+﻿@model SNIESWebApplication.Models.ContratoDocente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ContratoDocente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMERO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PORCENTAJE_DOCENCIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PORCENTAJE_DOCENCIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PORCENTAJE_INVESTIGACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PORCENTAJE_INVESTIGACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PORCENTAJE_ADMINISTRATIVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PORCENTAJE_ADMINISTRATIVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PORCENTAJE_EXTENSION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PORCENTAJE_EXTENSION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PORCENTAJE_OTRAS_ACTIVIDADES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PORCENTAJE_OTRAS_ACTIVIDADES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HORAS_DEDICACION_SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HORAS_DEDICACION_SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEDICACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEDICACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_CONTRATO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_CONTRATO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ASIGNACION_BASICA_MENSUAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ASIGNACION_BASICA_MENSUAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PERIODO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -66,13 +66,30 @@ namespace SNIESWebApplication.Models
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.ProyectoExtencion> ProyectoExtencion { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.AreaTrabajoProyectoExtencion> AreaTrabajoProyectoExtencion { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.CicloVitalProyectoExtencion> CicloVitalProyectoExtencion { get; set; }
-
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.EntidadNacionalProyectoExtencion> EntidadNacionalProyectoExtencion { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.FuenteInternacionalProyectoExtencion> FuenteInternacionalProyectoExtencion { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.FuenteNacionalProyectoExtencion> FuenteNacionalProyectoExtencion { get; set; }
-
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.OtraEntidadProyectoExtencion> OtraEntidadProyectoExtencion { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.PoblacionCondiProyectoExtencion> PoblacionCondiProyectoExtencion { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.PoblacionGrupoProyectoExtencion> PoblacionGrupoProyectoExtencion { get; set; }
+
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ServicioExtension> ServicioExtension { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.AreaTrabajoServicioExtension> AreaTrabajoServicioExtension { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.CicloVitalServicioExtension> CicloVitalServicioExtension { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.EntidadNacionalServicioExtension> EntidadNacionalServicioExtension { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.FuenteInternacionalServicioExtension> FuenteInternacionalServicioExtension { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.FuenteNacionalServicioExtension> FuenteNacionalServicioExtension { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.OtraEntidadServicioExtension> OtraEntidadServicioExtension { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.PoblacionCondicionalServicioExtension> PoblacionCondicionalServicioExtension { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.PoblacionGrupoServicioExtension> PoblacionGrupoServicioExtension { get; set; }
+
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Docente> Docente { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.CapacitacionDocente> CapacitacionDocente { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ContratoDocente> ContratoDocente { get; set; }
+
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ConvenioInternacional> ConvenioInternacional { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ConvenioInternacionalInstitucion> ConvenioInternacionalInstitucion { get; set; }
+
+
     }
 }
