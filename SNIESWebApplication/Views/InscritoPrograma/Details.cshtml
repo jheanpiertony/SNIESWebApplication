@@ -1,0 +1,154 @@
+﻿@model SNIESWebApplication.Models.InscritoPrograma
+
+@{
+    ViewBag.Title = @Recursos.Resources.Detalles;
+}
+
+<h2>@Recursos.Resources.Detalles</h2>
+
+<div>
+    <h4>@Recursos.Resources.InscritoPrograma</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEMESTRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMERO_DOCUMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_DOCUMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIMER_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEGUNDO_APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROGRAMA_CONSECUTIVO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROGRAMA_CONSECUTIVO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROGRAMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROGRAMA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_DANE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_DANE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MUNICIPIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MUNICIPIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PERIODO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Recursos.Resources.VolverLista, "Index")
+</p>

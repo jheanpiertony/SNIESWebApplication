@@ -20,8 +20,8 @@
         [Display(Name = "SEGUNDO APELLIDO")] public string SEGUNDO_APELLIDO { get; set; }
         [Display(Name = "ID SEXO")] public string ID_SEXO { get; set; }
         [Display(Name = "FECHA NACIMIENTO")] public string FECHA_NACIMIENTO { get; set; }
-        [Display(Name = "PAÍS")] public string PAIS { get; set; }
-        [Display(Name = "MUNICIPIO")] public string MUNICIPIO { get; set; }
+        [Display(Name = "ID PAÍS")] public string PAIS { get; set; }
+        [Display(Name = "ID MUNICIPIO")] public string MUNICIPIO { get; set; }
         [Display(Name = "EMAIL INSTITUCIONAL")] public string EMAIL_INSTITUCIONAL { get; set; }
         [Display(Name = "DIRECCIÓN INSTITUCIONAL")] public string DIRECCION_INSTITUCIONAL { get; set; }
         [Display(Name = "EMAIL PERSONAL")] public string EMAIL_PEROSNAL { get; set; }

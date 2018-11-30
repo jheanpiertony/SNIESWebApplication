@@ -227,15 +227,15 @@
                         listaEventoCultural.Add(
                             new EventoCultural()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                AÑO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD = matrixValorHoja[i, j = j + 1],
-                                CODIGO_EVENTO = matrixValorHoja[i, j = j + 1],
-                                EVENTO = matrixValorHoja[i, j = j + 1],
-                                FECHA_INICIO = matrixValorHoja[i, j = j + 1],
-                                FECHA_FINAL = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                AÑO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD = matrixValorHoja[i, j++],
+                                CODIGO_EVENTO = matrixValorHoja[i, j++],
+                                EVENTO = matrixValorHoja[i, j++],
+                                FECHA_INICIO = matrixValorHoja[i, j++],
+                                FECHA_FINAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -251,15 +251,15 @@
                         listaFteNacionEventoCultural.Add(
                             new FteNacionEventoCultural()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                AÑO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD = matrixValorHoja[i, j = j + 1],
-                                CODIGO_EVENTO = matrixValorHoja[i, j = j + 1],
-                                ID_FUENTE_NACIONAL = matrixValorHoja[i, j = j + 1],
-                                FUENTE_NACIONAL = matrixValorHoja[i, j = j + 1],
-                                VALOR_FINANCIACION = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                AÑO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD = matrixValorHoja[i, j++],
+                                CODIGO_EVENTO = matrixValorHoja[i, j++],
+                                ID_FUENTE_NACIONAL = matrixValorHoja[i, j++],
+                                FUENTE_NACIONAL = matrixValorHoja[i, j++],
+                                VALOR_FINANCIACION = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -275,19 +275,19 @@
                         listaFteInternEventoCultural.Add(
                             new FteInternEventoCultural()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                AÑO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD = matrixValorHoja[i, j = j + 1],
-                                CODIGO_EVENTO = matrixValorHoja[i, j = j + 1],
-                                EVENTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_INSTITUCION = matrixValorHoja[i, j = j + 1],
-                                ID_PAIS = matrixValorHoja[i, j = j + 1],
-                                PAIS = matrixValorHoja[i, j = j + 1],
-                                ID_FUENTE_INTERNACIONAL = matrixValorHoja[i, j = j + 1],
-                                FUENTE_INTERNACIONAL = matrixValorHoja[i, j = j + 1],
-                                VALOR_FINANCIACION = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                AÑO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD = matrixValorHoja[i, j++],
+                                CODIGO_EVENTO = matrixValorHoja[i, j++],
+                                EVENTO = matrixValorHoja[i, j++],
+                                NOMBRE_INSTITUCION = matrixValorHoja[i, j++],
+                                ID_PAIS = matrixValorHoja[i, j++],
+                                PAIS = matrixValorHoja[i, j++],
+                                ID_FUENTE_INTERNACIONAL = matrixValorHoja[i, j++],
+                                FUENTE_INTERNACIONAL = matrixValorHoja[i, j++],
+                                VALOR_FINANCIACION = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -303,21 +303,21 @@
                         listaRecHumanoEventoCultural.Add(
                             new RecHumanoEventoCultural()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                AÑO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD = matrixValorHoja[i, j = j + 1],
-                                CODIGO_EVENTO = matrixValorHoja[i, j = j + 1],
-                                EVENTO = matrixValorHoja[i, j = j + 1],
-                                ID_TIPO_DOCUMENTO = matrixValorHoja[i, j = j + 1],
-                                TIPO_DOCUMENTO = matrixValorHoja[i, j = j + 1],
-                                NUMERO_DOCUMENTO = matrixValorHoja[i, j = j + 1],
-                                PRIMER_NOMBRE = matrixValorHoja[i, j = j + 1],
-                                SEGUNDO_NOMBRE = matrixValorHoja[i, j = j + 1],
-                                PRIMER_APELLIDO = matrixValorHoja[i, j = j + 1],
-                                SEGUNDO_APELLIDO = matrixValorHoja[i, j = j + 1],
-                                DEDICACION = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                AÑO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD = matrixValorHoja[i, j++],
+                                CODIGO_EVENTO = matrixValorHoja[i, j++],
+                                EVENTO = matrixValorHoja[i, j++],
+                                ID_TIPO_DOCUMENTO = matrixValorHoja[i, j++],
+                                TIPO_DOCUMENTO = matrixValorHoja[i, j++],
+                                NUMERO_DOCUMENTO = matrixValorHoja[i, j++],
+                                PRIMER_NOMBRE = matrixValorHoja[i, j++],
+                                SEGUNDO_NOMBRE = matrixValorHoja[i, j++],
+                                PRIMER_APELLIDO = matrixValorHoja[i, j++],
+                                SEGUNDO_APELLIDO = matrixValorHoja[i, j++],
+                                DEDICACION = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -333,16 +333,16 @@
                         listaBeneficiarEventoCultural.Add(
                             new BeneficiarEventoCultural()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                AÑO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD = matrixValorHoja[i, j = j + 1],
-                                CODIGO_EVENTO = matrixValorHoja[i, j = j + 1],
-                                ID_TIPO_BENEFICIARIO = matrixValorHoja[i, j = j + 1],
-                                TIPO_BENEFICIARIO = matrixValorHoja[i, j = j + 1],
-                                TOTAL_ASISTENTES = matrixValorHoja[i, j = j + 1],
-                                VALOR_ENTRADA = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                AÑO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD = matrixValorHoja[i, j++],
+                                CODIGO_EVENTO = matrixValorHoja[i, j++],
+                                ID_TIPO_BENEFICIARIO = matrixValorHoja[i, j++],
+                                TIPO_BENEFICIARIO = matrixValorHoja[i, j++],
+                                TOTAL_ASISTENTES = matrixValorHoja[i, j++],
+                                VALOR_ENTRADA = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );

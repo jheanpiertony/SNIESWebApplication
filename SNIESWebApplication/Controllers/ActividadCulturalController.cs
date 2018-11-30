@@ -227,18 +227,18 @@
                         listaActividadCultural.Add(
                             new ActividadCultural()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                COD_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_ACTIVIDAD = matrixValorHoja[i, j = j + 1],
-                                ACTIVIDAD = matrixValorHoja[i, j = j + 1],
-                                COD_TIPO_ACTIVIDAD = matrixValorHoja[i, j = j + 1],
-                                TIPO_ACTIVIDAD = matrixValorHoja[i, j = j + 1],
-                                FECHA_INICIO = matrixValorHoja[i, j = j + 1],
-                                FECHA_FINAL = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                COD_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_ACTIVIDAD = matrixValorHoja[i, j++],
+                                ACTIVIDAD = matrixValorHoja[i, j++],
+                                COD_TIPO_ACTIVIDAD = matrixValorHoja[i, j++],
+                                TIPO_ACTIVIDAD = matrixValorHoja[i, j++],
+                                FECHA_INICIO = matrixValorHoja[i, j++],
+                                FECHA_FINAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -254,18 +254,18 @@
                         listaRecHumanoCultural.Add(
                             new RecHumanoCultural()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                COD_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_ACTIVIDAD = matrixValorHoja[i, j = j + 1],
-                                ACTIVIDAD = matrixValorHoja[i, j = j + 1],
-                                COD_TIPO_ACTIVIDAD = matrixValorHoja[i, j = j + 1],
-                                TIPO_ACTIVIDAD = matrixValorHoja[i, j = j + 1],
-                                FECHA_INICIO = matrixValorHoja[i, j = j + 1],
-                                FECHA_FINAL = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                COD_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_ACTIVIDAD = matrixValorHoja[i, j++],
+                                ACTIVIDAD = matrixValorHoja[i, j++],
+                                COD_TIPO_ACTIVIDAD = matrixValorHoja[i, j++],
+                                TIPO_ACTIVIDAD = matrixValorHoja[i, j++],
+                                FECHA_INICIO = matrixValorHoja[i, j++],
+                                FECHA_FINAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );

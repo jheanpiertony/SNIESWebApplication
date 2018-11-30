@@ -223,18 +223,18 @@
                         listaConvenioInternacional.Add(
                             new ConvenioInternacional()
                             {
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_CONVENIO = matrixValorHoja[i, j = j + 1],
-                                ID_TIPO_CONVENIO = matrixValorHoja[i, j = j + 1],
-                                TIPO_CONVENIO = matrixValorHoja[i, j = j + 1],
-                                ACTIVIDAD_FORMACION = matrixValorHoja[i, j = j + 1],
-                                ACTIVIDAD_INVESTIGACION = matrixValorHoja[i, j = j + 1],
-                                ACTIVIDAD_EXTENSION = matrixValorHoja[i, j = j + 1],
-                                ACTIVIDAD_ADMINISTRATIVA = matrixValorHoja[i, j = j + 1],
-                                OTRAS_ACTIVIDADES_COOPERACION = matrixValorHoja[i, j = j + 1],
-                                FECHA_INICIO = matrixValorHoja[i, j = j + 1],
-                                FECHA_TERMINACION = matrixValorHoja[i, j = j + 1],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_CONVENIO = matrixValorHoja[i, j++],
+                                ID_TIPO_CONVENIO = matrixValorHoja[i, j++],
+                                TIPO_CONVENIO = matrixValorHoja[i, j++],
+                                ACTIVIDAD_FORMACION = matrixValorHoja[i, j++],
+                                ACTIVIDAD_INVESTIGACION = matrixValorHoja[i, j++],
+                                ACTIVIDAD_EXTENSION = matrixValorHoja[i, j++],
+                                ACTIVIDAD_ADMINISTRATIVA = matrixValorHoja[i, j++],
+                                OTRAS_ACTIVIDADES_COOPERACION = matrixValorHoja[i, j++],
+                                FECHA_INICIO = matrixValorHoja[i, j++],
+                                FECHA_TERMINACION = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -250,14 +250,14 @@
                         listaConvenioInternacionalInstitucion.Add(
                             new ConvenioInternacionalInstitucion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_CONVENIO = matrixValorHoja[i, j = j + 1],
-                                INSTITUCION_ASOCIADA = matrixValorHoja[i, j = j + 1],
-                                INSTITUCION_MULTILATERAL = matrixValorHoja[i, j = j + 1],
-                                ID_PAIS_INSTITUCION_ASOCIADA = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_CONVENIO = matrixValorHoja[i, j++],
+                                INSTITUCION_ASOCIADA = matrixValorHoja[i, j++],
+                                INSTITUCION_MULTILATERAL = matrixValorHoja[i, j++],
+                                ID_PAIS_INSTITUCION_ASOCIADA = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );

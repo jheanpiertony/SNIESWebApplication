@@ -233,23 +233,23 @@
                         listaServicioExtension.Add(
                             new ServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                DESCRIPCION_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                VALOR_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                AREA_EXTENSION = matrixValorHoja[i, j = j + 1],
-                                FECHA_INICIO = matrixValorHoja[i, j = j + 1],
-                                FECHA_FINAL = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_CONTACTO = matrixValorHoja[i, j = j + 1],
-                                APELLIDO_CONTACTO = matrixValorHoja[i, j = j + 1],
-                                TELEFONO_CONTACTO = matrixValorHoja[i, j = j + 1],
-                                EMAIL_CONTACTO = matrixValorHoja[i, j = j + 1],
-                                TIENE_COSTO = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                DESCRIPCION_SERVICIO = matrixValorHoja[i, j++],
+                                VALOR_SERVICIO = matrixValorHoja[i, j++],
+                                AREA_EXTENSION = matrixValorHoja[i, j++],
+                                FECHA_INICIO = matrixValorHoja[i, j++],
+                                FECHA_FINAL = matrixValorHoja[i, j++],
+                                NOMBRE_CONTACTO = matrixValorHoja[i, j++],
+                                APELLIDO_CONTACTO = matrixValorHoja[i, j++],
+                                TELEFONO_CONTACTO = matrixValorHoja[i, j++],
+                                EMAIL_CONTACTO = matrixValorHoja[i, j++],
+                                TIENE_COSTO = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -265,14 +265,14 @@
                         listaAreaTrabajoServicioExtension.Add(
                             new AreaTrabajoServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                ÁREA_TRABAJO = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                ÁREA_TRABAJO = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -288,14 +288,14 @@
                         listaCicloVitalServicioExtension.Add(
                             new CicloVitalServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                CICLO_VITAL = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                CICLO_VITAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -311,14 +311,14 @@
                         listaEntidadNacionalServicioExtension.Add(
                             new EntidadNacionalServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                ENTIDAD_NACIONAL = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                ENTIDAD_NACIONAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -334,17 +334,17 @@
                         listaFuenteInternacionalServicioExtension.Add(
                             new FuenteInternacionalServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_INSTITUCION = matrixValorHoja[i, j = j + 1],
-                                PAIS = matrixValorHoja[i, j = j + 1],
-                                FUENTE_INTERNACIONAL = matrixValorHoja[i, j = j + 1],
-                                VALOR_FINANCIACION = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_INSTITUCION = matrixValorHoja[i, j++],
+                                PAIS = matrixValorHoja[i, j++],
+                                FUENTE_INTERNACIONAL = matrixValorHoja[i, j++],
+                                VALOR_FINANCIACION = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -360,15 +360,15 @@
                         listaFuenteNacionalServicioExtension.Add(
                             new FuenteNacionalServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                AÑO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                FUENTE_NACIONAL = matrixValorHoja[i, j = j + 1],
-                                VALOR_FINANCIACION = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                AÑO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                FUENTE_NACIONAL = matrixValorHoja[i, j++],
+                                VALOR_FINANCIACION = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -385,16 +385,16 @@
                         listaOtraEntidadServicioExtension.Add(
                             new OtraEntidadServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_ENTIDAD = matrixValorHoja[i, j = j + 1],
-                                PAIS = matrixValorHoja[i, j = j + 1],
-                                SECTOR_ENTIDAD = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_ENTIDAD = matrixValorHoja[i, j++],
+                                PAIS = matrixValorHoja[i, j++],
+                                SECTOR_ENTIDAD = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -410,15 +410,15 @@
                         listaPoblacionCondicionalServicioExtension.Add(
                             new PoblacionCondicionalServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                POBLACION_CONDICION = matrixValorHoja[i, j = j + 1],
-                                CANTIDAD = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                POBLACION_CONDICION = matrixValorHoja[i, j++],
+                                CANTIDAD = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -434,15 +434,15 @@
                         listaPoblacionGrupoServicioExtension.Add(
                             new PoblacionGrupoServicioExtension()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_SERVICIO = matrixValorHoja[i, j = j + 1],
-                                POBLACION_GRUPO = matrixValorHoja[i, j = j + 1],
-                                CANTIDAD = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_SERVICIO = matrixValorHoja[i, j++],
+                                NOMBRE_SERVICIO = matrixValorHoja[i, j++],
+                                POBLACION_GRUPO = matrixValorHoja[i, j++],
+                                CANTIDAD = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );

@@ -225,16 +225,16 @@
                         listaEducacionContinua.Add(
                             new EducacionContinua()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_CURSO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_CURSO = matrixValorHoja[i, j = j + 1],
-                                NUMERO_HORAS = matrixValorHoja[i, j = j + 1],
-                                ID_TIPO_CURSO_EXTENSION = matrixValorHoja[i, j = j + 1],
-                                TIPO_CURSO_EXTENSION = matrixValorHoja[i, j = j + 1],
-                                VALOR_CURSO = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_CURSO = matrixValorHoja[i, j++],
+                                NOMBRE_CURSO = matrixValorHoja[i, j++],
+                                NUMERO_HORAS = matrixValorHoja[i, j++],
+                                ID_TIPO_CURSO_EXTENSION = matrixValorHoja[i, j++],
+                                TIPO_CURSO_EXTENSION = matrixValorHoja[i, j++],
+                                VALOR_CURSO = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -250,18 +250,18 @@
                         listaDocenteEducacionContinua.Add(
                             new DocenteEducacionContinua()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_CURSO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_CURSO = matrixValorHoja[i, j = j + 1],
-                                ID_TIPO_DOCUMENTO = matrixValorHoja[i, j = j + 1],
-                                NUMERO_DOCUMENTO = matrixValorHoja[i, j = j + 1],
-                                PRIMER_NOMBRE = matrixValorHoja[i, j = j + 1],
-                                SEGUNDO_NOMBRE = matrixValorHoja[i, j = j + 1],
-                                PRIMER_APELLIDO = matrixValorHoja[i, j = j + 1],
-                                SEGUNDO_APELLIDO = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_CURSO = matrixValorHoja[i, j++],
+                                NOMBRE_CURSO = matrixValorHoja[i, j++],
+                                ID_TIPO_DOCUMENTO = matrixValorHoja[i, j++],
+                                NUMERO_DOCUMENTO = matrixValorHoja[i, j++],
+                                PRIMER_NOMBRE = matrixValorHoja[i, j++],
+                                SEGUNDO_NOMBRE = matrixValorHoja[i, j++],
+                                PRIMER_APELLIDO = matrixValorHoja[i, j++],
+                                SEGUNDO_APELLIDO = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -277,15 +277,15 @@
                         listaBeneficioEducacionContinua.Add(
                             new BeneficioEducacionContinua()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_CURSO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_CURSO = matrixValorHoja[i, j = j + 1],
-                                ID_TIPO_BENEFICIARIO = matrixValorHoja[i, j = j + 1],
-                                TIPO_BENEFICIARIO = matrixValorHoja[i, j = j + 1],
-                                CANTIDAD_BENEFICIARIOS = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_CURSO = matrixValorHoja[i, j++],
+                                NOMBRE_CURSO = matrixValorHoja[i, j++],
+                                ID_TIPO_BENEFICIARIO = matrixValorHoja[i, j++],
+                                TIPO_BENEFICIARIO = matrixValorHoja[i, j++],
+                                CANTIDAD_BENEFICIARIOS = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );

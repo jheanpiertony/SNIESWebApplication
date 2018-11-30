@@ -225,20 +225,20 @@
                         listaConsultaria.Add(
                             new Consultaria()
                             {
-                                ID_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                AÑO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                COD_CONSULTORIA = matrixValorHoja[i, j = j + 1],
-                                DESC_CONSULTORIA = matrixValorHoja[i, j = j + 1],
-                                COD_CINE = matrixValorHoja[i, j = j + 1],
-                                CINE_CAMPO_DETALLADO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_INSTITUCION = matrixValorHoja[i, j = j + 1],
-                                COD_SECTOR = matrixValorHoja[i, j = j + 1],
-                                SECTOR = matrixValorHoja[i, j = j + 1],
-                                VALOR = matrixValorHoja[i, j = j + 1],
-                                FECHA_INICIO = matrixValorHoja[i, j = j + 1],
-                                _FECHA_FINAL = matrixValorHoja[i, j = j + 1],
+                                ID_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                AÑO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                COD_CONSULTORIA = matrixValorHoja[i, j++],
+                                DESC_CONSULTORIA = matrixValorHoja[i, j++],
+                                COD_CINE = matrixValorHoja[i, j++],
+                                CINE_CAMPO_DETALLADO = matrixValorHoja[i, j++],
+                                NOMBRE_INSTITUCION = matrixValorHoja[i, j++],
+                                COD_SECTOR = matrixValorHoja[i, j++],
+                                SECTOR = matrixValorHoja[i, j++],
+                                VALOR = matrixValorHoja[i, j++],
+                                FECHA_INICIO = matrixValorHoja[i, j++],
+                                _FECHA_FINAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -254,19 +254,19 @@
                         listaRecHumanoConsultoria.Add(
                             new RecHumanoConsultoria()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                AÑO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                CODIGO_CONSULTORIA = matrixValorHoja[i, j = j + 1],
-                                DESCRIPCION_CONSULTORIA = matrixValorHoja[i, j = j + 1],
-                                ID_TIPO_DOCUMENTO = matrixValorHoja[i, j = j + 1],
-                                NUMERO_DOCUMENTO = matrixValorHoja[i, j = j + 1],
-                                PRIMER_NOMBRE = matrixValorHoja[i, j = j + 1],
-                                SEGUNDO_NOMBRE = matrixValorHoja[i, j = j + 1],
-                                PRIMER_APELLIDO = matrixValorHoja[i, j = j + 1],
-                                SEGUNDO_APELLIDO = matrixValorHoja[i, j = j + 1],
-                                NIVEL_ESTUDIO = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                AÑO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                CODIGO_CONSULTORIA = matrixValorHoja[i, j++],
+                                DESCRIPCION_CONSULTORIA = matrixValorHoja[i, j++],
+                                ID_TIPO_DOCUMENTO = matrixValorHoja[i, j++],
+                                NUMERO_DOCUMENTO = matrixValorHoja[i, j++],
+                                PRIMER_NOMBRE = matrixValorHoja[i, j++],
+                                SEGUNDO_NOMBRE = matrixValorHoja[i, j++],
+                                PRIMER_APELLIDO = matrixValorHoja[i, j++],
+                                SEGUNDO_APELLIDO = matrixValorHoja[i, j++],
+                                NIVEL_ESTUDIO = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );

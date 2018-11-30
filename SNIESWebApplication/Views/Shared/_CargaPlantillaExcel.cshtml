@@ -1,14 +1,14 @@
 ﻿    <div class="form-group">
         @Html.Label(" ", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <Label for="file"> Cargue el documento excel</Label><br>
-            <input type="file" name="plantillaCargaExcel" id="plantillaCargaExcel" accept=".xlsx, .xls, .xlsm, .csv" Class="form-control" />
+            <Label for="file">@Recursos.Resources.CargueDocumentoExcel</Label><br>
+            <input type="file" name="plantillaCargaExcel" id="plantillaCargaExcel" accept=".xlsx, .xls, .xlsm, .csv" Class="form-control"/>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Cargar plantilla" class="btn btn-default" />
+            <input type="submit" value="@Recursos.Resources.CargarPlantilla" class="btn btn-success" />
         </div>
     </div>
 

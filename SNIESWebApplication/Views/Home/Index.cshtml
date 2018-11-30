@@ -3,29 +3,35 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <img class="img-responsive" src="~/Content/Images/UnicocSnies.png" width="550" height="160" alt="imgf" />
+    <hr/>
+    <p>Bienvenido al sistemas de consultas de UNICOC - SNIES</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h4>Consulta de Participantes</h4>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div class="form-actions no-color">
+            @Html.ActionLink("Ir ahora >>", "Index", "Participante", new  {@area = ""}, new { @Class = "btn btn-primary"})
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h4>Consulta de Admitidos</h4>
+        <p>
+        </p>
+        <div class="form-actions no-color">
+            @Html.ActionLink("Ir ahora >>", "Index", "USERINFO", new { @area = ""}, new { @Class = "btn btn-warning"})
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div Class="col-md-4">
+        <h4>Consulta tus Ingresos y Salidas</h4>
+        <p>
+        </p>
+        <div class="form-actions no-color">
+            @Html.ActionLink("Ir ahora >>", "BusquedaAvanzada", "ConsultaView", null, new { @Class = "btn btn-success"})
+            @*<img id="loading" src="~/Content/Images/flecha.gif" alt="Consultate!!..." width="70" height="35" />*@
+        </div>
     </div>
 </div>

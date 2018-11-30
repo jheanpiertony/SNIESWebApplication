@@ -1,11 +1,13 @@
 ﻿@model SNIESWebApplication.Models.Inscrito
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Recursos.Resources.Crear;
 }
 
 <h2>Create</h2>
-<div>
+<div class="form-horizontal">
+    <h4>@Recursos.Resources.Inscrito</h4>
+    <hr />
     @using (Ajax.BeginForm("CargaPlantillaExcel", "Inscrito", new AjaxOptions
     {
         HttpMethod = "POST",
@@ -25,11 +27,9 @@
 
 @using (Html.BeginForm()) 
 {
-    @Html.AntiForgeryToken()
-    
+    @Html.AntiForgeryToken()    
     <div class="form-horizontal">
-        <h4>Inscrito</h4>
-        <hr />
+        
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.CODIGO_IES, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -48,10 +48,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AÑO, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ANO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.AÑO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AÑO, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ANO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ANO, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -120,42 +120,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PROGRAMA_CONSECUTIVO, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ID_SEXO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PROGRAMA_CONSECUTIVO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PROGRAMA_CONSECUTIVO, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ID_SEXO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ID_SEXO, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PROGRAMA, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SEXO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PROGRAMA, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PROGRAMA, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.COD_DANE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.COD_DANE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.COD_DANE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DEPARTAMENTO, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DEPARTAMENTO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DEPARTAMENTO, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MUNICIPIO, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MUNICIPIO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MUNICIPIO, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SEXO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SEXO, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -169,14 +145,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value=@Recursos.Resources.Crear class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(@Recursos.Resources.VolverLista, "Index")
 </div>
 
 @section Scripts {

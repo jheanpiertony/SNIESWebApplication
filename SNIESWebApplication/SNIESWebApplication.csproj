@@ -215,12 +215,20 @@
     <Compile Include="Controllers\FuenteInternacionalServicioExtensionController.cs" />
     <Compile Include="Controllers\FuenteNacionalProyectoExtencionController.cs" />
     <Compile Include="Controllers\FuenteNacionalServicioExtensionController.cs" />
+    <Compile Include="Controllers\InscritoProgramaController.cs" />
+    <Compile Include="Controllers\MovilidadAdministrativoColombiaInternacionalizacionController.cs" />
+    <Compile Include="Controllers\MovilidadAdministrativoExteriorInternacionalizacionController.cs" />
+    <Compile Include="Controllers\MovilidadDocenteExteriorColombiaInternacionalizacionController.cs" />
+    <Compile Include="Controllers\MovilidadDocenteExteriorInternacionalizacionController.cs" />
+    <Compile Include="Controllers\MovilidadEstudianteExteriorColombiaInternacionalizacionController.cs" />
+    <Compile Include="Controllers\MovilidadEstudianteExteriorInternacionalizacionController.cs" />
     <Compile Include="Controllers\OtraEntidadProyectoExtencionController.cs" />
     <Compile Include="Controllers\OtraEntidadServicioExtensionController.cs" />
     <Compile Include="Controllers\PoblacionCondicionalServicioExtensionController.cs" />
     <Compile Include="Controllers\PoblacionCondiProyectoExtencionController.cs" />
     <Compile Include="Controllers\PoblacionGrupoProyectoExtencionController.cs" />
     <Compile Include="Controllers\PoblacionGrupoServicioExtensionController.cs" />
+    <Compile Include="Controllers\ProgramaPresencialeExteriorController.cs" />
     <Compile Include="Controllers\ProyectoExtencionController.cs" />
     <Compile Include="Controllers\RecHumanoConsultoriaController.cs" />
     <Compile Include="Controllers\RecHumanoCulturalsController.cs" />
@@ -252,6 +260,7 @@
     <Compile Include="Models\Consultaria.cs" />
     <Compile Include="Models\ConvenioInternacional.cs" />
     <Compile Include="Models\Cupo.cs" />
+    <Compile Include="Models\DerechoPecuniario.cs" />
     <Compile Include="Models\Docente.cs" />
     <Compile Include="Models\EducacionContinua.cs" />
     <Compile Include="Models\Entidad.cs" />
@@ -264,12 +273,19 @@
     <Compile Include="Models\keyAttribute.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Matriculado.cs" />
+    <Compile Include="Models\MovilidadInternacionalizacion.cs" />
     <Compile Include="Models\Participante.cs" />
     <Compile Include="Models\Periodo.cs" />
+    <Compile Include="Models\ProgramaPresencialeExterior.cs" />
     <Compile Include="Models\ProyectoExtencion.cs" />
     <Compile Include="Models\RetiroDisciplinario.cs" />
     <Compile Include="Models\ServicioExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +293,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\UnicocIconoWeb.ico" />
+    <Content Include="Content\Images\UnicocSnies.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -356,11 +374,6 @@
     <Content Include="Views\Cupo\Details.cshtml" />
     <Content Include="Views\Cupo\Edit.cshtml" />
     <Content Include="Views\Cupo\Index.cshtml" />
-    <Content Include="Views\Inscrito\Create.cshtml" />
-    <Content Include="Views\Inscrito\Delete.cshtml" />
-    <Content Include="Views\Inscrito\Details.cshtml" />
-    <Content Include="Views\Inscrito\Edit.cshtml" />
-    <Content Include="Views\Inscrito\Index.cshtml" />
     <Content Include="Views\EstudiantePrimerCurso\Create.cshtml" />
     <Content Include="Views\EstudiantePrimerCurso\Delete.cshtml" />
     <Content Include="Views\EstudiantePrimerCurso\Details.cshtml" />
@@ -511,6 +524,51 @@
     <Content Include="Views\ConvenioInternacionalInstitucion\Details.cshtml" />
     <Content Include="Views\ConvenioInternacionalInstitucion\Edit.cshtml" />
     <Content Include="Views\ConvenioInternacionalInstitucion\Index.cshtml" />
+    <Content Include="Views\ProgramaPresencialeExterior\Create.cshtml" />
+    <Content Include="Views\ProgramaPresencialeExterior\Delete.cshtml" />
+    <Content Include="Views\ProgramaPresencialeExterior\Details.cshtml" />
+    <Content Include="Views\ProgramaPresencialeExterior\Edit.cshtml" />
+    <Content Include="Views\ProgramaPresencialeExterior\Index.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorInternacionalizacion\Create.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorInternacionalizacion\Delete.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorInternacionalizacion\Details.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorInternacionalizacion\Edit.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorInternacionalizacion\Index.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorInternacionalizacion\Create.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorInternacionalizacion\Delete.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorInternacionalizacion\Details.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorInternacionalizacion\Edit.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorInternacionalizacion\Index.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorColombiaInternacionalizacion\Create.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorColombiaInternacionalizacion\Delete.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorColombiaInternacionalizacion\Details.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorColombiaInternacionalizacion\Edit.cshtml" />
+    <Content Include="Views\MovilidadDocenteExteriorColombiaInternacionalizacion\Index.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorColombiaInternacionalizacion\Create.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorColombiaInternacionalizacion\Delete.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorColombiaInternacionalizacion\Details.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorColombiaInternacionalizacion\Edit.cshtml" />
+    <Content Include="Views\MovilidadEstudianteExteriorColombiaInternacionalizacion\Index.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoExteriorInternacionalizacion\Create.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoExteriorInternacionalizacion\Delete.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoExteriorInternacionalizacion\Details.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoExteriorInternacionalizacion\Edit.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoExteriorInternacionalizacion\Index.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoColombiaInternacionalizacion\Create.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoColombiaInternacionalizacion\Delete.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoColombiaInternacionalizacion\Details.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoColombiaInternacionalizacion\Edit.cshtml" />
+    <Content Include="Views\MovilidadAdministrativoColombiaInternacionalizacion\Index.cshtml" />
+    <Content Include="Views\InscritoPrograma\Create.cshtml" />
+    <Content Include="Views\InscritoPrograma\Delete.cshtml" />
+    <Content Include="Views\InscritoPrograma\Details.cshtml" />
+    <Content Include="Views\InscritoPrograma\Edit.cshtml" />
+    <Content Include="Views\InscritoPrograma\Index.cshtml" />
+    <Content Include="Views\Inscrito\Index.cshtml" />
+    <Content Include="Views\Inscrito\Create.cshtml" />
+    <Content Include="Views\Inscrito\Edit.cshtml" />
+    <Content Include="Views\Inscrito\Details.cshtml" />
+    <Content Include="Views\Inscrito\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -536,6 +594,13 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Recursos</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

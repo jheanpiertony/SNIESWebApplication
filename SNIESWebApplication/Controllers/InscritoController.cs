@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using SNIESWebApplication.Models;
 using System.IO;
+using OfficeOpenXml;
 
 namespace SNIESWebApplication.Controllers
 {
@@ -49,7 +50,7 @@ namespace SNIESWebApplication.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,CODIGO_IES,NOMBRE_IES,AÑO,SEMESTRE,ID_TIPO_DOCUMENTO,TIPO_DOCUMENTO,NUMERO_DOCUMENTO,PRIMER_NOMBRE,SEGUNDO_NOMBRE,PRIMER_APELLIDO,SEGUNDO_APELLIDO,PROGRAMA_CONSECUTIVO,PROGRAMA,COD_DANE,DEPARTAMENTO,MUNICIPIO,FECHA_PERIODO")] Inscrito inscrito)
+        public async Task<ActionResult> Create([Bind(Include = "Id,CODIGO_IES,NOMBRE_IES,ANO,SEMESTRE,ID_TIPO_DOCUMENTO,TIPO_DOCUMENTO,NUMERO_DOCUMENTO,PRIMER_NOMBRE,SEGUNDO_NOMBRE,PRIMER_APELLIDO,SEGUNDO_APELLIDO,PROGRAMA_CONSECUTIVO,PROGRAMA,COD_DANE,DEPARTAMENTO,MUNICIPIO,FECHA_PERIODO")] Inscrito inscrito)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +82,7 @@ namespace SNIESWebApplication.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,CODIGO_IES,NOMBRE_IES,AÑO,SEMESTRE,ID_TIPO_DOCUMENTO,TIPO_DOCUMENTO,NUMERO_DOCUMENTO,PRIMER_NOMBRE,SEGUNDO_NOMBRE,PRIMER_APELLIDO,SEGUNDO_APELLIDO,PROGRAMA_CONSECUTIVO,PROGRAMA,COD_DANE,DEPARTAMENTO,MUNICIPIO,FECHA_PERIODO")] Inscrito inscrito)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,CODIGO_IES,NOMBRE_IES,ANO,SEMESTRE,ID_TIPO_DOCUMENTO,TIPO_DOCUMENTO,NUMERO_DOCUMENTO,PRIMER_NOMBRE,SEGUNDO_NOMBRE,PRIMER_APELLIDO,SEGUNDO_APELLIDO,PROGRAMA_CONSECUTIVO,PROGRAMA,COD_DANE,DEPARTAMENTO,MUNICIPIO,FECHA_PERIODO")] Inscrito inscrito)
         {
             if (ModelState.IsValid)
             {
@@ -125,8 +126,6 @@ namespace SNIESWebApplication.Controllers
             {
                 if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm") || plantillaCargaExcel.FileName.EndsWith("csv"))
                 {
-
-                    List<Inscrito> listaInscritos = new List<Inscrito>();
                     string fileName = plantillaCargaExcel.FileName;
                     string filePath = string.Empty;
                     string path = Server.MapPath("~/PlantillaExcelSnies/");
@@ -143,47 +142,55 @@ namespace SNIESWebApplication.Controllers
                         Directory.Delete(filePath);
                     }
 
-                    string extesion = Path.GetExtension(fileName);
-                    plantillaCargaExcel.SaveAs(filePath);
-                    string csvData = System.IO.File.ReadAllText(filePath);
-                    int i = 0;
                     var _FECHA_PERIODO = db.Periodos.Where(x => x.Id == PeriodoId).FirstOrDefault();
 
-                    foreach (var row in csvData.Split('\n'))
+                    if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm"))
                     {
-                        if (!string.IsNullOrEmpty(row))
+                        using (var paquete = new ExcelPackage(plantillaCargaExcel.InputStream))
                         {
-                            if (i != 0)
+                            var hojaActuales = paquete.Workbook.Worksheets;
+                            var cantidadHojas = hojaActuales.Count;
+
+                            foreach (var hoja in hojaActuales)
                             {
+                                var nroColumna = hoja.Dimension.End.Column;
+                                var nroFila = hoja.Dimension.End.Row;
+                                string[,] matrixValorHoja = new string[nroFila - 1, nroColumna];
 
-                                listaInscritos.Add(new Inscrito()
+                                for (int i = 2; i <= nroFila; i++)
                                 {
-                                    CODIGO_IES = string.IsNullOrEmpty(row.Split(';')[0].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[0].Replace("\"", string.Empty),
-                                    NOMBRE_IES = string.IsNullOrEmpty(row.Split(';')[1].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[1].Replace("\"", string.Empty),
-                                    AÑO = string.IsNullOrEmpty(row.Split(';')[2].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[2].Replace("\"", string.Empty),
-                                    SEMESTRE = string.IsNullOrEmpty(row.Split(';')[3].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[3].Replace("\"", string.Empty),
-                                    ID_TIPO_DOCUMENTO = string.IsNullOrEmpty(row.Split(';')[4].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[4].Replace("\"", string.Empty),
-                                    TIPO_DOCUMENTO = string.IsNullOrEmpty(row.Split(';')[5].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[5].Replace("\"", string.Empty),
-                                    NUMERO_DOCUMENTO = string.IsNullOrEmpty(row.Split(';')[6].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[6].Replace("\"", string.Empty),
-                                    PRIMER_NOMBRE = string.IsNullOrEmpty(row.Split(';')[7].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[7].Replace("\"", string.Empty),
-                                    SEGUNDO_NOMBRE = string.IsNullOrEmpty(row.Split(';')[8].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[8].Replace("\"", string.Empty),
-                                    PRIMER_APELLIDO = string.IsNullOrEmpty(row.Split(';')[9].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[9].Replace("\"", string.Empty),
-                                    SEGUNDO_APELLIDO = string.IsNullOrEmpty(row.Split(';')[10].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[10].Replace("\"", string.Empty),
-                                    PROGRAMA_CONSECUTIVO = string.IsNullOrEmpty(row.Split(';')[11].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[11].Replace("\"", string.Empty),
-                                    PROGRAMA = string.IsNullOrEmpty(row.Split(';')[12].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[12].Replace("\"", string.Empty),
-                                    COD_DANE = string.IsNullOrEmpty(row.Split(';')[13].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[13].Replace("\"", string.Empty),
-                                    DEPARTAMENTO = string.IsNullOrEmpty(row.Split(';')[14].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[14].Replace("\"", string.Empty),
-                                    MUNICIPIO = string.IsNullOrEmpty(row.Split(';')[15].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[15].Replace("\"", string.Empty),
-                                    FECHA_PERIODO = _FECHA_PERIODO.FechaPeriodo
-                                });
+                                    for (int j = 1; j <= nroColumna; j++)
+                                    {
+                                        matrixValorHoja[i - 2, j - 1] = (hoja.Cells[i, j].Value == null) ? string.Empty : hoja.Cells[i, j].Value.ToString();
+                                    }
+                                }
+                                GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
-                            i++;
                         }
+                        return View("Index", db.Inscritos.ToList());
                     }
+                    else
+                    {
+                        string extesion = Path.GetExtension(fileName);
+                        plantillaCargaExcel.SaveAs(filePath);
+                        string csvData = System.IO.File.ReadAllText(filePath);
+                        int i = 0;
+                        List<MovilidadEstudianteExteriorInternacionalizacion> listaMovilidadEstudianteExteriorInternacionalizacion = new List<MovilidadEstudianteExteriorInternacionalizacion>();
 
-                    db.Inscritos.AddRange(listaInscritos);
-                    db.SaveChanges();
-                    return View("Index", db.Inscritos.ToList());
+                        foreach (var row in csvData.Split('\n'))
+                        {
+                            if (!string.IsNullOrEmpty(row))
+                            {
+                                if (i != 0)
+                                {
+                                }
+                                i++;
+                            }
+                        }
+                        db.MovilidadEstudianteExteriorInternacionalizacion.AddRange(listaMovilidadEstudianteExteriorInternacionalizacion);
+                        db.SaveChanges();
+                        return View("Index", db.Inscritos.ToList());
+                    }
                 }
                 else
                 {
@@ -197,6 +204,85 @@ namespace SNIESWebApplication.Controllers
                 return PartialView("Create");
             }
         }
+
+        private void GuardarDatos(string[,] matrixValorHoja, int index, string _FECHA_PERIODO)
+        {
+            var nroFila = matrixValorHoja.GetLength(0);
+
+            List<Inscrito> listaInscrito = new List<Inscrito>();
+            List<InscritoPrograma> listaInscritoPrograma = new List<InscritoPrograma>();
+
+            for (int i = 0; i < nroFila; i++)
+            {
+                int j = 0;
+                switch (index)
+                {
+                    case 1:
+
+                        listaInscrito.Add(
+                            new Inscrito()
+                            {
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                ID_TIPO_DOCUMENTO = matrixValorHoja[i, j++],
+                                TIPO_DOCUMENTO = matrixValorHoja[i, j++],
+                                NUMERO_DOCUMENTO = matrixValorHoja[i, j++],
+                                PRIMER_NOMBRE = matrixValorHoja[i, j++],
+                                SEGUNDO_NOMBRE = matrixValorHoja[i, j++],
+                                PRIMER_APELLIDO = matrixValorHoja[i, j++],
+                                SEGUNDO_APELLIDO = matrixValorHoja[i, j++],
+                                ID_SEXO = matrixValorHoja[i, j++],
+                                SEXO = matrixValorHoja[i, j++],
+                                FECHA_PERIODO = _FECHA_PERIODO
+                            }
+                            );
+
+                        if (i + 1 == nroFila)
+                        {
+                            db.Inscritos.AddRange(listaInscrito);
+                            db.SaveChanges();
+                        }
+                        break;
+
+                    case 2:
+                        listaInscritoPrograma.Add(
+                            new InscritoPrograma()
+                            {
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                ID_TIPO_DOCUMENTO = matrixValorHoja[i, j++],
+                                TIPO_DOCUMENTO = matrixValorHoja[i, j++],
+                                NUMERO_DOCUMENTO = matrixValorHoja[i, j++],
+                                PRIMER_NOMBRE = matrixValorHoja[i, j++],
+                                SEGUNDO_NOMBRE = matrixValorHoja[i, j++],
+                                PRIMER_APELLIDO = matrixValorHoja[i, j++],
+                                SEGUNDO_APELLIDO = matrixValorHoja[i, j++],
+                                PROGRAMA_CONSECUTIVO = matrixValorHoja[i, j++],
+                                PROGRAMA = matrixValorHoja[i, j++],
+                                COD_DANE = matrixValorHoja[i, j++],
+                                DEPARTAMENTO = matrixValorHoja[i, j++],
+                                MUNICIPIO = matrixValorHoja[i, j++],
+                                FECHA_PERIODO = _FECHA_PERIODO
+                            }
+                            );
+
+                        if (i + 1 == nroFila)
+                        {
+                            db.InscritoPrograma.AddRange(listaInscritoPrograma);
+                            db.SaveChanges();
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+
 
         protected override void Dispose(bool disposing)
         {

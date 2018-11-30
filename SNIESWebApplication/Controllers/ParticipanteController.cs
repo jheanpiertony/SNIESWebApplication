@@ -10,6 +10,7 @@
     using System.Collections.Generic;
     using System;
     using System.Linq;
+    using OfficeOpenXml;
 
     public class ParticipanteController : Controller
     {
@@ -175,7 +176,8 @@
                                     EMAIL_PEROSNAL = string.IsNullOrEmpty(row.Split(';')[14].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[14].Replace("\"", string.Empty),
                                     CELULAR_PERSONAL = string.IsNullOrEmpty(row.Split(';')[15].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[15].Replace("\"", string.Empty),
                                     VERIFICADO_POR_FUENTE_OFICIAL = string.IsNullOrEmpty(row.Split(';')[16].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[16].Replace("\"", string.Empty),
-                                    FUENTE = string.IsNullOrEmpty(row.Split(';')[17].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[17].Replace("\"", string.Empty)
+                                    FUENTE = string.IsNullOrEmpty(row.Split(';')[17].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[17].Replace("\"", string.Empty),
+                                    FECHA_PERIODO = _FECHA_PERIODO.FechaPeriodo
                                 });
                             }
                             i++;
@@ -195,12 +197,56 @@
             else
             {
                 ViewBag.CargaMasivaCatalogo = "Error! no se ha cargado ningun archivo.";
-                return PartialView("Create");
+                return PartialView("Cre9ate");
             }
         }
 
+        //// POST: CargaPlantillExcelaMasivaCatalogo http://localhost:50026/Participante
+        //[HttpPost]
+        public void CrearPlantillaExcel()
+        {
+            var d = db.Participantes.ToList();
+            //var the_ = d[1];
+            //var sde= the_.;
+            Participante[] Array = d.ToArray();
+            var sd= Array[1];
+            
 
 
+            string[] the_array = new string[d.Count];
+            for (int i = 0; i < d.Count; i++)
+            {
+                the_array[i] = d[i].ToString();
+            }
+            using (ExcelPackage package = new ExcelPackage())
+            {
+                ExcelWorksheet ws =   package.Workbook.Worksheets.Add("Plantilla");
+
+                ws.Cells["B1"].Value = "1111111111";
+                ws.Cells["C1"].Value = "222222222";
+                ws.Cells["D1"].Value = "33333333333333";
+                ws.Cells["E1"].Value = "444444444444444444444";
+                package.Save();
+
+                Response.Clear();
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("Content-Disposition", "inline; filename=" + "REPORTE" + ".xls");
+                Response.BinaryWrite(package.GetAsByteArray());
+                //Response.Charset = "";
+                Response.End();
+                Response.Flush();
+                Response.Clear();
+
+
+               
+
+                //return package;
+            }
+
+            //return View("");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

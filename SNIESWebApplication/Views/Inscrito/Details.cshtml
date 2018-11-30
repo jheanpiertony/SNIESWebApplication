@@ -1,13 +1,13 @@
 ﻿@model SNIESWebApplication.Models.Inscrito
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Recursos.Resources.Detalles;
 }
 
-<h2>Details</h2>
+<h2>@Recursos.Resources.Detalles</h2>
 
 <div>
-    <h4>Inscrito</h4>
+    <h4>@Recursos.Resources.Inscrito</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,11 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AÑO)
+            @Html.DisplayNameFor(model => model.ANO)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AÑO)
+            @Html.DisplayFor(model => model.ANO)
         </dd>
 
         <dt>
@@ -99,43 +99,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PROGRAMA_CONSECUTIVO)
+            @Html.DisplayNameFor(model => model.ID_SEXO)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PROGRAMA_CONSECUTIVO)
+            @Html.DisplayFor(model => model.ID_SEXO)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PROGRAMA)
+            @Html.DisplayNameFor(model => model.SEXO)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PROGRAMA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.COD_DANE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.COD_DANE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DEPARTAMENTO)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MUNICIPIO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MUNICIPIO)
+            @Html.DisplayFor(model => model.SEXO)
         </dd>
 
         <dt>
@@ -149,6 +125,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Recursos.Resources.VolverLista, "Index")
 </p>

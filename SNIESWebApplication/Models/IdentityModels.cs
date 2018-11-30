@@ -42,7 +42,10 @@ namespace SNIESWebApplication.Models
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.Matriculado> Matriculados { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.Graduado> Graduados { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.Cupo> Cupos { get; set; }
+
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.Inscrito> Inscritos { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.InscritoPrograma> InscritoPrograma { get; set; }
+
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.EstudiantePrimerCurso> EstudiantesPrimerCurso { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.RetiroDisciplinario> RetirosDisciplinarios { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.ApoyoEstudiante> ApoyoEstudiantes { get; set; }
@@ -89,6 +92,16 @@ namespace SNIESWebApplication.Models
 
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.ConvenioInternacional> ConvenioInternacional { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.ConvenioInternacionalInstitucion> ConvenioInternacionalInstitucion { get; set; }
+
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.ProgramaPresencialeExterior> ProgramaPresencialeExterior { get; set; }
+
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.MovilidadEstudianteExteriorInternacionalizacion> MovilidadEstudianteExteriorInternacionalizacion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.MovilidadDocenteExteriorInternacionalizacion> MovilidadDocenteExteriorInternacionalizacion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.MovilidadDocenteExteriorColombiaInternacionalizacion> MovilidadDocenteExteriorColombiaInternacionalizacion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.MovilidadEstudianteExteriorColombiaInternacionalizacion> MovilidadEstudianteExteriorColombiaInternacionalizacion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.MovilidadAdministrativoExteriorInternacionalizacion> MovilidadAdministrativoExteriorInternacionalizacion { get; set; }
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.MovilidadAdministrativoColombiaInternacionalizacion> MovilidadAdministrativoColombiaInternacionalizacion { get; set; }
+
 
 
     }

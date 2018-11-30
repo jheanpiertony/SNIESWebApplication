@@ -233,22 +233,22 @@
                         listaProyectoExtencion.Add(
                             new ProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANZIACIONAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                DESCRIPCION_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                VALOR_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                ÁREA_EXTENSION = matrixValorHoja[i, j = j + 1],
-                                FECHA_INICIO = matrixValorHoja[i, j = j + 1],
-                                FECHA_FINAL = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_CONTACTO = matrixValorHoja[i, j = j + 1],
-                                APELLIDO_CONTACTO = matrixValorHoja[i, j = j + 1],
-                                TELEFONO_CONTACTO = matrixValorHoja[i, j = j + 1],
-                                CORREO_CONTACTO = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANZIACIONAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                DESCRIPCION_PROYECTO = matrixValorHoja[i, j++],
+                                VALOR_PROYECTO = matrixValorHoja[i, j++],
+                                ÁREA_EXTENSION = matrixValorHoja[i, j++],
+                                FECHA_INICIO = matrixValorHoja[i, j++],
+                                FECHA_FINAL = matrixValorHoja[i, j++],
+                                NOMBRE_CONTACTO = matrixValorHoja[i, j++],
+                                APELLIDO_CONTACTO = matrixValorHoja[i, j++],
+                                TELEFONO_CONTACTO = matrixValorHoja[i, j++],
+                                CORREO_CONTACTO = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -264,14 +264,14 @@
                         listaAreaTrabajoProyectoExtencion.Add(
                             new AreaTrabajoProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                ÁREA_TRABAJO = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                ÁREA_TRABAJO = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -287,14 +287,14 @@
                         listaCicloVitalProyectoExtencion.Add(
                             new CicloVitalProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                CICLO_VITAL = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                CICLO_VITAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -310,14 +310,14 @@
                         listaEntidadNacionalProyectoExtencion.Add(
                             new EntidadNacionalProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                ENTIDAD_NACIONAL = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                ENTIDAD_NACIONAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -333,17 +333,17 @@
                         listaFuenteInternacionalProyectoExtencion.Add(
                             new FuenteInternacionalProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_INSTITUCION = matrixValorHoja[i, j = j + 1],
-                                PAIS = matrixValorHoja[i, j = j + 1],
-                                FUENTE_INTERNACIONAL = matrixValorHoja[i, j = j + 1],
-                                VALOR_FINANCIACION = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_INSTITUCION = matrixValorHoja[i, j++],
+                                PAIS = matrixValorHoja[i, j++],
+                                FUENTE_INTERNACIONAL = matrixValorHoja[i, j++],
+                                VALOR_FINANCIACION = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -359,15 +359,15 @@
                         listaFuenteNacionalProyectoExtencion.Add(
                             new FuenteNacionalProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                FUENTE_NACIONAL = matrixValorHoja[i, j = j + 1],
-                                VALOR_FINANCIACION = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                FUENTE_NACIONAL = matrixValorHoja[i, j++],
+                                VALOR_FINANCIACION = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -384,16 +384,16 @@
                         listaOtraEntidadProyectoExtencion.Add(
                             new OtraEntidadProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_ENTIDAD = matrixValorHoja[i, j = j + 1],
-                                PAIS = matrixValorHoja[i, j = j + 1],
-                                SECTOR_ENTIDAD = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_ENTIDAD = matrixValorHoja[i, j++],
+                                PAIS = matrixValorHoja[i, j++],
+                                SECTOR_ENTIDAD = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -409,15 +409,15 @@
                         listaPoblacionCondiProyectoExtencion.Add(
                             new PoblacionCondiProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                POBLACION = matrixValorHoja[i, j = j + 1],
-                                CANTIDAD = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                POBLACION = matrixValorHoja[i, j++],
+                                CANTIDAD = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -433,15 +433,15 @@
                         listaPoblacionGrupoProyectoExtencion.Add(
                             new PoblacionGrupoProyectoExtencion()
                             {
-                                CODIGO_IES = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_IES = matrixValorHoja[i, j = j + 1],
-                                ANO = matrixValorHoja[i, j = j + 1],
-                                SEMESTRE = matrixValorHoja[i, j = j + 1],
-                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j = j + 1],
-                                CODIGO_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                NOMBRE_PROYECTO = matrixValorHoja[i, j = j + 1],
-                                POBLACION = matrixValorHoja[i, j = j + 1],
-                                CANTIDAD = matrixValorHoja[i, j = j + 1],
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                UNIDAD_ORGANIZACINAL = matrixValorHoja[i, j++],
+                                CODIGO_PROYECTO = matrixValorHoja[i, j++],
+                                NOMBRE_PROYECTO = matrixValorHoja[i, j++],
+                                POBLACION = matrixValorHoja[i, j++],
+                                CANTIDAD = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );

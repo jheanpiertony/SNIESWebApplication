@@ -1,10 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="UNICOC - Ing. Antonio David Restrepo Carvajal" />
+    <meta name="description" content="intitucion universitara colegios colombia, universidad, Certificados, Estudiar pregrado en odontología,
+          negocios internacionales, 8 semestres. Posgrados ortodoncia endodoncia periodoncia rehabilitación gerencia salud Bogotá, Cali, snies" />
+    <meta name="keywords" content="universidad, certificados, estudiar, odontología, negocios internacionales, colegio odontológico, unicoc,
+          colombia, bogota, cali, snies" />
+    <link rel="shortcut icon" href="~/Content/Images/UnicocIconoWeb.ico" />
+    <title>@ViewBag.Title - UNICOC - SNIES</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -24,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("UNICOC - SNIES", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -32,7 +39,14 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Estudiantes<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Inscritos", "Create", "Inscrito")</li>
+                            <li>
+                                <a>Inscritos<b class="caret"></b></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Inscritos", "Create", "Inscrito")</li>
+                                    <li>@Html.ActionLink("Inscrito Programa", "Create", "InscritoPrograma")</li>
+                                </ul>
+                            </li>
+                            
                             <li>@Html.ActionLink("Admitidos", "Create", "Admitido")</li>
                             <li>@Html.ActionLink("Matriculados", "Create", "Matriculado")</li>
                             <li>@Html.ActionLink("Graduados", "Create", "Graduado")</li>
@@ -142,32 +156,33 @@
                                     <li>@Html.ActionLink("Convenio Internacional Institucion", "Index", "ConvenioInternacionalInstitucion")</li>
                                 </ul>
                             </li>
-                            
-                            <li>@Html.ActionLink("Personal administrativo hacia Colombia ", "Create","Admitido")</li>
-                            <li>@Html.ActionLink("Personal administrativo hacia Exterior ", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Docentes del exterior hacia Colombia", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Docentes hacia el exterior", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Estudiantes hacia el exterior", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Estudiantes del exterior hacia Colombia", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink("Programas presenciales ofrecidos en el exterior", "Create", "Admitido")</li>
+
+                            <li>@Html.ActionLink("Personal administrativo hacia Colombia ", "Create", "MovilidadAdministrativoColombiaInternacionalizacion")</li>
+                            <li>@Html.ActionLink("Personal administrativo hacia Exterior ", "Create", "MovilidadAdministrativoExteriorInternacionalizacion")</li>
+                            <li>@Html.ActionLink("Docentes del exterior hacia Colombia", "Create", "MovilidadDocenteExteriorColombiaInternacionalizacion")</li>
+                            <li>@Html.ActionLink("Docentes hacia el exterior", "Create", "MovilidadDocenteExteriorInternacionalizacion")</li>
+                            <li>@Html.ActionLink("Estudiantes hacia el exterior", "Create", "MovilidadEstudianteExteriorInternacionalizacion")</li>
+                            <li>@Html.ActionLink("Estudiantes del exterior hacia Colombia", "Create", "MovilidadEstudianteExteriorColombiaInternacionalizacion")</li>
+                            <li>@Html.ActionLink("Programas presenciales ofrecidos en el exterior", "Create", "ProgramaPresencialeExterior")</li>
+                                
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    @*<li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Derechos pecuniarios<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink(" Derechos Pecuniarios IES Privadas ", "Create", "Admitido")</li>
                             <li>@Html.ActionLink(" Proyectos de Inversión ", "Admitido")</li>
                             <li>@Html.ActionLink(" Valores de Matrícula IES Privadas ", "Create", "Admitido")</li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
+                    </li>*@
+                    @*<li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Informacion institucional<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink(" Derechos Pecuniarios IES Privadas ", "Create", "Admitido")</li>
-                            <li>@Html.ActionLink(" Proyectos de Inversión ", "Admitido")</li>
-                            <li>@Html.ActionLink(" Valores de Matrícula IES Privadas ", "Create", "Admitido")</li>
+                            <li>@Html.ActionLink(" Derechos Pecuniarios IES Privadas ", "Create", "DerechoPecuniarioIESPrivada")</li>
+                            <li>@Html.ActionLink(" Proyectos de Inversión ", "Create","ProyectoInversionDerechoPecuniario")</li>
+                            <li>@Html.ActionLink(" Valores de Matrícula IES Privadas ", "Create", "ValoresMatriculaIESPrivadaDerechoPecuniario")</li>
                         </ul>
-                    </li>
+                    </li>*@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Participantes<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -179,15 +194,12 @@
             </div>
         </div>
     </div>
-    <hr />
-    <hr />
-    <hr />
-    <hr />
+    <br/><br/>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - UNICOC - Colegio Odontologico de Colombia</p>
         </footer>
     </div>
 

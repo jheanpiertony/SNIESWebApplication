@@ -1,14 +1,14 @@
 ﻿@model SNIESWebApplication.Models.Inscrito
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = @Recursos.Resources.Eliminar;
 }
 
-<h2>Delete</h2>
+<h2>@Recursos.Resources.Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>@Recursos.Resources.EliminarConfirmar</h3>
 <div>
-    <h4>Inscrito</h4>
+    <h4>@Recursos.Resources.Inscrito</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -28,11 +28,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AÑO)
+            @Html.DisplayNameFor(model => model.ANO)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AÑO)
+            @Html.DisplayFor(model => model.ANO)
         </dd>
 
         <dt>
@@ -100,43 +100,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PROGRAMA_CONSECUTIVO)
+            @Html.DisplayNameFor(model => model.ID_SEXO)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PROGRAMA_CONSECUTIVO)
+            @Html.DisplayFor(model => model.ID_SEXO)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PROGRAMA)
+            @Html.DisplayNameFor(model => model.SEXO)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PROGRAMA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.COD_DANE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.COD_DANE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DEPARTAMENTO)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MUNICIPIO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MUNICIPIO)
+            @Html.DisplayFor(model => model.SEXO)
         </dd>
 
         <dt>
@@ -153,8 +129,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="@Recursos.Resources.Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink(Recursos.Resources.VolverLista, "Index")
         </div>
     }
 </div>
