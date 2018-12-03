@@ -11,6 +11,8 @@
     using System.Web.Mvc;
     using SNIESWebApplication.Models;
     using System.IO;
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
 
     public class MatriculadoController : Controller
     {
@@ -213,6 +215,74 @@
                 return PartialView("Create");
             }
         }
+
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.Matriculados.Select(x => 
+                new {
+                    x.CODIGO_IES,
+                    x.NOMBRE_IES,
+                    x.ANO,
+                    x.SEMESTRE,
+                    x.ID_TIPO_DOCUMENTO,
+                    x.TIPO_DOCUMENTO,
+                    x.NUMERO_DOCUMENTO,
+                    x.CODIGO_ESTUDIANTE,
+                    x.SEXO_BIOLOGICO,
+                    x.PRIMER_NOMBRE,
+                    x.SEGUNDO_NOMBRE,
+                    x.PRIMER_APELLIDO,
+                    x.SEGUNDO_APELLIDO,
+                    x.PROGRAMA_CONSECUTIVO,
+                    x.PROGRAMA,
+                    x.COD_DANE,
+                    x.DEPARTAMENTO,
+                    x.MUNICIPIO,
+                    x.FECHA_NACIMIENTO,
+                    x.ID_PAIS,
+                    x.PAIS,
+                    x.COD_DANE_NACIMIENTO,
+                    x.DEPARTAMENTO_NACIMIENTO,
+                    x.MUNICIPIO_NACIMIENTO,
+                    x.ID_ZONA_RESIDENCIA,
+                    x.ZONA_RESIDENCIA,
+                    x.NUMERO_MATERIAS_INSCRITAS,
+                    x.NUMERO_MATERIAS_APROBADAS,
+                    x.ES_REINTEGRO_ESTD_ANTES_DE1998,
+                    x.ANO_PRIMER_CURSO,
+                    x.SEMESTRE_PRIMER_CURSO,
+                    x.FECHA_PERIODO,
+                    x.Id,
+                }).ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, "Matriculados");
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + dt.TableName.ToString() + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
+
+
 
         protected override void Dispose(bool disposing)
         {

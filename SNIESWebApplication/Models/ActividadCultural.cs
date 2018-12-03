@@ -13,7 +13,7 @@
     {
         [Display(Name = "CÓDIGO IES")] public string CODIGO_IES { get; set; }
         [Display(Name = "NOMBRE IES")] public string NOMBRE_IES { get; set; }
-        [Display(Name = "ANO")] public string ANO { get; set; }
+        [Display(Name = "AÑO")] public string ANO { get; set; }
         [Display(Name = "SEMESTRE")] public string SEMESTRE { get; set; }
         [Display(Name = "CÓD UNIDAD ORGANIZACIONAL")] public string COD_UNIDAD_ORGANIZACIONAL { get; set; }
         [Display(Name = "UNIDAD ORGANIZACIONAL")] public string UNIDAD_ORGANIZACIONAL { get; set; }
@@ -31,7 +31,7 @@
     {
         [Display(Name = "CÓDIGO IES")] public string CODIGO_IES { get; set; }
         [Display(Name = "NOMBRE IES")] public string NOMBRE_IES { get; set; }
-        [Display(Name = "ANO")] public string ANO { get; set; }
+        [Display(Name = "AÑO")] public string ANO { get; set; }
         [Display(Name = "SEMESTRE")] public string SEMESTRE { get; set; }
         [Display(Name = "CÓD UNIDAD ORGANIZACIONAL")] public string COD_UNIDAD_ORGANIZACIONAL { get; set; }
         [Display(Name = "UNIDAD ORGANIZACIONAL")] public string UNIDAD_ORGANIZACIONAL { get; set; }

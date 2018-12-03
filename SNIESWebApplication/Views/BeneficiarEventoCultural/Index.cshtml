@@ -1,0 +1,102 @@
+﻿@model IEnumerable<SNIESWebApplication.Models.BeneficiarEventoCultural>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink(Recursos.Resources.CrearNuevo, "Create")
+</p>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-success", id = "CrearPlantillaExcel" })
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AÑO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEMESTRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_UNIDAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_EVENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_TIPO_BENEFICIARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_BENEFICIARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTAL_ASISTENTES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VALOR_ENTRADA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_PERIODO)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODIGO_IES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE_IES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AÑO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEMESTRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODIGO_UNIDAD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODIGO_EVENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_TIPO_BENEFICIARIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIPO_BENEFICIARIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TOTAL_ASISTENTES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALOR_ENTRADA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
+            </td>
+            <td>
+                @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Eliminar, "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

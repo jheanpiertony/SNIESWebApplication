@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Index";
-    int PeriodoId = 0;
 }
 
 <h2>Index</h2>
@@ -14,7 +13,7 @@
 <div class="form-horizontal">
     <div class="form-group">
         <div class="col-md-10">
-            @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-default", id = "CrearPlantillaExcel" })
+            @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-success", id = "CrearPlantillaExcel" })
         </div>
     </div>
 </div>

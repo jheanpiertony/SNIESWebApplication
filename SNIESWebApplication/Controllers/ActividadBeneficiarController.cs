@@ -10,6 +10,9 @@
     using System.Web;
     using System.Web.Mvc;
     using SNIESWebApplication.Models;
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
+    using System.IO;
 
     public class ActividadBeneficiarController : Controller
     {
@@ -115,6 +118,40 @@
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.ActividadBeneficiar.ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+            string nombre = dt.TableName.ToString();
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, nombre);
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + nombre + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
+
 
         protected override void Dispose(bool disposing)
         {

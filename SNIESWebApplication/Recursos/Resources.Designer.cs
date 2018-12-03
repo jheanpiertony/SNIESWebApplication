@@ -61,6 +61,69 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Actividad benefica.
+        /// </summary>
+        public static string ActividadBeneficiar {
+            get {
+                return ResourceManager.GetString("ActividadBeneficiar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actividad Cultural.
+        /// </summary>
+        public static string ActividadCultural {
+            get {
+                return ResourceManager.GetString("ActividadCultural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actividad de Rec. Humano.
+        /// </summary>
+        public static string ActividadRecHumano {
+            get {
+                return ResourceManager.GetString("ActividadRecHumano", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Apoyo a estudiante.
+        /// </summary>
+        public static string ApoyoEstudiante {
+            get {
+                return ResourceManager.GetString("ApoyoEstudiante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Area Trabajo Proyecto Extencion.
+        /// </summary>
+        public static string AreaTrabajoProyectoExtencion {
+            get {
+                return ResourceManager.GetString("AreaTrabajoProyectoExtencion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Avtividad de Bienestar.
+        /// </summary>
+        public static string AvtividadBienEstar {
+            get {
+                return ResourceManager.GetString("AvtividadBienEstar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Bienestar.
+        /// </summary>
+        public static string BienEstar {
+            get {
+                return ResourceManager.GetString("BienEstar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Carga plantilla.
         /// </summary>
         public static string CargarPlantilla {
@@ -75,6 +138,24 @@ namespace Recursos {
         public static string CargueDocumentoExcel {
             get {
                 return ResourceManager.GetString("CargueDocumentoExcel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ciclo Vital Proyecto Extencion.
+        /// </summary>
+        public static string CicloVitalProyectoExtencion {
+            get {
+                return ResourceManager.GetString("CicloVitalProyectoExtencion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Consultaria.
+        /// </summary>
+        public static string Consultaria {
+            get {
+                return ResourceManager.GetString("Consultaria", resourceCulture);
             }
         }
         
@@ -97,6 +178,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cupo.
+        /// </summary>
+        public static string Cupo {
+            get {
+                return ResourceManager.GetString("Cupo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descargar reporte en Excel.
         /// </summary>
         public static string DescargarReporteExcel {
@@ -115,11 +205,29 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Docente Educacion Continua.
+        /// </summary>
+        public static string DocenteEducacionContinua {
+            get {
+                return ResourceManager.GetString("DocenteEducacionContinua", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Editar.
         /// </summary>
         public static string Editar {
             get {
                 return ResourceManager.GetString("Editar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Educacion Continua.
+        /// </summary>
+        public static string EducacionContinua {
+            get {
+                return ResourceManager.GetString("EducacionContinua", resourceCulture);
             }
         }
         
@@ -138,6 +246,15 @@ namespace Recursos {
         public static string EliminarConfirmar {
             get {
                 return ResourceManager.GetString("EliminarConfirmar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estudiante de articulacion.
+        /// </summary>
+        public static string EstudianteArticulacion {
+            get {
+                return ResourceManager.GetString("EstudianteArticulacion", resourceCulture);
             }
         }
         
@@ -183,6 +300,24 @@ namespace Recursos {
         public static string Participante {
             get {
                 return ResourceManager.GetString("Participante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rec. Humano Consultoria.
+        /// </summary>
+        public static string RecHumanoConsultoria {
+            get {
+                return ResourceManager.GetString("RecHumanoConsultoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rec. Humano Cultural.
+        /// </summary>
+        public static string RecHumanoCultural {
+            get {
+                return ResourceManager.GetString("RecHumanoCultural", resourceCulture);
             }
         }
         

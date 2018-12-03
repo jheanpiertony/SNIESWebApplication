@@ -60,6 +60,7 @@ namespace SNIESWebApplication.Models
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.EducacionContinua> EducacionContinua { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.DocenteEducacionContinua> DocenteEducacionContinua { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.BeneficioEducacionContinua> BeneficioEducacionContinua { get; set; }
+
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.EventoCultural> EventoCultural { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.FteNacionEventoCultural> FteNacionEventoCultural { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.FteInternEventoCultural> FteInternEventoCultural { get; set; }

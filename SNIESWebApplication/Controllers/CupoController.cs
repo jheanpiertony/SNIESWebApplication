@@ -11,6 +11,9 @@
     using System.Web.Mvc;
     using SNIESWebApplication.Models;
     using System.IO;
+    using OfficeOpenXml;
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
 
     public class CupoController : Controller
     {
@@ -126,7 +129,7 @@
                 if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm") || plantillaCargaExcel.FileName.EndsWith("csv"))
                 {
 
-                    List<Cupo> listaCupo = new List<Cupo>();
+                    List<Cupo> listaCupos = new List<Cupo>();
                     string fileName = plantillaCargaExcel.FileName;
                     string filePath = string.Empty;
                     string path = Server.MapPath("~/PlantillaExcelSnies/");
@@ -143,43 +146,54 @@
                         Directory.Delete(filePath);
                     }
 
-                    string extesion = Path.GetExtension(fileName);
-                    plantillaCargaExcel.SaveAs(filePath);
-                    string csvData = System.IO.File.ReadAllText(filePath);
-                    int i = 0;
                     var _FECHA_PERIODO = db.Periodos.Where(x => x.Id == PeriodoId).FirstOrDefault();
 
-                    foreach (var row in csvData.Split('\n'))
+                    if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm"))
                     {
-                        if (!string.IsNullOrEmpty(row))
+                        using (var paquete = new ExcelPackage(plantillaCargaExcel.InputStream))
                         {
-                            if (i != 0)
+                            var hojaActuales = paquete.Workbook.Worksheets;
+                            var cantidadHojas = hojaActuales.Count;
+
+                            foreach (var hoja in hojaActuales)
                             {
+                                var nroColumna = hoja.Dimension.End.Column;
+                                var nroFila = hoja.Dimension.End.Row;
+                                string[,] matrixValorHoja = new string[nroFila - 1, nroColumna];
 
-                                listaCupo.Add(new Cupo()
+                                for (int i = 2; i <= nroFila; i++)
                                 {
-                                    CODIGO_IES = string.IsNullOrEmpty(row.Split(';')[0].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[0].Replace("\"", string.Empty),
-                                    NOMBRE_IES = string.IsNullOrEmpty(row.Split(';')[1].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[1].Replace("\"", string.Empty),
-                                    ANO = string.IsNullOrEmpty(row.Split(';')[2].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[2].Replace("\"", string.Empty),
-                                    SEMESTRE = string.IsNullOrEmpty(row.Split(';')[3].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[3].Replace("\"", string.Empty),
-                                    PRO_CONSECUTIVO = string.IsNullOrEmpty(row.Split(';')[4].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[4].Replace("\"", string.Empty),
-                                    PROGRAM_NOMBRE = string.IsNullOrEmpty(row.Split(';')[5].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[5].Replace("\"", string.Empty),
-                                    CODIGO_MUNICIPIO = string.IsNullOrEmpty(row.Split(';')[6].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[6].Replace("\"", string.Empty),
-                                    NOMBRE_MUNICIPIO = string.IsNullOrEmpty(row.Split(';')[7].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[7].Replace("\"", string.Empty),
-                                    CUPOS_NUEVOS_PROYECTADOS = string.IsNullOrEmpty(row.Split(';')[8].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[8].Replace("\"", string.Empty),
-                                    CUPOS_TOTALES_PROYECTADOS = string.IsNullOrEmpty(row.Split(';')[9].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[9].Replace("\"", string.Empty),
-                                    MATRICULA_TOTAL_ESPERADA = string.IsNullOrEmpty(row.Split(';')[10].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[10].Replace("\"", string.Empty),
-                                    FUENTE = string.IsNullOrEmpty(row.Split(';')[11].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[11].Replace("\"", string.Empty),
-                                    FECHA_PERIODO = _FECHA_PERIODO.FechaPeriodo
-                                });
+                                    for (int j = 1; j <= nroColumna; j++)
+                                    {
+                                        matrixValorHoja[i - 2, j - 1] = (hoja.Cells[i, j].Value == null) ? string.Empty : hoja.Cells[i, j].Value.ToString();
+                                    }
+                                }
+                                GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
-                            i++;
                         }
+                        return View("Index", db.Cupos.ToList());
                     }
+                    else
+                    {
+                        string extesion = Path.GetExtension(fileName);
+                        plantillaCargaExcel.SaveAs(filePath);
+                        string csvData = System.IO.File.ReadAllText(filePath);
+                        int i = 0;
 
-                    db.Cupos.AddRange(listaCupo);
-                    db.SaveChanges();
-                    return View("Index", db.Cupos.ToList());
+                        foreach (var row in csvData.Split('\n'))
+                        {
+                            if (!string.IsNullOrEmpty(row))
+                            {
+                                if (i != 0)
+                                {
+                                }
+                                i++;
+                            }
+                        }
+                        db.Cupos.AddRange(listaCupos);
+                        db.SaveChanges();
+                        return View("Index", db.Cupos.ToList());
+                    }
                 }
                 else
                 {
@@ -193,6 +207,102 @@
                 return PartialView("Create");
             }
         }
+
+        private void GuardarDatos(string[,] matrixValorHoja, int index, string _FECHA_PERIODO)
+        {
+            var nroFila = matrixValorHoja.GetLength(0);
+
+            List<Cupo> listaCupo = new List<Cupo>();
+
+
+            for (int i = 0; i < nroFila; i++)
+            {
+                var j = 0;
+                switch (index)
+                {
+                    case 1:
+
+                        listaCupo.Add(
+                            new Cupo()
+                            {
+                                CODIGO_IES = matrixValorHoja[i, j++],
+                                NOMBRE_IES = matrixValorHoja[i, j++],
+                                ANO = matrixValorHoja[i, j++],
+                                SEMESTRE = matrixValorHoja[i, j++],
+                                PRO_CONSECUTIVO = matrixValorHoja[i, j++],
+                                PROGRAM_NOMBRE = matrixValorHoja[i, j++],
+                                CODIGO_MUNICIPIO = matrixValorHoja[i, j++],
+                                NOMBRE_MUNICIPIO = matrixValorHoja[i, j++],
+                                CUPOS_NUEVOS_PROYECTADOS = matrixValorHoja[i, j++],
+                                CUPOS_TOTALES_PROYECTADOS = matrixValorHoja[i, j++],
+                                MATRICULA_TOTAL_ESPERADA = matrixValorHoja[i, j++],
+                                FECHA_PERIODO = _FECHA_PERIODO
+                            }
+                            );
+
+                        if (i + 1 == nroFila)
+                        {
+                            db.Cupos.AddRange(listaCupo);
+                            db.SaveChanges();
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+        
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.Cupos.
+                Select(x => new
+                {
+                    x.CODIGO_IES,
+                    x.NOMBRE_IES,
+                    x.ANO,
+                    x.SEMESTRE,
+                    x.PRO_CONSECUTIVO,
+                    x.PROGRAM_NOMBRE,
+                    x.CODIGO_MUNICIPIO,
+                    x.NOMBRE_MUNICIPIO,
+                    x.CUPOS_NUEVOS_PROYECTADOS,
+                    x.CUPOS_TOTALES_PROYECTADOS,
+                    x.MATRICULA_TOTAL_ESPERADA,
+                    x.FECHA_PERIODO,
+                    x.Id,
+
+                }).ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+            string nombre = "Cupos";
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, nombre);
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + nombre + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
+
 
         protected override void Dispose(bool disposing)
         {

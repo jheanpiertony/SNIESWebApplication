@@ -117,11 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ActividadBeneficiar" xml:space="preserve">
+    <value>Actividad benefica</value>
+  </data>
+  <data name="ActividadCultural" xml:space="preserve">
+    <value>Actividad Cultural</value>
+  </data>
+  <data name="ActividadRecHumano" xml:space="preserve">
+    <value>Actividad de Rec. Humano</value>
+  </data>
+  <data name="ApoyoEstudiante" xml:space="preserve">
+    <value>Apoyo a estudiante</value>
+  </data>
+  <data name="AreaTrabajoProyectoExtencion" xml:space="preserve">
+    <value>Area Trabajo Proyecto Extencion</value>
+  </data>
+  <data name="AvtividadBienEstar" xml:space="preserve">
+    <value>Avtividad de Bienestar</value>
+  </data>
+  <data name="BienEstar" xml:space="preserve">
+    <value>Bienestar</value>
+  </data>
   <data name="CargarPlantilla" xml:space="preserve">
     <value>Carga plantilla</value>
   </data>
   <data name="CargueDocumentoExcel" xml:space="preserve">
     <value>Cargue el documento excel</value>
+  </data>
+  <data name="CicloVitalProyectoExtencion" xml:space="preserve">
+    <value>Ciclo Vital Proyecto Extencion</value>
+  </data>
+  <data name="Consultaria" xml:space="preserve">
+    <value>Consultaria</value>
   </data>
   <data name="Crear" xml:space="preserve">
     <value>Crear</value>
@@ -129,20 +156,32 @@
   <data name="CrearNuevo" xml:space="preserve">
     <value>Crear nuevo</value>
   </data>
+  <data name="Cupo" xml:space="preserve">
+    <value>Cupo</value>
+  </data>
   <data name="DescargarReporteExcel" xml:space="preserve">
     <value>Descargar reporte en Excel</value>
   </data>
   <data name="Detalles" xml:space="preserve">
     <value>Detalles</value>
   </data>
+  <data name="DocenteEducacionContinua" xml:space="preserve">
+    <value>Docente Educacion Continua</value>
+  </data>
   <data name="Editar" xml:space="preserve">
     <value>Editar</value>
+  </data>
+  <data name="EducacionContinua" xml:space="preserve">
+    <value>Educacion Continua</value>
   </data>
   <data name="Eliminar" xml:space="preserve">
     <value>Eliminar</value>
   </data>
   <data name="EliminarConfirmar" xml:space="preserve">
     <value>Esta seguro que desea eliminar este registro?</value>
+  </data>
+  <data name="EstudianteArticulacion" xml:space="preserve">
+    <value>Estudiante de articulacion</value>
   </data>
   <data name="Guardar" xml:space="preserve">
     <value>Guardar</value>
@@ -158,6 +197,12 @@
   </data>
   <data name="Participante" xml:space="preserve">
     <value>Participante</value>
+  </data>
+  <data name="RecHumanoConsultoria" xml:space="preserve">
+    <value>Rec. Humano Consultoria</value>
+  </data>
+  <data name="RecHumanoCultural" xml:space="preserve">
+    <value>Rec. Humano Cultural</value>
   </data>
   <data name="VolverLista" xml:space="preserve">
     <value>Volver a la lista</value>

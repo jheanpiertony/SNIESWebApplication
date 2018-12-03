@@ -11,7 +11,8 @@
     using System.Web.Mvc;
     using SNIESWebApplication.Models;
     using System.IO;
-
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
 
     public class AdmitidoController : Controller
     {
@@ -156,18 +157,6 @@
                         {
                             if (i != 0)
                             {
-                                var ID_IES = string.IsNullOrEmpty(row.Split(';')[0]) ? string.Empty : row.Split(';')[0];
-                                var NOMBRE_IES = string.IsNullOrEmpty(row.Split(';')[1]) ? string.Empty : row.Split(';')[1];
-                                var ANO = string.IsNullOrEmpty(row.Split(';')[2]) ? string.Empty : row.Split(';')[2];
-                                var SEMESTRE = string.IsNullOrEmpty(row.Split(';')[3]) ? string.Empty : row.Split(';')[3];
-                                var COD_DANE = string.IsNullOrEmpty(row.Split(';')[4]) ? string.Empty : row.Split(';')[4];
-                                var DEPARTAMENTO = string.IsNullOrEmpty(row.Split(';')[5]) ? string.Empty : row.Split(';')[5];
-                                var MUNICIPIO = string.IsNullOrEmpty(row.Split(';')[6]) ? string.Empty : row.Split(';')[6];
-                                var PRO_CONSECUTIVO = string.IsNullOrEmpty(row.Split(';')[7]) ? string.Empty : row.Split(';')[7];
-                                var PROGRAMA = string.IsNullOrEmpty(row.Split(';')[8]) ? string.Empty : row.Split(';')[8];
-                                var TIPO_DOCUMENTO = string.IsNullOrEmpty(row.Split(';')[9]) ? string.Empty : row.Split(';')[9];
-                                var NUMERO_DOCUMENTO = string.IsNullOrEmpty(row.Split(';')[10]) ? string.Empty : row.Split(';')[10];
-
                                 listaAdmitidos.Add(new Admitido()
                                 {
                                     ID_IES = string.IsNullOrEmpty(row.Split(';')[0].Replace("\"", string.Empty)) ? string.Empty : row.Split(';')[0].Replace("\"", string.Empty),
@@ -202,6 +191,37 @@
             {
                 ViewBag.CargaMasivaCatalogo = "Error! no se ha cargado ningun archivo.";
                 return PartialView("Create");
+            }
+        }
+
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.Admitidos.ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, dt.TableName.ToString());
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + dt.TableName.ToString() + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
             }
         }
 

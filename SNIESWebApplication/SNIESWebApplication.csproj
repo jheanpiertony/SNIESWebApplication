@@ -209,6 +209,7 @@
     <Compile Include="Controllers\ActividadCulturalController.cs" />
     <Compile Include="Controllers\AreaTrabajoProyectoExtencionController.cs" />
     <Compile Include="Controllers\AreaTrabajoServicioExtensionController.cs" />
+    <Compile Include="Controllers\BeneficiarEventoCulturalController.cs" />
     <Compile Include="Controllers\BeneficioEducacionContinuaController.cs" />
     <Compile Include="Controllers\CapacitacionDocenteController.cs" />
     <Compile Include="Controllers\CicloVitalProyectoExtencionController.cs" />
@@ -223,6 +224,8 @@
     <Compile Include="Controllers\EntidadNacionalProyectoExtencionController.cs" />
     <Compile Include="Controllers\EntidadNacionalServicioExtensionController.cs" />
     <Compile Include="Controllers\EventoCulturalController.cs" />
+    <Compile Include="Controllers\FteInternEventoCulturalController.cs" />
+    <Compile Include="Controllers\FteNacionEventoCulturalController.cs" />
     <Compile Include="Controllers\FuenteInternacionalProyectoExtencionController.cs" />
     <Compile Include="Controllers\FuenteInternacionalServicioExtensionController.cs" />
     <Compile Include="Controllers\FuenteNacionalProyectoExtencionController.cs" />
@@ -244,7 +247,14 @@
     <Compile Include="Controllers\ProyectoExtencionController.cs" />
     <Compile Include="Controllers\RecHumanoConsultoriaController.cs" />
     <Compile Include="Controllers\RecHumanoCulturalsController.cs" />
+    <Compile Include="Controllers\RecHumanoEventoCulturalController.cs" />
     <Compile Include="Controllers\ServicioExtensionController.cs" />
+    <Compile Include="Helpers\CrearExcel.cs" />
+    <Compile Include="Helpers\CrearRolUsuarios.cs" />
+    <Compile Include="Helpers\EnumService.cs" />
+    <Compile Include="Helpers\FechaHelper.cs" />
+    <Compile Include="Helpers\ImagenHelper.cs" />
+    <Compile Include="Helpers\ObtenerIpAddress.cs" />
     <Compile Include="Models\ActividadCultural.cs" />
     <Compile Include="Controllers\ActividadRecHumanoController.cs" />
     <Compile Include="Controllers\AdmitidoController.cs" />
@@ -581,6 +591,26 @@
     <Content Include="Views\Inscrito\Edit.cshtml" />
     <Content Include="Views\Inscrito\Details.cshtml" />
     <Content Include="Views\Inscrito\Delete.cshtml" />
+    <Content Include="Views\FteNacionEventoCultural\Create.cshtml" />
+    <Content Include="Views\FteNacionEventoCultural\Delete.cshtml" />
+    <Content Include="Views\FteNacionEventoCultural\Details.cshtml" />
+    <Content Include="Views\FteNacionEventoCultural\Edit.cshtml" />
+    <Content Include="Views\FteNacionEventoCultural\Index.cshtml" />
+    <Content Include="Views\FteInternEventoCultural\Create.cshtml" />
+    <Content Include="Views\FteInternEventoCultural\Delete.cshtml" />
+    <Content Include="Views\FteInternEventoCultural\Details.cshtml" />
+    <Content Include="Views\FteInternEventoCultural\Edit.cshtml" />
+    <Content Include="Views\FteInternEventoCultural\Index.cshtml" />
+    <Content Include="Views\RecHumanoEventoCultural\Create.cshtml" />
+    <Content Include="Views\RecHumanoEventoCultural\Delete.cshtml" />
+    <Content Include="Views\RecHumanoEventoCultural\Details.cshtml" />
+    <Content Include="Views\RecHumanoEventoCultural\Edit.cshtml" />
+    <Content Include="Views\RecHumanoEventoCultural\Index.cshtml" />
+    <Content Include="Views\BeneficiarEventoCultural\Create.cshtml" />
+    <Content Include="Views\BeneficiarEventoCultural\Delete.cshtml" />
+    <Content Include="Views\BeneficiarEventoCultural\Details.cshtml" />
+    <Content Include="Views\BeneficiarEventoCultural\Edit.cshtml" />
+    <Content Include="Views\BeneficiarEventoCultural\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

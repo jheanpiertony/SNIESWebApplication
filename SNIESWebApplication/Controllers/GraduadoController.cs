@@ -11,6 +11,8 @@
     using System.Web.Mvc;
     using SNIESWebApplication.Models;
     using System.IO;
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
 
     public class GraduadoController : Controller
     {
@@ -204,6 +206,63 @@
             }
         }
 
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.Graduados.
+                Select(x => new
+                {
+                    x.CODIGO_IES,
+                    x.NOMBRE_IES,
+                    x.ANO,
+                    x.SEMESTRE,
+                    x.ID_TIPO_DOCUMENTO,
+                    x.TIPO_DOCUMENTO,
+                    x.NUMERO_DOCUMENTO,
+                    x.PRIMER_NOMBRE,
+                    x.SEGUNDO_NOMBRE,
+                    x.PRIMER_APELLIDO,
+                    x.SEGUNDO_APELLIDO,
+                    x.PROGRAMA_CONSECUTIVO,
+                    x.PROGRAMA,
+                    x.COD_DANE,
+                    x.DEPARTAMENTO,
+                    x.MUNICIPIO,
+                    x.ECAES_RESULTADO,
+                    x.ECAES_OBSERVACION,
+                    x.NO_ACTA_GRADO,
+                    x.FECHA_GRADO,
+                    x.FOLIO,
+                    x.FECHA_PERIODO,
+                    x.Id,
+                }).ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+            string nombre = "Graduados";
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, nombre);
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + nombre + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

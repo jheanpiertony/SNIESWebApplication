@@ -15,6 +15,8 @@
     using System.Reflection;
     using System.Dynamic;
     using System.Data.Entity.Core.Metadata.Edm;
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
 
     public class ActividadCulturalController : Controller
     {
@@ -130,7 +132,7 @@
                 if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm") || plantillaCargaExcel.FileName.EndsWith("csv"))
                 {
 
-                    List<ActividadBienestar> listaActividadBienestar = new List<ActividadBienestar>();
+                    List<ActividadCultural> listaActividadCultural = new List<ActividadCultural>();
                     string fileName = plantillaCargaExcel.FileName;
                     string filePath = string.Empty;
                     string path = Server.MapPath("~/PlantillaExcelSnies/");
@@ -172,7 +174,7 @@
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.ActividadBienestar.ToList());
+                        return View("Index", db.ActividadCultural.ToList());
                     }
                     else
                     {
@@ -191,9 +193,9 @@
                                 i++;
                             }
                         }
-                        db.ActividadBienestar.AddRange(listaActividadBienestar);
+                        db.ActividadCultural.AddRange(listaActividadCultural);
                         db.SaveChanges();
-                        return View("Index", db.ActividadBienestar.ToList());
+                        return View("Index", db.ActividadCultural.ToList());
                     }
                 }
                 else
@@ -282,6 +284,40 @@
                 }
             }
         }
+
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.ActividadCultural.ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+            string nombre = dt.TableName.ToString();
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, nombre);
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + nombre + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
+
 
         protected override void Dispose(bool disposing)
         {

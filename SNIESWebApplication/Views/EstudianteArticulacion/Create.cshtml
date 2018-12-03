@@ -1,11 +1,13 @@
 ﻿@model SNIESWebApplication.Models.EstudianteArticulacion
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Recursos.Resources.Crear;
 }
 
-<h2>Create</h2>
-<div>
+<h2>@Recursos.Resources.Crear</h2>
+<h4>@Recursos.Resources.EstudianteArticulacion</h4>
+<hr />
+<div class="form-horizontal">
     @using (Ajax.BeginForm("CargaPlantillaExcel", "EstudianteArticulacion", new AjaxOptions
     {
         HttpMethod = "POST",
@@ -23,13 +25,12 @@
     }
 </div>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>EstudianteArticulacion</h4>
-        <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.CODIGO_IES, htmlAttributes: new { @class = "control-label col-md-2" })

@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using SNIESWebApplication.Models;
 using System.IO;
+using SNIESWebApplication.Helpers;
+using ClosedXML.Excel;
 
 namespace SNIESWebApplication.Controllers
 {
@@ -211,6 +213,78 @@ namespace SNIESWebApplication.Controllers
                 return PartialView("Create");
             }
         }
+
+
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.EstudiantesPrimerCurso.
+                Select(x => new
+                {
+                    x.CODIGO_IES,
+                    x.NOMBRE_IES,
+                    x.ANO,
+                    x.SEMESTRE,
+                    x.ID_TIPO_DOCUMENTO,
+                    x.TIPO_DOCUMENTO,
+                    x.NUMERO_DOCUMENTO,
+                    x.PRIMER_NOMBRE,
+                    x.SEGUNDO_NOMBRE,
+                    x.PRIMER_APELLIDO,
+                    x.SEGUNDO_APELLIDO,
+                    x.PROGRAMA_CONSECUTIVO,
+                    x.NOMBRE_PROGRAMA,
+                    x.ID_MUNICIPIO,
+                    x.DEPARTAMENTO,
+                    x.MUNICIPIO,
+                    x.ID_TIPO_VINCULACION,
+                    x.TIPO_VINCULACION,
+                    x.ID_GRUPO_ETNICO,
+                    x.GRUPO_ETNICO,
+                    x.ID_PUEBLO_INDIGENA,
+                    x.PUEBLO_INDIGENA,
+                    x.ID_COMINIDAD_NEGRA,
+                    x.COMUNIDAD_NEGRA,
+                    x.PERSONA_CON_DISCAPACIDAD,
+                    x.ID_TIPO_DISCAPACIDAD,
+                    x.ID_CAPACIDAD_EXCEP,
+                    x.CAPACIDAD_EXCEPCIONAL,
+                    x.COD_PRUEBA_SABER_11,
+                    x.FECHA_PERIODO,
+                    x.Id,
+
+                }).ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+            
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+            string nombre = "EstudiantesPrimerCurso";
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, nombre);
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + nombre + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
+
+
+
 
         protected override void Dispose(bool disposing)
         {
