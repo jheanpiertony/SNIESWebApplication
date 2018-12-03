@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    int PeriodoId = 0;
 }
 
 <h2>Index</h2>
@@ -9,9 +10,15 @@
 <p>
     @Html.ActionLink(Recursos.Resources.CrearNuevo, "Create")
 </p>
-<div>
-    @Html.ActionLink("Descargar reporte", "CrearPlantillaExcel", null, new { htmlAttributes = new { @class = "btn btn-default" } })
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-default", id = "CrearPlantillaExcel" })
+        </div>
+    </div>
 </div>
+
 <table class="table">
     <tr>
         <th>
@@ -63,82 +70,92 @@
             @Html.DisplayNameFor(model => model.CELULAR_PERSONAL)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL)
-        </th>*@
+                @Html.DisplayNameFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL)
+            </th>*@
         @*<th>
-            @Html.DisplayNameFor(model => model.FUENTE)
-        </th>*@
+                @Html.DisplayNameFor(model => model.FUENTE)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.FECHA_PERIODO)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CODIGO_IES)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDENTIFICADOR_SNIES)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TIPO_DOCUMENTO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NUM_DOCUMENTO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PRIMER_NOMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SEGUNDO_NOMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SEGUNDO_APELLIDO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_SEXO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FECHA_NACIMIENTO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PAIS)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MUNICIPIO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAIL_INSTITUCIONAL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DIRECCION_INSTITUCIONAL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAIL_PEROSNAL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CELULAR_PERSONAL)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.VERIFICADO_POR_FUENTE_OFICIAL)
-        </td>*@
-        @*<td>
-            @Html.DisplayFor(modelItem => item.FUENTE)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
-        </td>
-        <td>
-            @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id=item.Id }) |
-            @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id=item.Id }) |
-            @Html.ActionLink(Recursos.Resources.Eliminar, "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODIGO_IES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDENTIFICADOR_SNIES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIPO_DOCUMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NUM_DOCUMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRIMER_NOMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEGUNDO_NOMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEGUNDO_APELLIDO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_SEXO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_NACIMIENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAIS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MUNICIPIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL_INSTITUCIONAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIRECCION_INSTITUCIONAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL_PEROSNAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CELULAR_PERSONAL)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.VERIFICADO_POR_FUENTE_OFICIAL)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.FUENTE)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
+            </td>
+            <td>
+                @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Eliminar, "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+    </script>
+}

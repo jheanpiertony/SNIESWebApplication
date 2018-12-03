@@ -12,14 +12,13 @@
     @using (Ajax.BeginForm("CargaPlantillaExcel", "Participante", new AjaxOptions
     {
         HttpMethod = "POST",
-        InsertionMode = InsertionMode.Replace//,
-                                             //UpdateTargetId = ""
+        InsertionMode = InsertionMode.Replace
     }, new { enctype = "multipart/form-data" }))
     {
         <div class="form-group">
             @Html.Label("Periodo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("PeriodoId", (IEnumerable<SelectListItem>)ViewBag.PeriodoId, htmlAttributes: new { @class = "form-control", @id = "PeriodoId" })
+                @Html.DropDownList("PeriodoId", (IEnumerable<SelectListItem>)ViewBag.PeriodoId, htmlAttributes: new { @class = "form-control", id = "PeriodoId" })
             </div>
         </div>
         @Html.Partial("_cargaPlantillaExcel")

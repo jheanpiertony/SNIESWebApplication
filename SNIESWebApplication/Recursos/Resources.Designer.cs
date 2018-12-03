@@ -97,6 +97,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Descargar reporte en Excel.
+        /// </summary>
+        public static string DescargarReporteExcel {
+            get {
+                return ResourceManager.GetString("DescargarReporteExcel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Detalles.
         /// </summary>
         public static string Detalles {

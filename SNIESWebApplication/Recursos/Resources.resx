@@ -129,6 +129,9 @@
   <data name="CrearNuevo" xml:space="preserve">
     <value>Crear nuevo</value>
   </data>
+  <data name="DescargarReporteExcel" xml:space="preserve">
+    <value>Descargar reporte en Excel</value>
+  </data>
   <data name="Detalles" xml:space="preserve">
     <value>Detalles</value>
   </data>
