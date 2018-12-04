@@ -106,6 +106,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Area Trabajo Servicio Extension.
+        /// </summary>
+        public static string AreaTrabajoServicioExtension {
+            get {
+                return ResourceManager.GetString("AreaTrabajoServicioExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Avtividad de Bienestar.
         /// </summary>
         public static string AvtividadBienEstar {
@@ -120,6 +129,15 @@ namespace Recursos {
         public static string BienEstar {
             get {
                 return ResourceManager.GetString("BienEstar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Capacitacion de Docente.
+        /// </summary>
+        public static string CapacitacionDocente {
+            get {
+                return ResourceManager.GetString("CapacitacionDocente", resourceCulture);
             }
         }
         
@@ -151,11 +169,47 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ciclo Vital Servicio Extension.
+        /// </summary>
+        public static string CicloVitalServicioExtension {
+            get {
+                return ResourceManager.GetString("CicloVitalServicioExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Consultaria.
         /// </summary>
         public static string Consultaria {
             get {
                 return ResourceManager.GetString("Consultaria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contrato de Docente.
+        /// </summary>
+        public static string ContratoDocente {
+            get {
+                return ResourceManager.GetString("ContratoDocente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Convenio Internacional.
+        /// </summary>
+        public static string ConvenioInternacional {
+            get {
+                return ResourceManager.GetString("ConvenioInternacional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Convenio Internacional Institucion.
+        /// </summary>
+        public static string ConvenioInternacionalInstitucion {
+            get {
+                return ResourceManager.GetString("ConvenioInternacionalInstitucion", resourceCulture);
             }
         }
         
@@ -205,6 +259,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Docente.
+        /// </summary>
+        public static string Docente {
+            get {
+                return ResourceManager.GetString("Docente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Docente Educacion Continua.
         /// </summary>
         public static string DocenteEducacionContinua {
@@ -250,11 +313,56 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Entidad Nacional Proyecto Extencion.
+        /// </summary>
+        public static string EntidadNacionalProyectoExtencion {
+            get {
+                return ResourceManager.GetString("EntidadNacionalProyectoExtencion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Entidad Nacional Servicio Extension.
+        /// </summary>
+        public static string EntidadNacionalServicioExtension {
+            get {
+                return ResourceManager.GetString("EntidadNacionalServicioExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Estudiante de articulacion.
         /// </summary>
         public static string EstudianteArticulacion {
             get {
                 return ResourceManager.GetString("EstudianteArticulacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fuente Internacional Proyecto Extencion.
+        /// </summary>
+        public static string FuenteInternacionalProyectoExtencion {
+            get {
+                return ResourceManager.GetString("FuenteInternacionalProyectoExtencion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fuente Internacional Servicio Extension.
+        /// </summary>
+        public static string FuenteInternacionalServicioExtension {
+            get {
+                return ResourceManager.GetString("FuenteInternacionalServicioExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fuente Nacional Servicio Extension.
+        /// </summary>
+        public static string FuenteNacionalServicioExtension {
+            get {
+                return ResourceManager.GetString("FuenteNacionalServicioExtension", resourceCulture);
             }
         }
         
@@ -286,6 +394,42 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Movilidad Administrativo Colombia Internacionalizacion.
+        /// </summary>
+        public static string MovilidadAdministrativoColombiaInternacionalizacion {
+            get {
+                return ResourceManager.GetString("MovilidadAdministrativoColombiaInternacionalizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Movilidad Administrativo Exterior Internacionalizacion.
+        /// </summary>
+        public static string MovilidadAdministrativoExteriorInternacionalizacion {
+            get {
+                return ResourceManager.GetString("MovilidadAdministrativoExteriorInternacionalizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Movilidad Docente Exterior Colombia Internacionalizacion.
+        /// </summary>
+        public static string MovilidadDocenteExteriorColombiaInternacionalizacion {
+            get {
+                return ResourceManager.GetString("MovilidadDocenteExteriorColombiaInternacionalizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Movilidad Docente Exterior Internacionalizacion.
+        /// </summary>
+        public static string MovilidadDocenteExteriorInternacionalizacion {
+            get {
+                return ResourceManager.GetString("MovilidadDocenteExteriorInternacionalizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombre.
         /// </summary>
         public static string Nombre {
@@ -295,11 +439,38 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Otra Entidad Proyecto Extencion.
+        /// </summary>
+        public static string OtraEntidadProyectoExtencion {
+            get {
+                return ResourceManager.GetString("OtraEntidadProyectoExtencion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Otra Entidad Servicio Extension.
+        /// </summary>
+        public static string OtraEntidadServicioExtension {
+            get {
+                return ResourceManager.GetString("OtraEntidadServicioExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Participante.
         /// </summary>
         public static string Participante {
             get {
                 return ResourceManager.GetString("Participante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Poblacion Condicional Servicio Extension.
+        /// </summary>
+        public static string PoblacionCondicionalServicioExtension {
+            get {
+                return ResourceManager.GetString("PoblacionCondicionalServicioExtension", resourceCulture);
             }
         }
         
@@ -318,6 +489,15 @@ namespace Recursos {
         public static string RecHumanoCultural {
             get {
                 return ResourceManager.GetString("RecHumanoCultural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Servicio de Extension.
+        /// </summary>
+        public static string ServicioExtension {
+            get {
+                return ResourceManager.GetString("ServicioExtension", resourceCulture);
             }
         }
         

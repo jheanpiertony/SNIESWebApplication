@@ -10,7 +10,8 @@ using System.Web.Mvc;
 using SNIESWebApplication.Models;
 using System.IO;
 using OfficeOpenXml;
-
+using SNIESWebApplication.Helpers;
+using ClosedXML.Excel;
 
 namespace SNIESWebApplication.Controllers
 {
@@ -227,9 +228,6 @@ namespace SNIESWebApplication.Controllers
             var nroFila = matrixValorHoja.GetLength(0);
 
             List<ActividadBienestar> listaActividadBienestar = new List<ActividadBienestar>();
-            List<ActividadBeneficiar> listaActividadBeneficiar = new List<ActividadBeneficiar>();
-            List<ActividadRecHumano> listaActividadRecHumano = new List<ActividadRecHumano>();
-
 
             for (int i = 0; i < nroFila; i++)
             {
@@ -241,18 +239,6 @@ namespace SNIESWebApplication.Controllers
                         listaActividadBienestar.Add(
                             new ActividadBienestar()
                             {
-                                ID_IES = matrixValorHoja[i, j++],
-                                NOMBRE_IES = matrixValorHoja[i, j++],
-                                ANO = matrixValorHoja[i, j++],
-                                SEMESTRE = matrixValorHoja[i, j++],
-                                COD_UNIDAD = matrixValorHoja[i, j++],
-                                UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
-                                COD_ACTIVIDAD = matrixValorHoja[i, j++],
-                                ACTIVIDAD = matrixValorHoja[i, j++],
-                                COD_TIPO_ACTIVIDAD = matrixValorHoja[i, j++],
-                                TIPO_ACTIVIDAD = matrixValorHoja[i, j++],
-                                FECHA_INICIO = matrixValorHoja[i, j++],
-                                FECHA_FINAL = matrixValorHoja[i, j++],
                                 FECHA_PERIODO = _FECHA_PERIODO
                             }
                             );
@@ -263,64 +249,43 @@ namespace SNIESWebApplication.Controllers
                             db.SaveChanges();
                         }
                         break;
-
-                    case 2:
-                        listaActividadBeneficiar.Add(
-                            new ActividadBeneficiar()
-                            {
-                                ID_IES = matrixValorHoja[i, j++],
-                                NOMBRE_IES = matrixValorHoja[i, j++],
-                                ANO = matrixValorHoja[i, j++],
-                                SEMESTRE = matrixValorHoja[i, j++],
-                                COD_UNIDAD = matrixValorHoja[i, j++],
-                                UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
-                                COD_ACTIVIDAD = matrixValorHoja[i, j++],
-                                ACTIVIDAD = matrixValorHoja[i, j++],
-                                COD_TIPO_BENEFICIARIO = matrixValorHoja[i, j++],
-                                TIPO_BENEFICIARIO = matrixValorHoja[i, j++],
-                                CANTIDAD_BENEFICIARIO = matrixValorHoja[i, j++],
-                                FECHA_PERIODO = _FECHA_PERIODO
-                            }
-                            );
-
-                        if (i + 1 == nroFila)
-                        {
-                            db.ActividadBeneficiar.AddRange(listaActividadBeneficiar);
-                            db.SaveChanges();
-                        }
-                        break;
-
-                    case 3:
-                        listaActividadRecHumano.Add(
-                            new ActividadRecHumano()
-                            {
-                                ID_IES = matrixValorHoja[i, j++],
-                                NOMBRE_IES = matrixValorHoja[i, j++],
-                                ANO = matrixValorHoja[i, j++],
-                                SEMESTRE = matrixValorHoja[i, j++],
-                                COD_UNIDAD = matrixValorHoja[i, j++],
-                                UNIDAD_ORGANIZACIONAL = matrixValorHoja[i, j++],
-                                COD_ACTIVIDAD = matrixValorHoja[i, j++],
-                                ACTIVIDAD = matrixValorHoja[i, j++],
-                                TIPO_DOCUMENTO = matrixValorHoja[i, j++],
-                                NUMERO_DOCUMENTO = matrixValorHoja[i, j++],
-                                PRIMER_NOMBRE = matrixValorHoja[i, j++],
-                                SEGUNDO_NOMBRE = matrixValorHoja[i, j++],
-                                PRIMER_APELLIDO = matrixValorHoja[i, j++],
-                                SEGUNDO_APELLIDO = matrixValorHoja[i, j++],
-                                FECHA_PERIODO = _FECHA_PERIODO
-                            }
-                            );
-
-                        if (i + 1 == nroFila)
-                        {
-                            db.ActividadRecHumano.AddRange(listaActividadRecHumano);
-                            db.SaveChanges();
-                        }
-                        break;
+                   
 
                     default:
                         break;
+                }
+            }
+        }
+
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.MovilidadAdministrativoExteriorInternacionalizacion.ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+            string nombre = "MovilidadAdminExtInter";
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, nombre);
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + nombre + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
                 }
             }
         }

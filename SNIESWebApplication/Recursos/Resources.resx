@@ -132,11 +132,17 @@
   <data name="AreaTrabajoProyectoExtencion" xml:space="preserve">
     <value>Area Trabajo Proyecto Extencion</value>
   </data>
+  <data name="AreaTrabajoServicioExtension" xml:space="preserve">
+    <value>Area Trabajo Servicio Extension</value>
+  </data>
   <data name="AvtividadBienEstar" xml:space="preserve">
     <value>Avtividad de Bienestar</value>
   </data>
   <data name="BienEstar" xml:space="preserve">
     <value>Bienestar</value>
+  </data>
+  <data name="CapacitacionDocente" xml:space="preserve">
+    <value>Capacitacion de Docente</value>
   </data>
   <data name="CargarPlantilla" xml:space="preserve">
     <value>Carga plantilla</value>
@@ -147,8 +153,20 @@
   <data name="CicloVitalProyectoExtencion" xml:space="preserve">
     <value>Ciclo Vital Proyecto Extencion</value>
   </data>
+  <data name="CicloVitalServicioExtension" xml:space="preserve">
+    <value>Ciclo Vital Servicio Extension</value>
+  </data>
   <data name="Consultaria" xml:space="preserve">
     <value>Consultaria</value>
+  </data>
+  <data name="ContratoDocente" xml:space="preserve">
+    <value>Contrato de Docente</value>
+  </data>
+  <data name="ConvenioInternacional" xml:space="preserve">
+    <value>Convenio Internacional</value>
+  </data>
+  <data name="ConvenioInternacionalInstitucion" xml:space="preserve">
+    <value>Convenio Internacional Institucion</value>
   </data>
   <data name="Crear" xml:space="preserve">
     <value>Crear</value>
@@ -165,6 +183,9 @@
   <data name="Detalles" xml:space="preserve">
     <value>Detalles</value>
   </data>
+  <data name="Docente" xml:space="preserve">
+    <value>Docente</value>
+  </data>
   <data name="DocenteEducacionContinua" xml:space="preserve">
     <value>Docente Educacion Continua</value>
   </data>
@@ -180,8 +201,23 @@
   <data name="EliminarConfirmar" xml:space="preserve">
     <value>Esta seguro que desea eliminar este registro?</value>
   </data>
+  <data name="EntidadNacionalProyectoExtencion" xml:space="preserve">
+    <value>Entidad Nacional Proyecto Extencion</value>
+  </data>
+  <data name="EntidadNacionalServicioExtension" xml:space="preserve">
+    <value>Entidad Nacional Servicio Extension</value>
+  </data>
   <data name="EstudianteArticulacion" xml:space="preserve">
     <value>Estudiante de articulacion</value>
+  </data>
+  <data name="FuenteInternacionalProyectoExtencion" xml:space="preserve">
+    <value>Fuente Internacional Proyecto Extencion</value>
+  </data>
+  <data name="FuenteInternacionalServicioExtension" xml:space="preserve">
+    <value>Fuente Internacional Servicio Extension</value>
+  </data>
+  <data name="FuenteNacionalServicioExtension" xml:space="preserve">
+    <value>Fuente Nacional Servicio Extension</value>
   </data>
   <data name="Guardar" xml:space="preserve">
     <value>Guardar</value>
@@ -192,17 +228,41 @@
   <data name="InscritoPrograma" xml:space="preserve">
     <value>Inscrito por programa</value>
   </data>
+  <data name="MovilidadAdministrativoColombiaInternacionalizacion" xml:space="preserve">
+    <value>Movilidad Administrativo Colombia Internacionalizacion</value>
+  </data>
+  <data name="MovilidadAdministrativoExteriorInternacionalizacion" xml:space="preserve">
+    <value>Movilidad Administrativo Exterior Internacionalizacion</value>
+  </data>
+  <data name="MovilidadDocenteExteriorColombiaInternacionalizacion" xml:space="preserve">
+    <value>Movilidad Docente Exterior Colombia Internacionalizacion</value>
+  </data>
+  <data name="MovilidadDocenteExteriorInternacionalizacion" xml:space="preserve">
+    <value>Movilidad Docente Exterior Internacionalizacion</value>
+  </data>
   <data name="Nombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="OtraEntidadProyectoExtencion" xml:space="preserve">
+    <value>Otra Entidad Proyecto Extencion</value>
+  </data>
+  <data name="OtraEntidadServicioExtension" xml:space="preserve">
+    <value>Otra Entidad Servicio Extension</value>
+  </data>
   <data name="Participante" xml:space="preserve">
     <value>Participante</value>
+  </data>
+  <data name="PoblacionCondicionalServicioExtension" xml:space="preserve">
+    <value>Poblacion Condicional Servicio Extension</value>
   </data>
   <data name="RecHumanoConsultoria" xml:space="preserve">
     <value>Rec. Humano Consultoria</value>
   </data>
   <data name="RecHumanoCultural" xml:space="preserve">
     <value>Rec. Humano Cultural</value>
+  </data>
+  <data name="ServicioExtension" xml:space="preserve">
+    <value>Servicio de Extension</value>
   </data>
   <data name="VolverLista" xml:space="preserve">
     <value>Volver a la lista</value>

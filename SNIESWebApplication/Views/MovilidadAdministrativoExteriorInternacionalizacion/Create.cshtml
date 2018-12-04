@@ -1,11 +1,14 @@
 ﻿@model SNIESWebApplication.Models.MovilidadAdministrativoExteriorInternacionalizacion
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Recursos.Resources.Crear;
 }
 
-<h2>Create</h2>
-<div>
+<h2>@Recursos.Resources.Crear</h2>
+<h4>@Recursos.Resources.MovilidadAdministrativoExteriorInternacionalizacion</h4>
+<hr />
+
+<div class="form-horizontal">
     @using (Ajax.BeginForm("CargaPlantillaExcel", "MovilidadAdministrativoExteriorInternacionalizacion", new AjaxOptions
     {
         HttpMethod = "POST",
@@ -23,13 +26,11 @@
     }
 </div>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>MovilidadAdministrativoExteriorInternacionalizacion</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.CODIGO_IES, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -137,14 +138,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="@Recursos.Resources.Crear" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(@Recursos.Resources.VolverLista, "Index")
 </div>
 
 @section Scripts {

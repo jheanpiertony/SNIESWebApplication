@@ -127,7 +127,7 @@
                 if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm") || plantillaCargaExcel.FileName.EndsWith("csv"))
                 {
 
-                    List<ActividadBienestar> listaActividadBienestar = new List<ActividadBienestar>();
+                    List<ServicioExtension> listaServicioExtension = new List<ServicioExtension>();
                     string fileName = plantillaCargaExcel.FileName;
                     string filePath = string.Empty;
                     string path = Server.MapPath("~/PlantillaExcelSnies/");
@@ -169,7 +169,7 @@
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.ActividadBienestar.ToList());
+                        return View("Index", db.ServicioExtension.ToList());
                     }
                     else
                     {
@@ -188,9 +188,9 @@
                                 i++;
                             }
                         }
-                        db.ActividadBienestar.AddRange(listaActividadBienestar);
+                        db.ServicioExtension.AddRange(listaServicioExtension);
                         db.SaveChanges();
-                        return View("Index", db.ActividadBienestar.ToList());
+                        return View("Index", db.ServicioExtension.ToList());
                     }
                 }
                 else

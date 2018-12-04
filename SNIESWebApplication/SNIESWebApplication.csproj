@@ -611,17 +611,24 @@
     <Content Include="Views\BeneficiarEventoCultural\Details.cshtml" />
     <Content Include="Views\BeneficiarEventoCultural\Edit.cshtml" />
     <Content Include="Views\BeneficiarEventoCultural\Index.cshtml" />
+    <Content Include="Views\AreaTrabajoServicioExtension\Index.cshtml" />
+    <Content Include="Views\AreaTrabajoServicioExtension\Create.cshtml" />
+    <Content Include="Views\CicloVitalServicioExtension\Index.cshtml" />
+    <Content Include="Views\CicloVitalServicioExtension\Create.cshtml" />
+    <Content Include="Views\EntidadNacionalServicioExtension\Index.cshtml" />
+    <Content Include="Views\EntidadNacionalServicioExtension\Create.cshtml" />
+    <Content Include="Views\FuenteInternacionalServicioExtension\Index.cshtml" />
+    <Content Include="Views\FuenteInternacionalServicioExtension\Create.cshtml" />
+    <Content Include="Views\FuenteNacionalServicioExtension\Index.cshtml" />
+    <Content Include="Views\FuenteNacionalServicioExtension\Create.cshtml" />
+    <Content Include="Views\OtraEntidadServicioExtension\Index.cshtml" />
+    <Content Include="Views\OtraEntidadServicioExtension\Create.cshtml" />
+    <Content Include="Views\PoblacionCondicionalServicioExtension\Index.cshtml" />
+    <Content Include="Views\PoblacionCondicionalServicioExtension\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="PlantillaExcelSnies\" />
-    <Folder Include="Views\AreaTrabajoServicioExtension\" />
-    <Folder Include="Views\CicloVitalServicioExtension\" />
-    <Folder Include="Views\EntidadNacionalServicioExtension\" />
-    <Folder Include="Views\FuenteInternacionalServicioExtension\" />
-    <Folder Include="Views\FuenteNacionalServicioExtension\" />
-    <Folder Include="Views\OtraEntidadServicioExtension\" />
-    <Folder Include="Views\PoblacionCondicionalServicioExtension\" />
     <Folder Include="Views\PoblacionGrupoServicioExtension\" />
   </ItemGroup>
   <ItemGroup>
