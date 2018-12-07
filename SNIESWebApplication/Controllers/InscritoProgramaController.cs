@@ -21,6 +21,16 @@
         // GET: InscritoPrograma
         public async Task<ActionResult> Index()
         {
+            ViewBag.Contolador = "InscritoPrograma";
+            var PeriodoIdActual = db.InscritoPrograma.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+
+                listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
             return View(await db.InscritoPrograma.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
@@ -119,27 +129,28 @@
             return RedirectToAction("Index");
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.InscritoPrograma.ToList();
+            var lista = db.InscritoPrograma.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 
         public void CrearExcelT<T>(List<T> lista)
         {
+           
             CrearExcel excel = new CrearExcel();
             DataTable dt = excel.ToDataTable<T>(lista);
+            string name = dt.ToString();
 
             using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
             {
-                wb.Worksheets.Add(dt, dt.TableName.ToString());
+                wb.Worksheets.Add(dt, name);
                 Response.Clear();
                 Response.Buffer = true;
                 Response.Charset = "";
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                Response.AddHeader("content-disposition", "attachment;filename=" + dt.TableName.ToString() + ".xlsx");
+                Response.AddHeader("content-disposition", "attachment;filename=" + name + ".xlsx");
                 using (MemoryStream MyMemoryStream = new MemoryStream())
                 {
                     wb.SaveAs(MyMemoryStream);

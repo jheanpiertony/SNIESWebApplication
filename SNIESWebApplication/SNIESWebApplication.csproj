@@ -690,6 +690,7 @@
     <Content Include="Views\OtraEntidadServicioExtension\Create.cshtml" />
     <Content Include="Views\PoblacionCondicionalServicioExtension\Index.cshtml" />
     <Content Include="Views\PoblacionCondicionalServicioExtension\Create.cshtml" />
+    <Content Include="Views\Shared\_DescargarReporteExcel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

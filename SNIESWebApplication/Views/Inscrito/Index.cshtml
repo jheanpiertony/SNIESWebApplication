@@ -8,20 +8,10 @@
 <p>
     @Html.ActionLink(Recursos.Resources.CrearNuevo, "Create")
 </p>
-
-<div class="form-inline">
-    <div class="form-group">
-        <div class="col-md-6">
-            @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-success", id = "CrearPlantillaExcel" })
-        </div>
-    </div>
-    <div class="form-group">
-        @*@Html.Label("Periodo", htmlAttributes: new { @class = "control-label col-md-2" })*@
-        <div class="col-md-4">
-            @Html.DropDownList("PeriodoIdActual", (IEnumerable<SelectListItem>)ViewBag.PeriodoIdActual, htmlAttributes: new { @class = "form-control", @id = "PeriodoIdActual" })
-        </div>
-    </div>
+<div class="form-horizontal">
+    @Html.Partial("_DescargarReporteExcel")
 </div>
+
 <table class="table">
     <tr>
         <th>
@@ -123,3 +113,19 @@
     }
 
 </table>
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function(){
+
+            $(document).on("click","#CrearPlantillaExcel",function(e){
+             e.preventDefault();
+
+                var newUrl = "@Url.Action("CrearPlantillaExcel", ViewBag.Contolador)?PeriodoIdActual=" + $("#PeriodoIdActual :selected").text();
+                window.location.href = newUrl;
+          });
+
+        });
+    </script>
+}

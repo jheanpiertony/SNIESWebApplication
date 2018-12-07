@@ -9,13 +9,7 @@
 <p>
     @Html.ActionLink(Recursos.Resources.CrearNuevo, "Create")
 </p>
-<div class="form-horizontal">
-    <div class="form-group">
-        <div class="col-md-10">
-            @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-success", id = "CrearPlantillaExcel" })
-        </div>
-    </div>
-</div>
+@Html.Partial("_DescargarReporteExcel")
 
 <table class="table">
     <tr>

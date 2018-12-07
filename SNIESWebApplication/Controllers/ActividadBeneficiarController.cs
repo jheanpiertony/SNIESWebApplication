@@ -21,6 +21,15 @@
         // GET: ActividadBeneficiar
         public async Task<ActionResult> Index()
         {
+            var PeriodoIdActual = db.Inscritos.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+
+                listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
             return View(await db.ActividadBeneficiar.ToListAsync());
         }
 
@@ -119,11 +128,10 @@
             return RedirectToAction("Index");
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.ActividadBeneficiar.ToList();
+            var lista = db.Inscritos.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 
