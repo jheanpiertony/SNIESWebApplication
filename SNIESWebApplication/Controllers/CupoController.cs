@@ -22,6 +22,15 @@
         // GET: Cupo
         public async Task<ActionResult> Index()
         {
+            ViewBag.Contolador = "Cupo";
+            var PeriodoIdActual = db.Cupos.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
             return View(await db.Cupos.OrderBy(x => new { x.FECHA_PERIODO, x.PROGRAM_NOMBRE }).ToListAsync());
         }
 
@@ -252,12 +261,12 @@
                 }
             }
         }
-        
-        public void CrearPlantillaExcel()
+
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
 
-            var lista = db.Cupos.
+            var lista = db.Cupos.Where(x => x.FECHA_PERIODO == PeriodoIdActual).
                 Select(x => new
                 {
                     x.CODIGO_IES,

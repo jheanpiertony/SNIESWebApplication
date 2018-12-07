@@ -21,6 +21,15 @@ namespace SNIESWebApplication.Controllers
         // GET: ApoyoEstudiante
         public async Task<ActionResult> Index()
         {
+            ViewBag.Contolador = "ApoyoEstudiante";
+            var PeriodoIdActual = db.ApoyoEstudiantes.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
             return View(await db.ApoyoEstudiantes.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
@@ -203,10 +212,10 @@ namespace SNIESWebApplication.Controllers
             }
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-            var lista = db.ApoyoEstudiantes.ToList();
+            var lista = db.ApoyoEstudiantes.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 

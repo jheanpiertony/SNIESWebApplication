@@ -10,11 +10,7 @@
 </p>
 
 <div class="form-horizontal">
-    <div class="form-group">
-        <div class="col-md-10">
-            @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-success", id = "CrearPlantillaExcel" })
-        </div>
-    </div>
+    @Html.Partial("_DescargarReporteExcel")
 </div>
 
 <table class="table">
@@ -78,67 +74,80 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CODIGO_IES)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMBRE_IES)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AÑO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SEMESTRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_TIPO_DOCUMENTO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TIPO_DOCUMENTO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NUMERO_DOCUMENTO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PRIMER_NOMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SEGUNDO_NOMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SEGUNDO_APELLIDO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PROGRAMA_CONSECUTIVO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMBRE_PROGRAMA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_MUNICIPIO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DEPARTAMENTO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MUNICIPIO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GRADO_CURSA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
-        </td>
-        <td>
-            @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = item.Id }) |
-            @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id = item.Id }) |
-            @Html.ActionLink(Recursos.Resources.Eliminar, "Delete", new { id = item.Id })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODIGO_IES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE_IES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AÑO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEMESTRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_TIPO_DOCUMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIPO_DOCUMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NUMERO_DOCUMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRIMER_NOMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEGUNDO_NOMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEGUNDO_APELLIDO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PROGRAMA_CONSECUTIVO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE_PROGRAMA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_MUNICIPIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTAMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MUNICIPIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GRADO_CURSA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
+            </td>
+            <td>
+                @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Eliminar, "Delete", new { id = item.Id })
+            </td>
+        </tr>
     }
 
 </table>
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function(){
+            $(document).on("click","#CrearPlantillaExcel",function(e){
+             e.preventDefault();
+                var newUrl = "@Url.Action("CrearPlantillaExcel", ViewBag.Contolador)?PeriodoIdActual=" + $("#PeriodoIdActual :selected").text();
+                window.location.href = newUrl;
+          });
+        });
+    </script>
+}
