@@ -21,6 +21,16 @@
         // GET: Matriculado
         public async Task<ActionResult> Index()
         {
+            ViewBag.Contolador = "Matriculado";
+            var PeriodoIdActual = db.Matriculados.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+
+                listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
             return View(await db.Matriculados.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
@@ -216,11 +226,11 @@
             }
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
 
-            var lista = db.Matriculados.Select(x => 
+            var lista = db.Matriculados.Where(x => x.FECHA_PERIODO == PeriodoIdActual).Select(x => 
                 new {
                     x.CODIGO_IES,
                     x.NOMBRE_IES,
