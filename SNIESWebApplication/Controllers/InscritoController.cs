@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using SNIESWebApplication.Models;
-using System.IO;
-using OfficeOpenXml;
-using SNIESWebApplication.Helpers;
-using ClosedXML.Excel;
-
-namespace SNIESWebApplication.Controllers
+﻿namespace SNIESWebApplication.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Web;
+    using System.Web.Mvc;
+    using SNIESWebApplication.Models;
+    using System.IO;
+    using OfficeOpenXml;
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
+
     public class InscritoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -22,7 +22,16 @@ namespace SNIESWebApplication.Controllers
         // GET: Inscrito
         public async Task<ActionResult> Index()
         {
-            return View(await db.Inscritos.ToListAsync());
+            var PeriodoIdActual = db.Inscritos.Select(x => new {x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                
+                listaPeriodo.Add(new Periodo() {Id= i++, FechaPeriodo= item.Key.ToString() });
+            }
+            ViewBag.PeriodoIdActual = new SelectList(PeriodoIdActual, "Id", "FechaPeriodo");
+            return View(await db.Inscritos.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO}).ToListAsync());
         }
 
         // GET: Inscrito/Details/5

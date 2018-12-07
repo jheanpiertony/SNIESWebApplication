@@ -22,7 +22,7 @@
         // GET: Cupo
         public async Task<ActionResult> Index()
         {
-            return View(await db.Cupos.ToListAsync());
+            return View(await db.Cupos.OrderBy(x => new { x.FECHA_PERIODO, x.PROGRAM_NOMBRE }).ToListAsync());
         }
 
         // GET: Cupo/Details/5

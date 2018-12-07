@@ -126,6 +126,9 @@
   <data name="ActividadRecHumano" xml:space="preserve">
     <value>Actividad de Rec. Humano</value>
   </data>
+  <data name="Admitido" xml:space="preserve">
+    <value>Admitido</value>
+  </data>
   <data name="ApoyoEstudiante" xml:space="preserve">
     <value>Apoyo a estudiante</value>
   </data>
@@ -210,6 +213,12 @@
   <data name="EstudianteArticulacion" xml:space="preserve">
     <value>Estudiante de articulacion</value>
   </data>
+  <data name="EstudiantePrimerCurso" xml:space="preserve">
+    <value>Estudiante Primer Curso</value>
+  </data>
+  <data name="EventoCultural" xml:space="preserve">
+    <value>Evento Cultural</value>
+  </data>
   <data name="FuenteInternacionalProyectoExtencion" xml:space="preserve">
     <value>Fuente Internacional Proyecto Extencion</value>
   </data>
@@ -219,6 +228,9 @@
   <data name="FuenteNacionalServicioExtension" xml:space="preserve">
     <value>Fuente Nacional Servicio Extension</value>
   </data>
+  <data name="Graduado" xml:space="preserve">
+    <value>Graduado</value>
+  </data>
   <data name="Guardar" xml:space="preserve">
     <value>Guardar</value>
   </data>
@@ -227,6 +239,9 @@
   </data>
   <data name="InscritoPrograma" xml:space="preserve">
     <value>Inscrito por programa</value>
+  </data>
+  <data name="Matriculado" xml:space="preserve">
+    <value>Matriculado</value>
   </data>
   <data name="MovilidadAdministrativoColombiaInternacionalizacion" xml:space="preserve">
     <value>Movilidad Administrativo Colombia Internacionalizacion</value>
@@ -239,6 +254,12 @@
   </data>
   <data name="MovilidadDocenteExteriorInternacionalizacion" xml:space="preserve">
     <value>Movilidad Docente Exterior Internacionalizacion</value>
+  </data>
+  <data name="MovilidadEstudianteExteriorColombiaInternacionalizacion" xml:space="preserve">
+    <value>Movilidad Estudiante Exterior Colombia Internacionalizacion</value>
+  </data>
+  <data name="MovilidadEstudianteExteriorInternacionalizacion" xml:space="preserve">
+    <value>Movilidad Estudiante Exterior Internacionalizacion</value>
   </data>
   <data name="Nombre" xml:space="preserve">
     <value>Nombre</value>
@@ -255,11 +276,20 @@
   <data name="PoblacionCondicionalServicioExtension" xml:space="preserve">
     <value>Poblacion Condicional Servicio Extension</value>
   </data>
+  <data name="ProgramaPresencialeExterior" xml:space="preserve">
+    <value>Programa Presenciale Exterior</value>
+  </data>
+  <data name="ProyectoExtencion" xml:space="preserve">
+    <value>Proyecto Extencion</value>
+  </data>
   <data name="RecHumanoConsultoria" xml:space="preserve">
     <value>Rec. Humano Consultoria</value>
   </data>
   <data name="RecHumanoCultural" xml:space="preserve">
     <value>Rec. Humano Cultural</value>
+  </data>
+  <data name="RetiroDisciplinario" xml:space="preserve">
+    <value>Retiro Disciplinario</value>
   </data>
   <data name="ServicioExtension" xml:space="preserve">
     <value>Servicio de Extension</value>

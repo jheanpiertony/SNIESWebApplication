@@ -231,7 +231,7 @@ namespace SNIESWebApplication.Controllers
 
             for (int i = 0; i < nroFila; i++)
             {
-                var j = 0;
+                //var j = 0;
                 switch (index)
                 {
                     case 1:

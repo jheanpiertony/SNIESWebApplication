@@ -67,9 +67,9 @@
         <th>
             @Html.DisplayNameFor(model => model.MUNICIPIO)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.FUENTE)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.FECHA_PERIODO)
         </th>
@@ -127,16 +127,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.MUNICIPIO)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.FUENTE)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Eliminar, "Delete", new { id = item.Id })
             </td>
         </tr>
     }

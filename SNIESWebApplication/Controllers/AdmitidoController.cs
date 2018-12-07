@@ -21,7 +21,7 @@
         // GET: Admitido
         public async Task<ActionResult> Index()
         {
-            return View(await db.Admitidos.ToListAsync());
+            return View(await db.Admitidos.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
         // GET: Admitido/Details/5

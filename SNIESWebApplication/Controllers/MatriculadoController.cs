@@ -21,7 +21,7 @@
         // GET: Matriculado
         public async Task<ActionResult> Index()
         {
-            return View(await db.Matriculados.ToListAsync());
+            return View(await db.Matriculados.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
         // GET: Matriculado/Details/5
@@ -263,15 +263,16 @@
         {
             CrearExcel excel = new CrearExcel();
             DataTable dt = excel.ToDataTable<T>(lista);
+            string nombre = "Matriculados";
 
             using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
             {
-                wb.Worksheets.Add(dt, "Matriculados");
+                wb.Worksheets.Add(dt, nombre);
                 Response.Clear();
                 Response.Buffer = true;
                 Response.Charset = "";
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                Response.AddHeader("content-disposition", "attachment;filename=" + dt.TableName.ToString() + ".xlsx");
+                Response.AddHeader("content-disposition", "attachment;filename=" + nombre + ".xlsx");
                 using (MemoryStream MyMemoryStream = new MemoryStream())
                 {
                     wb.SaveAs(MyMemoryStream);

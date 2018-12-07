@@ -60,49 +60,50 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_IES)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOMBRE_IES)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ANO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SEMESTRE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.COD_DANE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DEPARTAMENTO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MUNICIPIO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PRO_CONSECUTIVO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PROGRAMA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TIPO_DOCUMENTO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NUMERO_DOCUMENTO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE_IES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEMESTRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COD_DANE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPARTAMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MUNICIPIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRO_CONSECUTIVO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROGRAMA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_DOCUMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUMERO_DOCUMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
+        </td>
+        <td>
+            @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = item.Id }) |
+            @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id = item.Id }) |
+            @Html.ActionLink(Recursos.Resources.Eliminar, "Delete", new { id = item.Id })
+        </td>
+
+    </tr>
     }
 
 </table>

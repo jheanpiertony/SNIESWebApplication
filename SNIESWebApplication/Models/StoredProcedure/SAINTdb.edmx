@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SQL2012_951057_unicocdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SNIES_Admitidos_Posg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Admitidos_Preg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Inscritos_Posg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Inscritos_Posg_ConPrograma" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Inscritos_Preg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Inscritos_Preg_ConPrograma" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Matriculados_Posg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Matriculados_Preg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Participantes_Posg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SNIES_Participantes_Preg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="SQL2012_951057_unicocdbModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SQL2012_951057_unicocdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SAINTdbSp" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SNIES_Admitidos_Posg" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Admitidos_Posg_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Admitidos_Preg" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Admitidos_Preg_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Inscritos_Posg" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Inscritos_Posg_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Inscritos_Posg_ConPrograma" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Inscritos_Posg_ConPrograma_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Inscritos_Preg" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Inscritos_Preg_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Inscritos_Preg_ConPrograma" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Inscritos_Preg_ConPrograma_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Matriculados_Posg" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Matriculados_Posg_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Matriculados_Preg" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Matriculados_Preg_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Participantes_Posg" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Participantes_Posg_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SNIES_Participantes_Preg" ReturnType="Collection(SQL2012_951057_unicocdbModel.SNIES_Participantes_Preg_Result)">
+            <Parameter Name="periodo" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SNIES_Admitidos_Posg_Result">
+          <Property Type="String" Name="AÑO" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SEMESTRE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="PRO_CONSECUTIVO" Nullable="true" />
+          <Property Type="String" Name="ID_MUNICIPIO" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Admitidos_Preg_Result">
+          <Property Type="String" Name="AÑO" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SEMESTRE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="PRO_CONSECUTIVO" Nullable="true" />
+          <Property Type="String" Name="ID_MUNICIPIO" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Inscritos_Posg_Result">
+          <Property Type="String" Name="AÑO" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SEMESTRE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="PRIMER_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="PRIMER_APELLIDO" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_APELLIDO" Nullable="true" />
+          <Property Type="Int32" Name="ID_SEXO_BIOLOGICO" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Inscritos_Posg_ConPrograma_Result">
+          <Property Type="String" Name="AÑO" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SEMESTRE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="PRIMER_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="PRIMER_APELLIDO" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_APELLIDO" Nullable="true" />
+          <Property Type="Int32" Name="ID_SEXO_BIOLOGICO" Nullable="true" />
+          <Property Type="Int32" Name="SNIES" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Inscritos_Preg_Result">
+          <Property Type="String" Name="AÑO" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SEMESTRE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="PRIMER_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="PRIMER_APELLIDO" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_APELLIDO" Nullable="true" />
+          <Property Type="Int32" Name="ID_SEXO_BIOLOGICO" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Inscritos_Preg_ConPrograma_Result">
+          <Property Type="String" Name="AÑO" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SEMESTRE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="PRIMER_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="PRIMER_APELLIDO" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_APELLIDO" Nullable="true" />
+          <Property Type="Int32" Name="ID_SEXO_BIOLOGICO" Nullable="true" />
+          <Property Type="Int32" Name="SNIES" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Matriculados_Posg_Result">
+          <Property Type="String" Name="AÑO" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SEMESTRE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="CODIGO_ESTUDIANTE" Nullable="true" />
+          <Property Type="String" Name="PRO_CONSECUTIVO" Nullable="true" />
+          <Property Type="String" Name="ID_MUNICIPIO" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="FECHA_NACIMIENTO" Nullable="true" MaxLength="17" />
+          <Property Type="Int32" Name="ID_PAIS_NACIMIENTO" Nullable="true" />
+          <Property Type="Int32" Name="ID_MUNICIPIO_NACIMIENTO" Nullable="true" />
+          <Property Type="String" Name="ID_ZONA_RESIDENCIA" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="ES_REINTEGRO_ESTD_ANTES_DE2007" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Matriculados_Preg_Result">
+          <Property Type="String" Name="AÑO" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SEMESTRE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="CODIGO_ESTUDIANTE" Nullable="true" />
+          <Property Type="String" Name="PRO_CONSECUTIVO" Nullable="true" />
+          <Property Type="String" Name="ID_MUNICIPIO" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="FECHA_NACIMIENTO" Nullable="true" MaxLength="17" />
+          <Property Type="Int32" Name="ID_PAIS_NACIMIENTO" Nullable="true" />
+          <Property Type="Int32" Name="ID_MUNICIPIO_NACIMIENTO" Nullable="true" />
+          <Property Type="String" Name="ID_ZONA_RESIDENCIA" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="ES_REINTEGRO_ESTD_ANTES_DE2007" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Participantes_Posg_Result">
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="FECHA_EXPEDICION" Nullable="true" MaxLength="22" />
+          <Property Type="String" Name="PRIMER_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="PRIMER_APELLIDO" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_APELLIDO" Nullable="true" />
+          <Property Type="Int32" Name="ID_SEXO_BIOLOGICO" Nullable="true" />
+          <Property Type="String" Name="ID_ESTADO_CIVIL" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="FECHA_NACIMIENTO" Nullable="true" MaxLength="22" />
+          <Property Type="Int32" Name="ID_PAIS" Nullable="true" />
+          <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="true" />
+          <Property Type="String" Name="TELEFONO_CONTACTO" Nullable="true" />
+          <Property Type="String" Name="EMAIL_PERSONAL" Nullable="true" />
+          <Property Type="String" Name="EMAIL_INSTITUCIONAL" Nullable="false" MaxLength="21" />
+          <Property Type="String" Name="DIRECCION_INSTITUCIONAL" Nullable="false" MaxLength="61" />
+        </ComplexType>
+        <ComplexType Name="SNIES_Participantes_Preg_Result">
+          <Property Type="String" Name="ID_TIPO_DOCUMENTO" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="NUM_DOCUMENTO" Nullable="true" />
+          <Property Type="String" Name="FECHA_EXPEDICION" Nullable="true" MaxLength="22" />
+          <Property Type="String" Name="PRIMER_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_NOMBRE" Nullable="true" />
+          <Property Type="String" Name="PRIMER_APELLIDO" Nullable="true" />
+          <Property Type="String" Name="SEGUNDO_APELLIDO" Nullable="true" />
+          <Property Type="Int32" Name="ID_SEXO_BIOLOGICO" Nullable="true" />
+          <Property Type="String" Name="ID_ESTADO_CIVIL" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="FECHA_NACIMIENTO" Nullable="true" MaxLength="22" />
+          <Property Type="Int32" Name="ID_PAIS" Nullable="true" />
+          <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="true" />
+          <Property Type="String" Name="TELEFONO_CONTACTO" Nullable="true" />
+          <Property Type="String" Name="EMAIL_PERSONAL" Nullable="true" />
+          <Property Type="String" Name="EMAIL_INSTITUCIONAL" Nullable="false" MaxLength="21" />
+          <Property Type="String" Name="DIRECCION_INSTITUCIONAL" Nullable="false" MaxLength="61" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SQL2012_951057_unicocdbModelStoreContainer" CdmEntityContainer="SAINTdbSp" >
+          <FunctionImportMapping FunctionImportName="SNIES_Admitidos_Posg" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Admitidos_Posg">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Admitidos_Posg_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="PRO_CONSECUTIVO" ColumnName="PRO_CONSECUTIVO" />
+                <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Admitidos_Preg" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Admitidos_Preg">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Admitidos_Preg_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="PRO_CONSECUTIVO" ColumnName="PRO_CONSECUTIVO" />
+                <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Inscritos_Posg" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Inscritos_Posg">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Inscritos_Posg_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="PRIMER_NOMBRE" ColumnName="PRIMER_NOMBRE" />
+                <ScalarProperty Name="SEGUNDO_NOMBRE" ColumnName="SEGUNDO_NOMBRE" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="ID_SEXO_BIOLOGICO" ColumnName="ID_SEXO_BIOLOGICO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Inscritos_Posg_ConPrograma" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Inscritos_Posg_ConPrograma">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Inscritos_Posg_ConPrograma_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="PRIMER_NOMBRE" ColumnName="PRIMER_NOMBRE" />
+                <ScalarProperty Name="SEGUNDO_NOMBRE" ColumnName="SEGUNDO_NOMBRE" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="ID_SEXO_BIOLOGICO" ColumnName="ID_SEXO_BIOLOGICO" />
+                <ScalarProperty Name="SNIES" ColumnName="SNIES" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Inscritos_Preg" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Inscritos_Preg">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Inscritos_Preg_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="PRIMER_NOMBRE" ColumnName="PRIMER_NOMBRE" />
+                <ScalarProperty Name="SEGUNDO_NOMBRE" ColumnName="SEGUNDO_NOMBRE" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="ID_SEXO_BIOLOGICO" ColumnName="ID_SEXO_BIOLOGICO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Inscritos_Preg_ConPrograma" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Inscritos_Preg_ConPrograma">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Inscritos_Preg_ConPrograma_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="PRIMER_NOMBRE" ColumnName="PRIMER_NOMBRE" />
+                <ScalarProperty Name="SEGUNDO_NOMBRE" ColumnName="SEGUNDO_NOMBRE" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="ID_SEXO_BIOLOGICO" ColumnName="ID_SEXO_BIOLOGICO" />
+                <ScalarProperty Name="SNIES" ColumnName="SNIES" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Matriculados_Posg" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Matriculados_Posg">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Matriculados_Posg_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="CODIGO_ESTUDIANTE" ColumnName="CODIGO_ESTUDIANTE" />
+                <ScalarProperty Name="PRO_CONSECUTIVO" ColumnName="PRO_CONSECUTIVO" />
+                <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="ID_PAIS_NACIMIENTO" ColumnName="ID_PAIS_NACIMIENTO" />
+                <ScalarProperty Name="ID_MUNICIPIO_NACIMIENTO" ColumnName="ID_MUNICIPIO_NACIMIENTO" />
+                <ScalarProperty Name="ID_ZONA_RESIDENCIA" ColumnName="ID_ZONA_RESIDENCIA" />
+                <ScalarProperty Name="ES_REINTEGRO_ESTD_ANTES_DE2007" ColumnName="ES_REINTEGRO_ESTD_ANTES_DE2007" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Matriculados_Preg" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Matriculados_Preg">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Matriculados_Preg_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="CODIGO_ESTUDIANTE" ColumnName="CODIGO_ESTUDIANTE" />
+                <ScalarProperty Name="PRO_CONSECUTIVO" ColumnName="PRO_CONSECUTIVO" />
+                <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="ID_PAIS_NACIMIENTO" ColumnName="ID_PAIS_NACIMIENTO" />
+                <ScalarProperty Name="ID_MUNICIPIO_NACIMIENTO" ColumnName="ID_MUNICIPIO_NACIMIENTO" />
+                <ScalarProperty Name="ID_ZONA_RESIDENCIA" ColumnName="ID_ZONA_RESIDENCIA" />
+                <ScalarProperty Name="ES_REINTEGRO_ESTD_ANTES_DE2007" ColumnName="ES_REINTEGRO_ESTD_ANTES_DE2007" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Participantes_Posg" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Participantes_Posg">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Participantes_Posg_Result">
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="FECHA_EXPEDICION" ColumnName="FECHA_EXPEDICION" />
+                <ScalarProperty Name="PRIMER_NOMBRE" ColumnName="PRIMER_NOMBRE" />
+                <ScalarProperty Name="SEGUNDO_NOMBRE" ColumnName="SEGUNDO_NOMBRE" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="ID_SEXO_BIOLOGICO" ColumnName="ID_SEXO_BIOLOGICO" />
+                <ScalarProperty Name="ID_ESTADO_CIVIL" ColumnName="ID_ESTADO_CIVIL" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+                <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+                <ScalarProperty Name="TELEFONO_CONTACTO" ColumnName="TELEFONO_CONTACTO" />
+                <ScalarProperty Name="EMAIL_PERSONAL" ColumnName="EMAIL_PERSONAL" />
+                <ScalarProperty Name="EMAIL_INSTITUCIONAL" ColumnName="EMAIL_INSTITUCIONAL" />
+                <ScalarProperty Name="DIRECCION_INSTITUCIONAL" ColumnName="DIRECCION_INSTITUCIONAL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SNIES_Participantes_Preg" FunctionName="SQL2012_951057_unicocdbModel.Store.SNIES_Participantes_Preg">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SQL2012_951057_unicocdbModel.SNIES_Participantes_Preg_Result">
+                <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+                <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+                <ScalarProperty Name="FECHA_EXPEDICION" ColumnName="FECHA_EXPEDICION" />
+                <ScalarProperty Name="PRIMER_NOMBRE" ColumnName="PRIMER_NOMBRE" />
+                <ScalarProperty Name="SEGUNDO_NOMBRE" ColumnName="SEGUNDO_NOMBRE" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="ID_SEXO_BIOLOGICO" ColumnName="ID_SEXO_BIOLOGICO" />
+                <ScalarProperty Name="ID_ESTADO_CIVIL" ColumnName="ID_ESTADO_CIVIL" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+                <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+                <ScalarProperty Name="TELEFONO_CONTACTO" ColumnName="TELEFONO_CONTACTO" />
+                <ScalarProperty Name="EMAIL_PERSONAL" ColumnName="EMAIL_PERSONAL" />
+                <ScalarProperty Name="EMAIL_INSTITUCIONAL" ColumnName="EMAIL_INSTITUCIONAL" />
+                <ScalarProperty Name="DIRECCION_INSTITUCIONAL" ColumnName="DIRECCION_INSTITUCIONAL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

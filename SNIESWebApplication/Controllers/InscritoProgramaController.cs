@@ -21,7 +21,7 @@
         // GET: InscritoPrograma
         public async Task<ActionResult> Index()
         {
-            return View(await db.InscritoPrograma.ToListAsync());
+            return View(await db.InscritoPrograma.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
         // GET: InscritoPrograma/Details/5

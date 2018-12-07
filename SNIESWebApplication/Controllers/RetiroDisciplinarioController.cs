@@ -21,7 +21,7 @@ namespace SNIESWebApplication.Controllers
         // GET: RetiroDisciplinario
         public async Task<ActionResult> Index()
         {
-            return View(await db.RetirosDisciplinarios.ToListAsync());
+            return View(await db.RetirosDisciplinarios.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
         // GET: RetiroDisciplinario/Details/5

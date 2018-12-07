@@ -68,15 +68,15 @@
         <th>
             @Html.DisplayNameFor(model => model.CELULAR_PERSONAL)
         </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL)
-            </th>*@
-        @*<th>
-                @Html.DisplayNameFor(model => model.FUENTE)
-            </th>*@
         <th>
+                @Html.DisplayNameFor(model => model.FECHA_EXPEDICION)
+            </th>
+        <th>
+                @Html.DisplayNameFor(model => model.ID_ESTADO_CIVIL)
+            </th>
+        @*<th>
             @Html.DisplayNameFor(model => model.FECHA_PERIODO)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -131,15 +131,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CELULAR_PERSONAL)
             </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.VERIFICADO_POR_FUENTE_OFICIAL)
-                </td>*@
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.FUENTE)
-                </td>*@
             <td>
+                    @Html.DisplayFor(modelItem => item.FECHA_EXPEDICION)
+                </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.ID_ESTADO_CIVIL)
+                </td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
-            </td>
+            </td>*@
             <td>
                 @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = item.Id }) |
                 @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id = item.Id }) |

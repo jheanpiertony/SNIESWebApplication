@@ -10,6 +10,8 @@ using System.Web.Mvc;
 using SNIESWebApplication.Models;
 using System.IO;
 using OfficeOpenXml;
+using SNIESWebApplication.Helpers;
+using ClosedXML.Excel;
 
 namespace SNIESWebApplication.Controllers
 {
@@ -127,7 +129,7 @@ namespace SNIESWebApplication.Controllers
                 if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm") || plantillaCargaExcel.FileName.EndsWith("csv"))
                 {
 
-                    List<ActividadBienestar> listaActividadBienestar = new List<ActividadBienestar>();
+                    List<ProgramaPresencialeExterior> listaProgramaPresencialeExterior = new List<ProgramaPresencialeExterior>();
                     string fileName = plantillaCargaExcel.FileName;
                     string filePath = string.Empty;
                     string path = Server.MapPath("~/PlantillaExcelSnies/");
@@ -169,7 +171,7 @@ namespace SNIESWebApplication.Controllers
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.ActividadBienestar.ToList());
+                        return View("Index", db.ProgramaPresencialeExterior.ToList());
                     }
                     else
                     {
@@ -188,9 +190,9 @@ namespace SNIESWebApplication.Controllers
                                 i++;
                             }
                         }
-                        db.ActividadBienestar.AddRange(listaActividadBienestar);
+                        db.ProgramaPresencialeExterior.AddRange(listaProgramaPresencialeExterior);
                         db.SaveChanges();
-                        return View("Index", db.ActividadBienestar.ToList());
+                        return View("Index", db.ProgramaPresencialeExterior.ToList());
                     }
                 }
                 else
@@ -211,9 +213,6 @@ namespace SNIESWebApplication.Controllers
             var nroFila = matrixValorHoja.GetLength(0);
 
             List<ProgramaPresencialeExterior> listaProgramaPresencialeExterior = new List<ProgramaPresencialeExterior>();
-            List<ActividadBeneficiar> listaActividadBeneficiar = new List<ActividadBeneficiar>();
-            List<ActividadRecHumano> listaActividadRecHumano = new List<ActividadRecHumano>();
-
 
             for (int i = 0; i < nroFila; i++)
             {
@@ -246,6 +245,39 @@ namespace SNIESWebApplication.Controllers
                         break;
                     default:
                         break;
+                }
+            }
+        }
+
+        public void CrearPlantillaExcel()
+        {
+            CrearExcel excel = new CrearExcel();
+
+            var lista = db.ProgramaPresencialeExterior.ToList();
+            CrearExcelT(lista);
+        }
+
+        public void CrearExcelT<T>(List<T> lista)
+        {
+
+            CrearExcel excel = new CrearExcel();
+            DataTable dt = excel.ToDataTable<T>(lista);
+            string nombre = "ProgramaPresencialeExt";
+
+            using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
+            {
+                wb.Worksheets.Add(dt, nombre);
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=" + nombre + ".xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
                 }
             }
         }

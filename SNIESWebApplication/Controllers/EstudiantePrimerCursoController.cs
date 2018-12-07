@@ -21,7 +21,7 @@ namespace SNIESWebApplication.Controllers
         // GET: EstudiantePrimerCurso
         public async Task<ActionResult> Index()
         {
-            return View(await db.EstudiantesPrimerCurso.ToListAsync());
+            return View(await db.EstudiantesPrimerCurso.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
         // GET: EstudiantePrimerCurso/Details/5

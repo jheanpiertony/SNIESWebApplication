@@ -23,16 +23,16 @@ namespace SNIESWebApplication.Migrations
 
             context.Periodos.AddOrUpdate(
                x => x.Id,
-               new Periodo { Id = 1, FechaPeriodo = "2014-1" },
-               new Periodo { Id = 2, FechaPeriodo = "2014-2" },
-               new Periodo { Id = 3, FechaPeriodo = "2015-1" },
-               new Periodo { Id = 4, FechaPeriodo = "2015-2" },
-               new Periodo { Id = 5, FechaPeriodo = "2016-1" },
-               new Periodo { Id = 6, FechaPeriodo = "2016-2" },
-               new Periodo { Id = 7, FechaPeriodo = "2017-1" },
-               new Periodo { Id = 8, FechaPeriodo = "2017-2" },
-               new Periodo { Id = 9, FechaPeriodo = "2018-1" },
-               new Periodo { Id = 10, FechaPeriodo = "2018-2" }
+               new Periodo { Id = 1, FechaPeriodo = "2014-01" },
+               new Periodo { Id = 2, FechaPeriodo = "2014-02" },
+               new Periodo { Id = 3, FechaPeriodo = "2015-01" },
+               new Periodo { Id = 4, FechaPeriodo = "2015-02" },
+               new Periodo { Id = 5, FechaPeriodo = "2016-01" },
+               new Periodo { Id = 6, FechaPeriodo = "2016-02" },
+               new Periodo { Id = 7, FechaPeriodo = "2017-01" },
+               new Periodo { Id = 8, FechaPeriodo = "2017-02" },
+               new Periodo { Id = 9, FechaPeriodo = "2018-01" },
+               new Periodo { Id = 10, FechaPeriodo = "2018-02" }
                );
 
         }

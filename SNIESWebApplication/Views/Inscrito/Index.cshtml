@@ -9,10 +9,16 @@
     @Html.ActionLink(Recursos.Resources.CrearNuevo, "Create")
 </p>
 
-<div class="form-horizontal">
+<div class="form-inline">
     <div class="form-group">
-        <div class="col-md-10">
+        <div class="col-md-6">
             @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-success", id = "CrearPlantillaExcel" })
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("Periodo", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-4">
+            @Html.DropDownList("PeriodoIdActual", (IEnumerable<SelectListItem>)ViewBag.PeriodoIdActual, htmlAttributes: new { @class = "form-control", @id = "PeriodoIdActual" })
         </div>
     </div>
 </div>

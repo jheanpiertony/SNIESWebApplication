@@ -21,7 +21,7 @@
         // GET: Graduado
         public async Task<ActionResult> Index()
         {
-            return View(await db.Graduados.ToListAsync());
+            return View(await db.Graduados.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
         // GET: Graduado/Details/5

@@ -161,28 +161,28 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FECHA_EXPEDICION, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.VERIFICADO_POR_FUENTE_OFICIAL, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.FECHA_EXPEDICION, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FECHA_EXPEDICION, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FUENTE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ID_ESTADO_CIVIL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FUENTE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FUENTE, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ID_ESTADO_CIVIL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ID_ESTADO_CIVIL, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.FECHA_PERIODO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.FECHA_PERIODO, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.FECHA_PERIODO, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

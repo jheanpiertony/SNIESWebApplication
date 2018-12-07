@@ -158,9 +158,9 @@
                 @Html.DisplayFor(modelItem => item.FECHA_PERIODO)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Detalles, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Recursos.Resources.Eliminar, "Delete", new { id = item.Id })
             </td>
         </tr>
     }

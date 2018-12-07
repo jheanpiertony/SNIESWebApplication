@@ -78,6 +78,8 @@
     <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -302,6 +304,51 @@
     <Compile Include="Models\ProyectoExtencion.cs" />
     <Compile Include="Models\RetiroDisciplinario.cs" />
     <Compile Include="Models\ServicioExtension.cs" />
+    <Compile Include="Models\StoredProcedure\SAINTdb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAINTdb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SAINTdb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SAINTdb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAINTdb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Admitidos_Posg_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Admitidos_Preg_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Inscritos_Posg_ConPrograma_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Inscritos_Posg_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Inscritos_Preg_ConPrograma_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Inscritos_Preg_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Matriculados_Posg_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Matriculados_Preg_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Participantes_Posg_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoredProcedure\SNIES_Participantes_Preg_Result.cs">
+      <DependentUpon>SAINTdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recursos\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -321,8 +368,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\StoredProcedure\SAINTdb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SAINTdb.edmx</DependentUpon>
+      <LastGenOutput>SAINTdb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StoredProcedure\SAINTdb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SAINTdb.edmx</DependentUpon>
+      <LastGenOutput>SAINTdb.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\StoredProcedure\SAINTdb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SAINTdb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StoredProcedure\SAINTdb.edmx.diagram">
+      <DependentUpon>SAINTdb.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -650,6 +715,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Recursos</CustomToolNamespace>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
