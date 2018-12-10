@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using SNIESWebApplication.Models;
-using SNIESWebApplication.Helpers;
-using ClosedXML.Excel;
-using System.IO;
-
-namespace SNIESWebApplication.Controllers
+﻿namespace SNIESWebApplication.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Web;
+    using System.Web.Mvc;
+    using SNIESWebApplication.Models;
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
+    using System.IO;
+
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
     public class AreaTrabajoProyectoExtencionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

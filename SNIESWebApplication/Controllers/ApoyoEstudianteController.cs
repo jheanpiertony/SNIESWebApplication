@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using SNIESWebApplication.Models;
-using System.IO;
-using SNIESWebApplication.Helpers;
-using ClosedXML.Excel;
-
-namespace SNIESWebApplication.Controllers
+﻿namespace SNIESWebApplication.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Web;
+    using System.Web.Mvc;
+    using SNIESWebApplication.Models;
+    using System.IO;
+    using SNIESWebApplication.Helpers;
+    using ClosedXML.Excel;
+
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
     public class ApoyoEstudianteController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -27,7 +28,10 @@ namespace SNIESWebApplication.Controllers
             var listaPeriodo = new List<Periodo>();
             foreach (var item in PeriodoIdActual)
             {
-                listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
             }
             ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
             return View(await db.ApoyoEstudiantes.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());

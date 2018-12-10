@@ -15,14 +15,27 @@
     using SNIESWebApplication.Helpers;
     using ClosedXML.Excel;
 
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
     public class ActividadBienestarController : Controller
-{
+    {
     private ApplicationDbContext db = new ApplicationDbContext();
 
     // GET: ActividadBienestar
     public async Task<ActionResult> Index()
     {
-        return View(await db.ActividadBienestar.ToListAsync());
+            ViewBag.Contolador = "ActividadBienestar";
+            var PeriodoIdActual = db.Docente.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
+            return View(await db.ActividadBienestar.OrderBy(x => new { x.FECHA_PERIODO, x.ACTIVIDAD }).ToListAsync());
     }
 
     // GET: ActividadBienestar/Details/5
@@ -312,11 +325,10 @@
     }
 
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.ActividadBienestar.ToList();
+            var lista = db.ActividadBienestar.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 
@@ -347,12 +359,12 @@
 
 
         protected override void Dispose(bool disposing)
-    {
-        if (disposing)
         {
-            db.Dispose();
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
-        base.Dispose(disposing);
     }
-}
 }

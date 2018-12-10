@@ -14,6 +14,7 @@
     using ClosedXML.Excel;
     using System.IO;
 
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
     public class InscritoProgramaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -27,8 +28,10 @@
             var listaPeriodo = new List<Periodo>();
             foreach (var item in PeriodoIdActual)
             {
-
-                listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
             }
             ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
             return View(await db.InscritoPrograma.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());

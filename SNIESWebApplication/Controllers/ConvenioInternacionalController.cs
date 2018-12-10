@@ -15,6 +15,7 @@
     using SNIESWebApplication.Helpers;
     using ClosedXML.Excel;
 
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
     public class ConvenioInternacionalController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -22,7 +23,19 @@
         // GET: ConvenioInternacional
         public async Task<ActionResult> Index()
         {
-            return View(await db.ConvenioInternacional.ToListAsync());
+            ViewBag.Contolador = "ConvenioInternacional";
+            var PeriodoIdActual = db.ConvenioInternacional.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
+            return View(await db.ConvenioInternacional.OrderBy(x => new { x.FECHA_PERIODO, x.ACTIVIDAD_ADMINISTRATIVA }).ToListAsync());
         }
 
         // GET: ConvenioInternacional/Details/5
@@ -278,11 +291,10 @@
         }
 
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.ConvenioInternacional.ToList();
+            var lista = db.ConvenioInternacional.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 

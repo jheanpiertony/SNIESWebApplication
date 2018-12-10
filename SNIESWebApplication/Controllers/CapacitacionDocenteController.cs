@@ -14,6 +14,7 @@ using System.IO;
 
 namespace SNIESWebApplication.Controllers
 {
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
     public class CapacitacionDocenteController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -21,7 +22,19 @@ namespace SNIESWebApplication.Controllers
         // GET: CapacitacionDocente
         public async Task<ActionResult> Index()
         {
-            return View(await db.CapacitacionDocente.ToListAsync());
+            ViewBag.Contolador = "CapacitacionDocente";
+            var PeriodoIdActual = db.CapacitacionDocente.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
+            return View(await db.CapacitacionDocente.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
         // GET: CapacitacionDocente/Details/5
@@ -119,11 +132,11 @@ namespace SNIESWebApplication.Controllers
             return RedirectToAction("Index");
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
 
-            var lista = db.CapacitacionDocente.ToList();
+            var lista = db.CapacitacionDocente.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 

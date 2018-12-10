@@ -14,6 +14,7 @@
     using ClosedXML.Excel;
     using System.IO;
 
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
     public class ContratoDocenteController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -21,7 +22,19 @@
         // GET: ContratoDocente
         public async Task<ActionResult> Index()
         {
-            return View(await db.ContratoDocente.ToListAsync());
+            ViewBag.Contolador = "ContratoDocente";
+            var PeriodoIdActual = db.ContratoDocente.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
+            return View(await db.ContratoDocente.OrderBy(x => new { x.FECHA_PERIODO, x.NUMERO_DOCUMENTO }).ToListAsync());
         }
 
         // GET: ContratoDocente/Details/5
@@ -119,17 +132,15 @@
             return RedirectToAction("Index");
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.ContratoDocente.ToList();
+            var lista = db.ContratoDocente.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 
         public void CrearExcelT<T>(List<T> lista)
         {
-
             CrearExcel excel = new CrearExcel();
             DataTable dt = excel.ToDataTable<T>(lista);
             string nombre = dt.TableName.ToString();
