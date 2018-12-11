@@ -24,7 +24,7 @@
     public async Task<ActionResult> Index()
     {
             ViewBag.Contolador = "ActividadBienestar";
-            var PeriodoIdActual = db.Docente.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            var PeriodoIdActual = db.ActividadBienestar.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
             int i = 0;
             var listaPeriodo = new List<Periodo>();
             foreach (var item in PeriodoIdActual)
