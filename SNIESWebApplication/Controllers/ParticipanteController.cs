@@ -18,7 +18,7 @@
     using System.Data.SqlClient;
     using SNIESWebApplication.Models.StoredProcedure;
 
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
     public class ParticipanteController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -49,28 +49,6 @@
         // GET: Participante/Create
         public ActionResult Create()
         {
-            //List<SNIES_Participantes_Posg_Result> saintParticipatePosg = new List<SNIES_Participantes_Posg_Result>();
-            //List<SNIES_Participantes_Preg_Result> saintParticipatePreg = new List<SNIES_Participantes_Preg_Result>();
-            ////List<SNIES_Inscritos_Preg_Result> saintInscritoPreg = new List<SNIES_Inscritos_Preg_Result>();
-            ////List<SNIES_Inscritos_Posg_Result> saintInscritoPost = new List<SNIES_Inscritos_Posg_Result>();
-            ////List<SNIES_Admitidos_Preg_Result> saintAdmitidoPreg = new List<SNIES_Admitidos_Preg_Result>();
-            ////List<SNIES_Admitidos_Posg_Result> saintAdmitidoPost = new List<SNIES_Admitidos_Posg_Result>();
-
-            //var listaPeriodo = db.Periodos.Select(x => new { x.FechaPeriodo }).ToList();
-            //using (SAINTdbSp dbSaint = new SAINTdbSp())
-            //{
-            //    foreach (var item in listaPeriodo)
-            //    {
-            //        saintParticipatePosg.AddRange(dbSaint.SNIES_Participantes_Posg(item.FechaPeriodo.ToString()).ToList());
-            //        saintParticipatePreg.AddRange(dbSaint.SNIES_Participantes_Preg(item.FechaPeriodo.ToString()).ToList());
-            //        //saintInscritoPreg.AddRange(dbSaint.SNIES_Inscritos_Preg(item.FechaPeriodo.ToString()).ToList());
-            //        //saintInscritoPost.AddRange(dbSaint.SNIES_Inscritos_Posg(item.FechaPeriodo.ToString()).ToList());
-            //        //saintAdmitidoPreg.AddRange(dbSaint.SNIES_Admitidos_Preg(item.FechaPeriodo.ToString()).ToList());
-            //        //saintAdmitidoPost.AddRange(dbSaint.SNIES_Admitidos_Posg(item.FechaPeriodo.ToString()).ToList());
-            //    }
-
-            //}
-
             ViewBag.PeriodoId = new SelectList(db.Periodos, "Id", "FechaPeriodo");
             return View();
         }
@@ -164,10 +142,6 @@
 
                     List<SNIES_Participantes_Posg_Result> saintParticipatePosg = new List<SNIES_Participantes_Posg_Result>();
                     List<SNIES_Participantes_Preg_Result> saintParticipatePreg = new List<SNIES_Participantes_Preg_Result>();
-                    //List<SNIES_Inscritos_Preg_Result> saintInscritoPreg = new List<SNIES_Inscritos_Preg_Result>();
-                    //List<SNIES_Inscritos_Posg_Result> saintInscritoPost = new List<SNIES_Inscritos_Posg_Result>();
-                    //List<SNIES_Admitidos_Preg_Result> saintAdmitidoPreg = new List<SNIES_Admitidos_Preg_Result>();
-                    //List<SNIES_Admitidos_Posg_Result> saintAdmitidoPost = new List<SNIES_Admitidos_Posg_Result>();
 
                     var listaPeriodo = db.Periodos.Select(x => new { x.FechaPeriodo }).ToList();
                     using (SAINTdbSp dbSaint = new SAINTdbSp())
@@ -176,10 +150,6 @@
                         {
                             saintParticipatePosg.AddRange(dbSaint.SNIES_Participantes_Posg(item.FechaPeriodo.ToString()).ToList());
                             saintParticipatePreg.AddRange(dbSaint.SNIES_Participantes_Preg(item.FechaPeriodo.ToString()).ToList());
-                            //saintInscritoPreg.AddRange(dbSaint.SNIES_Inscritos_Preg(item.FechaPeriodo.ToString()).ToList());
-                            //saintInscritoPost.AddRange(dbSaint.SNIES_Inscritos_Posg(item.FechaPeriodo.ToString()).ToList());
-                            //saintAdmitidoPreg.AddRange(dbSaint.SNIES_Admitidos_Preg(item.FechaPeriodo.ToString()).ToList());
-                            //saintAdmitidoPost.AddRange(dbSaint.SNIES_Admitidos_Posg(item.FechaPeriodo.ToString()).ToList());
                         }
 
                     }

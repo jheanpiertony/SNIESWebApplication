@@ -15,7 +15,7 @@ using ClosedXML.Excel;
 
 namespace SNIESWebApplication.Controllers
 {
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
     public class ProgramaPresencialeExteriorController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -23,6 +23,18 @@ namespace SNIESWebApplication.Controllers
         // GET: ProgramaPresencialeExterior
         public async Task<ActionResult> Index()
         {
+            ViewBag.Contolador = "ProgramaPresencialeExterior";
+            var PeriodoIdActual = db.ProgramaPresencialeExterior.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
             return View(await db.ProgramaPresencialeExterior.ToListAsync());
         }
 
@@ -172,7 +184,7 @@ namespace SNIESWebApplication.Controllers
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.ProgramaPresencialeExterior.ToList());
+                        return RedirectToAction("Index");
                     }
                     else
                     {
@@ -193,7 +205,7 @@ namespace SNIESWebApplication.Controllers
                         }
                         db.ProgramaPresencialeExterior.AddRange(listaProgramaPresencialeExterior);
                         db.SaveChanges();
-                        return View("Index", db.ProgramaPresencialeExterior.ToList());
+                        return RedirectToAction("Index");
                     }
                 }
                 else
@@ -212,7 +224,6 @@ namespace SNIESWebApplication.Controllers
         private void GuardarDatos(string[,] matrixValorHoja, int index, string _FECHA_PERIODO)
         {
             var nroFila = matrixValorHoja.GetLength(0);
-
             List<ProgramaPresencialeExterior> listaProgramaPresencialeExterior = new List<ProgramaPresencialeExterior>();
 
             for (int i = 0; i < nroFila; i++)
@@ -250,11 +261,12 @@ namespace SNIESWebApplication.Controllers
             }
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
 
-            var lista = db.ProgramaPresencialeExterior.ToList();
+            var lista = db.ProgramaPresencialeExterior
+                .Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 

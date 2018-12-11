@@ -250,6 +250,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Curso.
+        /// </summary>
+        public static string Curso {
+            get {
+                return ResourceManager.GetString("Curso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descargar reporte en Excel.
         /// </summary>
         public static string DescargarReporteExcel {

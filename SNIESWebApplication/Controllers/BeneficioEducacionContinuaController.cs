@@ -14,7 +14,7 @@ using System.IO;
 
 namespace SNIESWebApplication.Controllers
 {
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
     public class BeneficioEducacionContinuaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -22,7 +22,19 @@ namespace SNIESWebApplication.Controllers
         // GET: BeneficioEducacionContinua
         public async Task<ActionResult> Index()
         {
-            return View(await db.BeneficioEducacionContinua.ToListAsync());
+            ViewBag.Contolador = "BeneficioEducacionContinua";
+            var PeriodoIdActual = db.BeneficioEducacionContinua.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
+            return View(await db.BeneficioEducacionContinua.OrderBy(x => new { x.FECHA_PERIODO, x.CODIGO_CURSO }).ToListAsync());
         }
 
         // GET: BeneficioEducacionContinua/Details/5
@@ -121,11 +133,10 @@ namespace SNIESWebApplication.Controllers
         }
 
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.BeneficioEducacionContinua.ToList();
+            var lista = db.BeneficioEducacionContinua.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 

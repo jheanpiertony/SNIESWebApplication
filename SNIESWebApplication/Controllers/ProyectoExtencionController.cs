@@ -15,7 +15,7 @@
     using SNIESWebApplication.Helpers;
     using ClosedXML.Excel;
 
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
     public class ProyectoExtencionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -23,7 +23,19 @@
         // GET: ProyectoExtencion
         public async Task<ActionResult> Index()
         {
-            return View(await db.ProyectoExtencion.ToListAsync());
+            ViewBag.Contolador = "ProyectoExtencion";
+            var PeriodoIdActual = db.ProyectoExtencion.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
+            return View(await db.ProyectoExtencion.OrderBy(x => new { x.FECHA_PERIODO, x.CODIGO_PROYECTO }).ToListAsync());
         }
 
         // GET: ProyectoExtencion/Details/5
@@ -463,11 +475,10 @@
         }
 
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.ProyectoExtencion.ToList();
+            var lista = db.ProyectoExtencion.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 

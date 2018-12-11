@@ -220,6 +220,7 @@
     <Compile Include="Controllers\ContratoDocenteController.cs" />
     <Compile Include="Controllers\ConvenioInternacionalController.cs" />
     <Compile Include="Controllers\ConvenioInternacionalInstitucionController.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\DocenteController.cs" />
     <Compile Include="Controllers\DocenteEducacionContinuaController.cs" />
     <Compile Include="Controllers\EducacionContinuaController.cs" />
@@ -284,6 +285,7 @@
     <Compile Include="Models\Consultaria.cs" />
     <Compile Include="Models\ConvenioInternacional.cs" />
     <Compile Include="Models\Cupo.cs" />
+    <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\DerechoPecuniario.cs" />
     <Compile Include="Models\Docente.cs" />
     <Compile Include="Models\EducacionContinua.cs" />
@@ -300,6 +302,7 @@
     <Compile Include="Models\MovilidadInternacionalizacion.cs" />
     <Compile Include="Models\Participante.cs" />
     <Compile Include="Models\Periodo.cs" />
+    <Compile Include="Models\ProductoInvestigacion.cs" />
     <Compile Include="Models\ProgramaPresencialeExterior.cs" />
     <Compile Include="Models\ProyectoExtencion.cs" />
     <Compile Include="Models\RetiroDisciplinario.cs" />
@@ -693,6 +696,11 @@
     <Content Include="Views\PoblacionCondicionalServicioExtension\Index.cshtml" />
     <Content Include="Views\PoblacionCondicionalServicioExtension\Create.cshtml" />
     <Content Include="Views\Shared\_DescargarReporteExcel.cshtml" />
+    <Content Include="Views\Curso\Create.cshtml" />
+    <Content Include="Views\Curso\Delete.cshtml" />
+    <Content Include="Views\Curso\Details.cshtml" />
+    <Content Include="Views\Curso\Edit.cshtml" />
+    <Content Include="Views\Curso\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,7 +11,7 @@ using SNIESWebApplication.Models;
 
 namespace SNIESWebApplication.Controllers
 {
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
     public class PoblacionGrupoServicioExtensionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -15,7 +15,7 @@
     using SNIESWebApplication.Helpers;
     using ClosedXML.Excel;
 
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
     public class ConsultariaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -23,7 +23,19 @@
         // GET: Consultaria
         public async Task<ActionResult> Index()
         {
-            return View(await db.Consultaria.ToListAsync());
+            ViewBag.Contolador = "Consultaria";
+            var PeriodoIdActual = db.Consultaria.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
+            return View(await db.Consultaria.OrderBy(x => new { x.FECHA_PERIODO, x.COD_CONSULTORIA }).ToListAsync());
         }
 
         // GET: Consultaria/Details/5
@@ -172,7 +184,7 @@
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.Consultaria.ToList());
+                        return RedirectToAction("Index");
                     }
                     else
                     {
@@ -193,7 +205,7 @@
                         }
                         db.Consultaria.AddRange(listaConsultaria);
                         db.SaveChanges();
-                        return View("Index", db.Consultaria.ToList());
+                        return RedirectToAction("Index");
                     }
                 }
                 else
@@ -287,11 +299,10 @@
             }
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.Consultaria.ToList();
+            var lista = db.Consultaria.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 

@@ -180,6 +180,9 @@
   <data name="Cupo" xml:space="preserve">
     <value>Cupo</value>
   </data>
+  <data name="Curso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
   <data name="DescargarReporteExcel" xml:space="preserve">
     <value>Descargar reporte en Excel</value>
   </data>

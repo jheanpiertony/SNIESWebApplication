@@ -10,11 +10,7 @@
 </p>
 
 <div class="form-horizontal">
-    <div class="form-group">
-        <div class="col-md-10">
-            @Html.ActionLink(Recursos.Resources.DescargarReporteExcel, "CrearPlantillaExcel", null, new { @class = "btn btn-success", id = "CrearPlantillaExcel" })
-        </div>
-    </div>
+    @Html.Partial("_DescargarReporteExcel")
 </div>
 
 <table class="table">
@@ -118,3 +114,19 @@
     }
 
 </table>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function(){
+
+            $(document).on("click","#CrearPlantillaExcel",function(e){
+             e.preventDefault();
+
+                var newUrl = "@Url.Action("CrearPlantillaExcel", ViewBag.Contolador)?PeriodoIdActual=" + $("#PeriodoIdActual :selected").text();
+                window.location.href = newUrl;
+          });
+        });
+    </script>
+}

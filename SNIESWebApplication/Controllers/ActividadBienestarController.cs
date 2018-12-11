@@ -15,7 +15,7 @@
     using SNIESWebApplication.Helpers;
     using ClosedXML.Excel;
 
-    //[Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
     public class ActividadBienestarController : Controller
     {
     private ApplicationDbContext db = new ApplicationDbContext();
@@ -205,8 +205,8 @@
                     }
                     db.ActividadBienestar.AddRange(listaActividadBienestar);
                     db.SaveChanges();
-                    return View("Index", db.ActividadBienestar.ToList());
-                }
+                        return RedirectToAction("Index");
+                    }
             }
             else
             {

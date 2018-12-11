@@ -1,0 +1,74 @@
+﻿@model SNIESWebApplication.Models.Curso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Curso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_IES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_IES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_CURSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_CURSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_CURSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_CURSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_CINE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_CINE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CINE_CAMPO_DETALLADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CINE_CAMPO_DETALLADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXTENSION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXTENSION)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,148 +1,133 @@
-﻿namespace SNIESWebApplication.Controllers
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Data;
-    using System.Data.Entity;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Net;
-    using System.Web;
-    using System.Web.Mvc;
-    using SNIESWebApplication.Models;
-    using System.IO;
-    using OfficeOpenXml;
-    using SNIESWebApplication.Helpers;
-    using ClosedXML.Excel;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using SNIESWebApplication.Models;
+using SNIESWebApplication.Helpers;
+using ClosedXML.Excel;
+using System.IO;
+using OfficeOpenXml;
 
+namespace SNIESWebApplication.Controllers
+{
     [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
-    public class CupoController : Controller
+    public class CursoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Cupo
+        // GET: Curso
         public async Task<ActionResult> Index()
         {
-            ViewBag.Contolador = "Cupo";
-            var PeriodoIdActual = db.Cupos.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
-            int i = 0;
-            var listaPeriodo = new List<Periodo>();
-            foreach (var item in PeriodoIdActual)
-            {
-                if (item.Key != null)
-                {
-                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
-                }
-            }
-            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
-            return View(await db.Cupos.OrderBy(x => new { x.FECHA_PERIODO, x.PROGRAM_NOMBRE }).ToListAsync());
+            return View(await db.Curso.OrderBy(x => new { x.CODIGO_CURSO }).ToListAsync());
         }
 
-        // GET: Cupo/Details/5
+        // GET: Curso/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cupo cupo = await db.Cupos.FindAsync(id);
-            if (cupo == null)
+            Curso curso = await db.Curso.FindAsync(id);
+            if (curso == null)
             {
                 return HttpNotFound();
             }
-            return View(cupo);
+            return View(curso);
         }
 
-        // GET: Cupo/Create
+        // GET: Curso/Create
         public ActionResult Create()
         {
-            ViewBag.PeriodoId = new SelectList(db.Periodos, "Id", "FechaPeriodo");
             return View();
         }
 
-        // POST: Cupo/Create
+        // POST: Curso/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,CODIGO_IES,NOMBRE_IES,ANO,SEMESTRE,PRO_CONSECUTIVO,PROGRAM_NOMBRE,CODIGO_MUNICIPIO,NOMBRE_MUNICIPIO,CUPOS_NUEVOS_PROYECTADOS,CUPOS_TOTALES_PROYECTADOS,MATRICULA_TOTAL_ESPERADA,FUENTE,FECHA_PERIODO")] Cupo cupo)
+        public async Task<ActionResult> Create([Bind(Include = "Id,CODIGO_IES,NOMBRE_IES,CODIGO_CURSO,NOMBRE_CURSO,COD_CINE,CINE_CAMPO_DETALLADO,EXTENSION")] Curso curso)
         {
             if (ModelState.IsValid)
             {
-                db.Cupos.Add(cupo);
+                db.Curso.Add(curso);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(cupo);
+            return View(curso);
         }
 
-        // GET: Cupo/Edit/5
+        // GET: Curso/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cupo cupo = await db.Cupos.FindAsync(id);
-            if (cupo == null)
+            Curso curso = await db.Curso.FindAsync(id);
+            if (curso == null)
             {
                 return HttpNotFound();
             }
-            return View(cupo);
+            return View(curso);
         }
 
-        // POST: Cupo/Edit/5
+        // POST: Curso/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,CODIGO_IES,NOMBRE_IES,ANO,SEMESTRE,PRO_CONSECUTIVO,PROGRAM_NOMBRE,CODIGO_MUNICIPIO,NOMBRE_MUNICIPIO,CUPOS_NUEVOS_PROYECTADOS,CUPOS_TOTALES_PROYECTADOS,MATRICULA_TOTAL_ESPERADA,FUENTE,FECHA_PERIODO")] Cupo cupo)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,CODIGO_IES,NOMBRE_IES,CODIGO_CURSO,NOMBRE_CURSO,COD_CINE,CINE_CAMPO_DETALLADO,EXTENSION")] Curso curso)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cupo).State = EntityState.Modified;
+                db.Entry(curso).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(cupo);
+            return View(curso);
         }
 
-        // GET: Cupo/Delete/5
+        // GET: Curso/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cupo cupo = await db.Cupos.FindAsync(id);
-            if (cupo == null)
+            Curso curso = await db.Curso.FindAsync(id);
+            if (curso == null)
             {
                 return HttpNotFound();
             }
-            return View(cupo);
+            return View(curso);
         }
 
-        // POST: Cupo/Delete/5
+        // POST: Curso/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Cupo cupo = await db.Cupos.FindAsync(id);
-            db.Cupos.Remove(cupo);
+            Curso curso = await db.Curso.FindAsync(id);
+            db.Curso.Remove(curso);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public ActionResult CargaPlantillaExcel(HttpPostedFileBase plantillaCargaExcel, int PeriodoId)
+        public ActionResult CargaPlantillaExcel(HttpPostedFileBase plantillaCargaExcel)
         {
             if (plantillaCargaExcel != null && !string.IsNullOrEmpty(plantillaCargaExcel.FileName) && plantillaCargaExcel.ContentLength != 0)
             {
                 if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm") || plantillaCargaExcel.FileName.EndsWith("csv"))
                 {
-
-                    List<Cupo> listaCupos = new List<Cupo>();
                     string fileName = plantillaCargaExcel.FileName;
                     string filePath = string.Empty;
                     string path = Server.MapPath("~/PlantillaExcelSnies/");
@@ -159,7 +144,7 @@
                         Directory.Delete(filePath);
                     }
 
-                    var _FECHA_PERIODO = db.Periodos.Where(x => x.Id == PeriodoId).FirstOrDefault();
+                    //var _FECHA_PERIODO = db.Periodos.Where(x => x.Id == PeriodoId).FirstOrDefault();
 
                     if (plantillaCargaExcel.FileName.EndsWith("xls") || plantillaCargaExcel.FileName.EndsWith("xlsx") || plantillaCargaExcel.FileName.EndsWith("xlsm"))
                     {
@@ -181,7 +166,7 @@
                                         matrixValorHoja[i - 2, j - 1] = (hoja.Cells[i, j].Value == null) ? string.Empty : hoja.Cells[i, j].Value.ToString();
                                     }
                                 }
-                                GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
+                                GuardarDatos(matrixValorHoja, hoja.Index,"");
                             }
                         }
                         return RedirectToAction("Index");
@@ -192,6 +177,7 @@
                         plantillaCargaExcel.SaveAs(filePath);
                         string csvData = System.IO.File.ReadAllText(filePath);
                         int i = 0;
+                        List<MovilidadEstudianteExteriorInternacionalizacion> listaMovilidadEstudianteExteriorInternacionalizacion = new List<MovilidadEstudianteExteriorInternacionalizacion>();
 
                         foreach (var row in csvData.Split('\n'))
                         {
@@ -203,7 +189,7 @@
                                 i++;
                             }
                         }
-                        db.Cupos.AddRange(listaCupos);
+                        db.MovilidadEstudianteExteriorInternacionalizacion.AddRange(listaMovilidadEstudianteExteriorInternacionalizacion);
                         db.SaveChanges();
                         return RedirectToAction("Index");
                     }
@@ -225,37 +211,31 @@
         {
             var nroFila = matrixValorHoja.GetLength(0);
 
-            List<Cupo> listaCupo = new List<Cupo>();
-
+            List<Curso> listaCurso = new List<Curso>();
 
             for (int i = 0; i < nroFila; i++)
             {
-                var j = 0;
+                int j = 0;
                 switch (index)
                 {
                     case 1:
 
-                        listaCupo.Add(
-                            new Cupo()
+                        listaCurso.Add(
+                            new Curso()
                             {
                                 CODIGO_IES = matrixValorHoja[i, j++],
                                 NOMBRE_IES = matrixValorHoja[i, j++],
-                                ANO = matrixValorHoja[i, j++],
-                                SEMESTRE = matrixValorHoja[i, j++],
-                                PRO_CONSECUTIVO = matrixValorHoja[i, j++],
-                                PROGRAM_NOMBRE = matrixValorHoja[i, j++],
-                                CODIGO_MUNICIPIO = matrixValorHoja[i, j++],
-                                NOMBRE_MUNICIPIO = matrixValorHoja[i, j++],
-                                CUPOS_NUEVOS_PROYECTADOS = matrixValorHoja[i, j++],
-                                CUPOS_TOTALES_PROYECTADOS = matrixValorHoja[i, j++],
-                                MATRICULA_TOTAL_ESPERADA = matrixValorHoja[i, j++],
-                                FECHA_PERIODO = _FECHA_PERIODO
+                                CODIGO_CURSO = matrixValorHoja[i, j++],
+                                NOMBRE_CURSO = matrixValorHoja[i, j++],
+                                COD_CINE = matrixValorHoja[i, j++],
+                                CINE_CAMPO_DETALLADO = matrixValorHoja[i, j++],
+                                EXTENSION = matrixValorHoja[i, j++]
                             }
                             );
 
                         if (i + 1 == nroFila)
                         {
-                            db.Cupos.AddRange(listaCupo);
+                            db.Curso.AddRange(listaCurso);
                             db.SaveChanges();
                         }
                         break;
@@ -266,37 +246,18 @@
             }
         }
 
-        public void CrearPlantillaExcel(string PeriodoIdActual)
+        public void CrearPlantillaExcel()
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.Cupos.Where(x => x.FECHA_PERIODO == PeriodoIdActual).
-                Select(x => new
-                {
-                    x.CODIGO_IES,
-                    x.NOMBRE_IES,
-                    x.ANO,
-                    x.SEMESTRE,
-                    x.PRO_CONSECUTIVO,
-                    x.PROGRAM_NOMBRE,
-                    x.CODIGO_MUNICIPIO,
-                    x.NOMBRE_MUNICIPIO,
-                    x.CUPOS_NUEVOS_PROYECTADOS,
-                    x.CUPOS_TOTALES_PROYECTADOS,
-                    x.MATRICULA_TOTAL_ESPERADA,
-                    x.FECHA_PERIODO,
-                    x.Id,
-
-                }).ToList();
+            var lista = db.Curso.OrderBy(x => x.CODIGO_CURSO).ToList();
             CrearExcelT(lista);
         }
 
         public void CrearExcelT<T>(List<T> lista)
         {
-
             CrearExcel excel = new CrearExcel();
             DataTable dt = excel.ToDataTable<T>(lista);
-            string nombre = "Cupos";
+            string nombre = dt.TableName.ToString();
 
             using (XLWorkbook wb = new XLWorkbook())//https://github.com/ClosedXML/ClosedXML <----- la libreria
             {

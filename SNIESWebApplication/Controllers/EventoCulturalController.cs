@@ -15,7 +15,7 @@
     using SNIESWebApplication.Helpers;
     using ClosedXML.Excel;
 
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
+    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
     public class EventoCulturalController : Controller
     {
 
@@ -24,7 +24,19 @@
         // GET: EventoCultural
         public async Task<ActionResult> Index()
         {
-            return View(await db.EventoCultural.ToListAsync());
+            ViewBag.Contolador = "EventoCultural";
+            var PeriodoIdActual = db.EventoCultural.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            int i = 0;
+            var listaPeriodo = new List<Periodo>();
+            foreach (var item in PeriodoIdActual)
+            {
+                if (item.Key != null)
+                {
+                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                }
+            }
+            ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
+            return View(await db.EventoCultural.OrderBy(x => new { x.FECHA_PERIODO, x.CODIGO_EVENTO }).ToListAsync());
         }
 
         // GET: EventoCultural/Details/5
@@ -173,7 +185,8 @@
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.EventoCultural.ToList());
+                        return RedirectToAction("Index");
+
                     }
                     else
                     {
@@ -194,7 +207,8 @@
                         }
                         db.EventoCultural.AddRange(listaEventoCultural);
                         db.SaveChanges();
-                        return View("Index", db.EventoCultural.ToList());
+                        return RedirectToAction("Index");
+
                     }
                 }
                 else
@@ -364,11 +378,10 @@
             }
         }
 
-        public void CrearPlantillaExcel()
+        public void CrearPlantillaExcel(string PeriodoIdActual)
         {
             CrearExcel excel = new CrearExcel();
-
-            var lista = db.EventoCultural.ToList();
+            var lista = db.EventoCultural.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
             CrearExcelT(lista);
         }
 

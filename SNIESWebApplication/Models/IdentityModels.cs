@@ -103,6 +103,10 @@ namespace SNIESWebApplication.Models
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.MovilidadAdministrativoExteriorInternacionalizacion> MovilidadAdministrativoExteriorInternacionalizacion { get; set; }
         public System.Data.Entity.DbSet<SNIESWebApplication.Models.MovilidadAdministrativoColombiaInternacionalizacion> MovilidadAdministrativoColombiaInternacionalizacion { get; set; }
 
+        public System.Data.Entity.DbSet<SNIESWebApplication.Models.Curso> Curso { get; set; }
+
+
+
 
 
     }

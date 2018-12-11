@@ -15,14 +15,27 @@ using ClosedXML.Excel;
 
 namespace SNIESWebApplication.Controllers
 {
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co")]
-    public class MovilidadEstudianteExteriorInternacionalizacionController : Controller
+	[Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
+	public class MovilidadEstudianteExteriorInternacionalizacionController : Controller
 	{
 		private ApplicationDbContext db = new ApplicationDbContext();
 
 		// GET: MovilidadEstudianteExteriorInternacionalizacion
 		public async Task<ActionResult> Index()
 		{
+			ViewBag.Contolador = "MovilidadEstudianteExteriorInternacionalizacion";
+			var PeriodoIdActual = db.MovilidadEstudianteExteriorInternacionalizacion
+				.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+			int i = 0;
+			var listaPeriodo = new List<Periodo>();
+			foreach (var item in PeriodoIdActual)
+			{
+				if (item.Key != null)
+				{
+					listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+				}
+			}
+			ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");
 			return View(await db.MovilidadEstudianteExteriorInternacionalizacion.ToListAsync());
 		}
 
@@ -170,10 +183,10 @@ namespace SNIESWebApplication.Controllers
 								GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
 							}
 						}
-                        return RedirectToAction("Index");
+						return RedirectToAction("Index");
 
-                    }
-                    else
+					}
+					else
 					{
 						string extesion = Path.GetExtension(fileName);
 						plantillaCargaExcel.SaveAs(filePath);
@@ -218,10 +231,10 @@ namespace SNIESWebApplication.Controllers
 						}
 						db.MovilidadEstudianteExteriorInternacionalizacion.AddRange(listaMovilidadEstudianteExteriorInternacionalizacion);
 						db.SaveChanges();
-                        return RedirectToAction("Index");
+						return RedirectToAction("Index");
 
-                    }
-                }
+					}
+				}
 				else
 				{
 					ViewBag.CargaMasivaCatalogo = "Error! La plantilla no es un archivo Excel!";
@@ -268,11 +281,10 @@ namespace SNIESWebApplication.Controllers
 			}
 		}
 
-		public void CrearPlantillaExcel()
+		public void CrearPlantillaExcel(string PeriodoIdActual)
 		{
 			CrearExcel excel = new CrearExcel();
-
-			var lista = db.MovilidadEstudianteExteriorInternacionalizacion.ToList();
+			var lista = db.MovilidadEstudianteExteriorInternacionalizacion.Where(x => x.FECHA_PERIODO == PeriodoIdActual).ToList();
 			CrearExcelT(lista);
 		}
 
