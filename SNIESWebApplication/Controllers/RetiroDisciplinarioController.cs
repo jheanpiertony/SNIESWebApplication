@@ -199,7 +199,7 @@ namespace SNIESWebApplication.Controllers
 
                     db.RetirosDisciplinarios.AddRange(listaRetiroDisciplinario);
                     db.SaveChanges();
-                    return View("Index", db.RetirosDisciplinarios.ToList());
+                    return RedirectToAction("Index");
                 }
                 else
                 {

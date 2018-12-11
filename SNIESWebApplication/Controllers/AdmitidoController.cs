@@ -192,7 +192,7 @@
 
                     db.Admitidos.AddRange(listaAdmitidos);
                     db.SaveChanges();
-                    return View("Index", db.Admitidos.ToList());
+                    return RedirectToAction("Index");
                 }
                 else
                 {

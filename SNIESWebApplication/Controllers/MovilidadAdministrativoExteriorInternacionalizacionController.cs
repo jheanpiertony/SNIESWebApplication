@@ -170,7 +170,8 @@ namespace SNIESWebApplication.Controllers
                                 //GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.MovilidadAdministrativoExteriorInternacionalizacion.ToList());
+                        return RedirectToAction("Index");
+
                     }
                     else
                     {
@@ -208,7 +209,8 @@ namespace SNIESWebApplication.Controllers
                         }
                         db.MovilidadAdministrativoExteriorInternacionalizacion.AddRange(listaMovilidadAdministrativoExteriorInternacionalizacion);
                         db.SaveChanges();
-                        return View("Index", db.MovilidadAdministrativoExteriorInternacionalizacion.ToList());
+                        return RedirectToAction("Index");
+
                     }
                 }
                 else

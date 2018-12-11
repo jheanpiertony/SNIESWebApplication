@@ -212,7 +212,7 @@ namespace SNIESWebApplication.Controllers
 
                     db.EstudiantesPrimerCurso.AddRange(listaEstudiantePrimerCurso);
                     db.SaveChanges();
-                    return View("Index", db.EstudiantesPrimerCurso.ToList());
+                    return RedirectToAction("Index");
                 }
                 else
                 {

@@ -171,7 +171,8 @@ namespace SNIESWebApplication.Controllers
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.MovilidadEstudianteExteriorInternacionalizacion.ToList());
+                        return RedirectToAction("Index");
+
                     }
                     else
                     {
@@ -215,7 +216,8 @@ namespace SNIESWebApplication.Controllers
                         }
                         db.MovilidadEstudianteExteriorColombiaInternacionalizacion.AddRange(listaMovilidadEstudianteExteriorColombiaInternacionalizacion);
                         db.SaveChanges();
-                        return View("Index", db.MovilidadEstudianteExteriorColombiaInternacionalizacion.ToList());
+                        return RedirectToAction("Index");
+
                     }
                 }
                 else

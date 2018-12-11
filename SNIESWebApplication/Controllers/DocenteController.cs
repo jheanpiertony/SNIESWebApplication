@@ -184,7 +184,7 @@
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.Docente.ToList());
+                        return RedirectToAction("Index");
                     }
                     else
                     {
@@ -205,7 +205,8 @@
                         }
                         db.Docente.AddRange(listaDocente);
                         db.SaveChanges();
-                        return View("Index", db.Docente.ToList());
+                        return RedirectToAction("Index");
+
                     }
                 }
                 else

@@ -184,7 +184,7 @@
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.Cupos.ToList());
+                        return RedirectToAction("Index");
                     }
                     else
                     {
@@ -205,7 +205,7 @@
                         }
                         db.Cupos.AddRange(listaCupos);
                         db.SaveChanges();
-                        return View("Index", db.Cupos.ToList());
+                        return RedirectToAction("Index");
                     }
                 }
                 else

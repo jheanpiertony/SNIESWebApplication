@@ -182,7 +182,7 @@
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.Inscritos.ToList());
+                        return RedirectToAction("Index");
                     }
                     else
                     {

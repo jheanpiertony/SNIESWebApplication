@@ -199,7 +199,7 @@ namespace SNIESWebApplication.Controllers
 
                     db.EstudianteArticulacion.AddRange(listaEstudianteArticulacion);
                     db.SaveChanges();
-                    return View("Index", db.EstudianteArticulacion.ToList());
+                    return RedirectToAction("Index");
                 }
                 else
                 {

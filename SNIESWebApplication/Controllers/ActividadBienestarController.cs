@@ -184,7 +184,7 @@
                             GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                         }
                     }
-                    return View("Index", db.ActividadBienestar.ToList());
+                    return RedirectToAction("Index");
                 }
                 else
                 {

@@ -170,9 +170,10 @@ namespace SNIESWebApplication.Controllers
 								GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
 							}
 						}
-						return View("Index", db.MovilidadEstudianteExteriorInternacionalizacion.ToList());
-					}
-					else
+                        return RedirectToAction("Index");
+
+                    }
+                    else
 					{
 						string extesion = Path.GetExtension(fileName);
 						plantillaCargaExcel.SaveAs(filePath);
@@ -217,9 +218,10 @@ namespace SNIESWebApplication.Controllers
 						}
 						db.MovilidadEstudianteExteriorInternacionalizacion.AddRange(listaMovilidadEstudianteExteriorInternacionalizacion);
 						db.SaveChanges();
-						return View("Index", db.MovilidadEstudianteExteriorInternacionalizacion.ToList());
-					}
-				}
+                        return RedirectToAction("Index");
+
+                    }
+                }
 				else
 				{
 					ViewBag.CargaMasivaCatalogo = "Error! La plantilla no es un archivo Excel!";

@@ -214,7 +214,7 @@
 
                     db.Matriculados.AddRange(listaMatriculado);
                     db.SaveChanges();
-                    return View("Index", db.Matriculados.ToList());
+                    return RedirectToAction("Index");
                 }
                 else
                 {

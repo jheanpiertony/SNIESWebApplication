@@ -201,7 +201,7 @@
 
                     db.ApoyoEstudiantes.AddRange(listaApoyoEstudiante);
                     db.SaveChanges();
-                    return View("Index", db.ApoyoEstudiantes.ToList());
+                    return RedirectToAction("Index");
                 }
                 else
                 {

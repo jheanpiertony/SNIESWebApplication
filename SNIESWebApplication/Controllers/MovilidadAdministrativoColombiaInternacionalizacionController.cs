@@ -170,7 +170,8 @@ namespace SNIESWebApplication.Controllers
                                 //GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.MovilidadAdministrativoColombiaInternacionalizacion.ToList());
+                        return RedirectToAction("Index");
+
                     }
                     else
                     {
@@ -213,7 +214,8 @@ namespace SNIESWebApplication.Controllers
                         }
                         db.MovilidadAdministrativoColombiaInternacionalizacion.AddRange(listaMovilidadAdministrativoColombiaInternacionalizacion);
                         db.SaveChanges();
-                        return View("Index", db.MovilidadAdministrativoColombiaInternacionalizacion.ToList());
+                        return RedirectToAction("Index");
+
                     }
                 }
                 else

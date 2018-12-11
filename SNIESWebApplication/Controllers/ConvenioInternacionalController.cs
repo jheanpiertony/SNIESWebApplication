@@ -184,7 +184,8 @@
                                 GuardarDatos(matrixValorHoja, hoja.Index, _FECHA_PERIODO.FechaPeriodo);
                             }
                         }
-                        return View("Index", db.ConvenioInternacional.ToList());
+                        return RedirectToAction("Index");
+
                     }
                     else
                     {
@@ -205,7 +206,8 @@
                         }
                         db.ConvenioInternacional.AddRange(listaConvenioInternacional);
                         db.SaveChanges();
-                        return View("Index", db.ConvenioInternacional.ToList());
+                        return RedirectToAction("Index");
+
                     }
                 }
                 else

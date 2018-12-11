@@ -202,7 +202,7 @@
 
                     db.Graduados.AddRange(listaGraduado);
                     db.SaveChanges();
-                    return View("Index", db.Graduados.ToList());
+                    return RedirectToAction("Index");
                 }
                 else
                 {

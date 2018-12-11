@@ -9,7 +9,9 @@
 <p>
     @Html.ActionLink(Recursos.Resources.CrearNuevo, "Create")
 </p>
-@Html.Partial("_DescargarReporteExcel")
+<div class="form-horizontal">
+    @Html.Partial("_DescargarReporteExcel")
+</div>
 
 <table class="table">
     <tr>
