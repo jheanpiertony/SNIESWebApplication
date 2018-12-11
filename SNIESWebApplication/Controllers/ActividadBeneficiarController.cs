@@ -22,7 +22,7 @@
         // GET: ActividadBeneficiar
         public async Task<ActionResult> Index()
         {
-            var PeriodoIdActual = db.Inscritos.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
+            var PeriodoIdActual = db.ActividadBeneficiar.Select(x => new { x.FECHA_PERIODO }).GroupBy(x => x.FECHA_PERIODO).ToList();
             int i = 0;
             var listaPeriodo = new List<Periodo>();
             foreach (var item in PeriodoIdActual)
