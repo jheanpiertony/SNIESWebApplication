@@ -282,6 +282,7 @@
     <Compile Include="Models\ActividadRecHumano.cs" />
     <Compile Include="Models\Admitido.cs" />
     <Compile Include="Models\ApoyoEstudiante.cs" />
+    <Compile Include="Models\ColsultaTotal.cs" />
     <Compile Include="Models\Consultaria.cs" />
     <Compile Include="Models\ConvenioInternacional.cs" />
     <Compile Include="Models\Cupo.cs" />
@@ -299,7 +300,9 @@
     <Compile Include="Models\keyAttribute.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Matriculado.cs" />
+    <Compile Include="Models\MatriculadoEstado.cs" />
     <Compile Include="Models\MovilidadInternacionalizacion.cs" />
+    <Compile Include="Models\PartEstadoFecha.cs" />
     <Compile Include="Models\Participante.cs" />
     <Compile Include="Models\Periodo.cs" />
     <Compile Include="Models\ProductoInvestigacion.cs" />
