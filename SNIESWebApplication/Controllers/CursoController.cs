@@ -12,7 +12,7 @@ using SNIESWebApplication.Helpers;
 using ClosedXML.Excel;
 using System.IO;
 using OfficeOpenXml;
-// desde unicoc bogota
+
 namespace SNIESWebApplication.Controllers
 {
     [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]

@@ -7,8 +7,10 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net;
     using System.Web;
     using System.Web.Mvc;
+    using System.Web.Routing;
 
     public class UsersController : Controller
     {
@@ -57,40 +59,66 @@
                     };
                     rolesView.Add(roleView);
                 }
-            }
-            
+            }            
 
             var userView = new UserView()
             {
                 EMail = usuario.Email,
                 Name = usuario.UserName,
                 UserID = usuario.Id,
-                Roles = rolesView
+                Roles = rolesView.OrderBy(r => r.Name).ToList()
             };
 
             return View(userView); 
         }
 
-        // GET: Users/AddRole/5
-        public ActionResult AddRole(int id)
+        // GET: Users/AddRole
+        public ActionResult AddRole(string userID)
         {
-            return View();
+            if (string.IsNullOrEmpty(userID))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var usuarioManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var usuarios = usuarioManager.Users.ToList();
+            var usuario = usuarios.Find(u => u.Id == userID);
+
+            if (usuario.Roles == null)
+            {
+                return HttpNotFound();
+            }
+
+            var userView = new UserView()
+            {
+                EMail = usuario.Email,
+                Name = usuario.UserName,
+                UserID = usuario.Id,
+            };
+
+            var rolMarager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
+            var roles = rolMarager.Roles.ToList();
+            roles = roles.OrderBy(r => r.Name).ToList();
+            ViewBag.RoleID = new SelectList(roles, "Id","Name");
+
+            return View(userView);
         }
 
-        // POST: Users/AddRole/5
+        // POST: Users/AddRole/
         [HttpPost]
-        public ActionResult AddRole(int id, FormCollection collection)
+        public ActionResult AddRole(string userID, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
+            var roleId = Request["RoleID"];
+            var usuarioManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var rolMarager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
+            var role = rolMarager.Roles.ToList().Find(r => r.Id == roleId);
+            var usuarios = usuarioManager.Users.ToList();
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (!usuarioManager.IsInRole(userID, role.Name))
             {
-                return View();
+                usuarioManager.AddToRole(userID, role.Name);
             }
+            return RedirectToAction("Roles", new RouteValueDictionary( new { controller = "Users", action = "Roles", userID }));
         }
 
         // GET: Users/Delete/5
