@@ -31,7 +31,11 @@
             {
                 if (item.Key != null)
                 {
-                    listaPeriodo.Add(new Periodo() { Id = i++, FechaPeriodo = item.Key.ToString() });
+                    listaPeriodo.Add(new Periodo()
+                    {
+                        Id = i++,
+                        FechaPeriodo = item.Key.ToString()
+                    });
                 }
             }
             ViewBag.PeriodoIdActual = new SelectList(listaPeriodo, "Id", "FechaPeriodo");

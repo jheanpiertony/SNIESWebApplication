@@ -1,0 +1,62 @@
+﻿@model SNIESWebApplication.ModelViews.UserView
+
+@{
+    ViewBag.Title = "Roles";
+}
+
+<h2>Roles</h2>
+
+<div>
+    <h4>UserView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+                @Html.DisplayNameFor(model => model.UserID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserID)
+            </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Agregar rol", "AddRole", "Users", new { userID = Model.UserID }, new { @class = "btn btn-success" })
+    @Html.ActionLink(@Recursos.Resources.VolverLista, "Index", "Users", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Roles[0].Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Roles)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Elimiar", "Deleted", "Users", new { usuario = Model, roleID = item.RoleID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

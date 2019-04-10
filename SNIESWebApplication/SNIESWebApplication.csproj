@@ -252,6 +252,7 @@
     <Compile Include="Controllers\RecHumanoCulturalsController.cs" />
     <Compile Include="Controllers\RecHumanoEventoCulturalController.cs" />
     <Compile Include="Controllers\ServicioExtensionController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Helpers\CrearExcel.cs" />
     <Compile Include="Helpers\CrearRolUsuarios.cs" />
     <Compile Include="Helpers\EnumService.cs" />
@@ -355,6 +356,8 @@
     <Compile Include="Models\StoredProcedure\SNIES_Participantes_Preg_Result.cs">
       <DependentUpon>SAINTdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelViews\RolView.cs" />
+    <Compile Include="ModelViews\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recursos\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -704,6 +707,8 @@
     <Content Include="Views\Curso\Details.cshtml" />
     <Content Include="Views\Curso\Edit.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Roles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
