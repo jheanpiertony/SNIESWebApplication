@@ -20,6 +20,7 @@ namespace SNIESWebApplication.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Desarrollador")]
         public ActionResult About()
         {
             //List<MatriculadoEstado> lista = new List<MatriculadoEstado>();
@@ -152,6 +153,7 @@ namespace SNIESWebApplication.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Desarrollador")]
         public ActionResult Contact()
         {
 

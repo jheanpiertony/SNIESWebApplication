@@ -14,7 +14,7 @@
     using ClosedXML.Excel;
     using System.IO;
 
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
+    [Authorize(Roles = "Administrador, Desarrollador, Calidad")]
     public class ActividadRecHumanoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

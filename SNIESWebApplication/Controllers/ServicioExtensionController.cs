@@ -13,7 +13,7 @@
     using System.IO;
     using OfficeOpenXml;
 
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
+    [Authorize(Roles = "Administrador, Desarrollador, Calidad")]
     public class ServicioExtensionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

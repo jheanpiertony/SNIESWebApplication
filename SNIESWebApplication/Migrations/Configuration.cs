@@ -32,7 +32,8 @@ namespace SNIESWebApplication.Migrations
                new Periodo { Id = 7, FechaPeriodo = "2017-01" },
                new Periodo { Id = 8, FechaPeriodo = "2017-02" },
                new Periodo { Id = 9, FechaPeriodo = "2018-01" },
-               new Periodo { Id = 10, FechaPeriodo = "2018-02" }
+               new Periodo { Id = 10, FechaPeriodo = "2018-02" },
+               new Periodo { Id = 11, FechaPeriodo = "2019-01" }
                );
 
         }

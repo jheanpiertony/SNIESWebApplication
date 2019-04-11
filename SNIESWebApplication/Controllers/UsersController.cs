@@ -12,6 +12,7 @@
     using System.Web.Mvc;
     using System.Web.Routing;
 
+    [Authorize(Roles = "Desarrollador")]
     public class UsersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -121,27 +122,43 @@
             return RedirectToAction("Roles", new RouteValueDictionary( new { controller = "Users", action = "Roles", userID }));
         }
 
-        // GET: Users/Delete/5
-        public ActionResult Delete(int id)
+        // Users/Delete        
+        public ActionResult Delete(string userID, string roleID)
         {
-            return View();
+            if (string.IsNullOrEmpty(userID) || string.IsNullOrEmpty(roleID))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var usuarioManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var rolMarager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
+
+            var role = rolMarager.Roles.ToList().Find(r => r.Id == roleID);
+            var usuario = usuarioManager.Users.ToList().Find(r => r.Id == userID);
+
+            if (usuarioManager.IsInRole(usuario.Id, role.Name))
+            {
+                usuarioManager.RemoveFromRole(usuario.Id, role.Name);
+            }
+
+            return RedirectToAction("Roles", new RouteValueDictionary(new { controller = "Users", action = "Roles", userID = usuario.Id }));
         }
 
         // POST: Users/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+        //[HttpPost]
+        //public ActionResult Delete(int id, FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
         protected override void Dispose(bool disposing)
         {

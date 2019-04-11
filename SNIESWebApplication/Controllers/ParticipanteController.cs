@@ -18,7 +18,7 @@
     using System.Data.SqlClient;
     using SNIESWebApplication.Models.StoredProcedure;
 
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
+    [Authorize(Roles = "Administrador, Desarrollador, Calidad")]
     public class ParticipanteController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

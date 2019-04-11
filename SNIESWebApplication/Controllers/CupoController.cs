@@ -15,7 +15,7 @@
     using SNIESWebApplication.Helpers;
     using ClosedXML.Excel;
 
-    [Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
+    [Authorize(Roles = "Administrador, Desarrollador, Calidad")]
     public class CupoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -15,8 +15,8 @@ using ClosedXML.Excel;
 
 namespace SNIESWebApplication.Controllers
 {
-	[Authorize(Users = "calidad@unicoc.edu.co,desarrollador@unicoc.edu.co,jgomezm@unicoc.edu.co")]
-	public class MovilidadEstudianteExteriorInternacionalizacionController : Controller
+    [Authorize(Roles = "Administrador, Desarrollador, Calidad")]
+    public class MovilidadEstudianteExteriorInternacionalizacionController : Controller
 	{
 		private ApplicationDbContext db = new ApplicationDbContext();
 

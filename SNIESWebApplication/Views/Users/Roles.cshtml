@@ -48,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.ActionLink("Elimiar", "Deleted", "Users", new { usuario = Model, roleID = item.RoleID }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Elimiar", "Delete", "Users", new { userID = Model.UserID, roleID = item.RoleID }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }
