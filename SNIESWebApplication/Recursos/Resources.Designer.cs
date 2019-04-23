@@ -421,6 +421,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lista.
+        /// </summary>
+        public static string Index {
+            get {
+                return ResourceManager.GetString("Index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Inscrito.
         /// </summary>
         public static string Inscrito {
@@ -534,6 +543,15 @@ namespace Recursos {
         public static string Participante {
             get {
                 return ResourceManager.GetString("Participante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Periodos.
+        /// </summary>
+        public static string Periodos {
+            get {
+                return ResourceManager.GetString("Periodos", resourceCulture);
             }
         }
         

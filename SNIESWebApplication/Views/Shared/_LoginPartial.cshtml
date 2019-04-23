@@ -16,8 +16,10 @@
                     @if (User.IsInRole("Administrador") || User.IsInRole("Desarrollador"))
                     {
                         <li>@Html.ActionLink("Roles y usuarios", "Index", "Users")</li>
+                        <li>@Html.ActionLink("Periodos", "Index", "Periodos")</li>
                     }
-                    <li><a href="#">Manual</a></li>
+                    <li><a href="~/Content/PlantillasSnies/plantillas.zip" target="_blank">Descarga platillas SNIES</a></li>
+                    <li><a href="#">Manuales</a></li>
 
                 </ul>
             </li>

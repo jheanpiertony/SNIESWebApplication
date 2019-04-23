@@ -1,0 +1,26 @@
+﻿@model SNIESWebApplication.Models.Periodo
+
+@{
+    ViewBag.Title = Recursos.Resources.Detalles;
+}
+
+<h2>@Recursos.Resources.Detalles</h2>
+
+<div>
+    <h4>@Recursos.Resources.Periodos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPeriodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaPeriodo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Recursos.Resources.Editar, "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink(Recursos.Resources.VolverLista, "Index", null, new { @class = "btn btn-success" })
+</p>

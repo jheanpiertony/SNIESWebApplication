@@ -242,6 +242,7 @@
     <Compile Include="Controllers\MovilidadEstudianteExteriorInternacionalizacionController.cs" />
     <Compile Include="Controllers\OtraEntidadProyectoExtencionController.cs" />
     <Compile Include="Controllers\OtraEntidadServicioExtensionController.cs" />
+    <Compile Include="Controllers\PeriodosController.cs" />
     <Compile Include="Controllers\PoblacionCondicionalServicioExtensionController.cs" />
     <Compile Include="Controllers\PoblacionCondiProyectoExtencionController.cs" />
     <Compile Include="Controllers\PoblacionGrupoProyectoExtencionController.cs" />
@@ -396,6 +397,7 @@
     <Content Include="Models\StoredProcedure\SAINTdb.edmx.diagram">
       <DependentUpon>SAINTdb.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\PlantillasSnies\plantillas.zip" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -710,6 +712,11 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Roles.cshtml" />
     <Content Include="Views\Users\AddRole.cshtml" />
+    <Content Include="Views\Periodos\Create.cshtml" />
+    <Content Include="Views\Periodos\Delete.cshtml" />
+    <Content Include="Views\Periodos\Details.cshtml" />
+    <Content Include="Views\Periodos\Edit.cshtml" />
+    <Content Include="Views\Periodos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

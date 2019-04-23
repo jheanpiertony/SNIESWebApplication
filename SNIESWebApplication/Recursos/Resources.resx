@@ -237,6 +237,9 @@
   <data name="Guardar" xml:space="preserve">
     <value>Guardar</value>
   </data>
+  <data name="Index" xml:space="preserve">
+    <value>Lista</value>
+  </data>
   <data name="Inscrito" xml:space="preserve">
     <value>Inscrito</value>
   </data>
@@ -275,6 +278,9 @@
   </data>
   <data name="Participante" xml:space="preserve">
     <value>Participante</value>
+  </data>
+  <data name="Periodos" xml:space="preserve">
+    <value>Periodos</value>
   </data>
   <data name="PoblacionCondicionalServicioExtension" xml:space="preserve">
     <value>Poblacion Condicional Servicio Extension</value>
